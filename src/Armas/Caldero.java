@@ -1,14 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Armas;
 
-/**
- *
- * @author Dell-Studio1558
- */
-public class Caldero {
+
+public class Caldero extends ArmasBuilder{
     
+    public Caldero(){
+        super.armas = new Armas();
+    }
+
+    @Override
+    public void buildTipo() {
+        armas.setTipo("El caldero del demonio");
+    }
+
+    @Override
+    public void buildResistencia(int res) {
+        armas.setResistencia(res);
+    } 
+
+    @Override
+    public void buildCantAtaque(int ataque) {
+        armas.setValorAtaque(ataque);
+    }
 }
