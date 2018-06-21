@@ -13,7 +13,7 @@ public class Enemigo {
     
     int vida = 50;
     int ataque = 20;
-    String tipo = "";
+
     String recompensa  = "";
     boolean atacando = false;
     
@@ -32,14 +32,6 @@ public class Enemigo {
 
     public void setAtaque(int ataque) {
         this.ataque = ataque;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
     }
 
     public String getRecompensa() {

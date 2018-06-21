@@ -18,6 +18,5 @@ public abstract class VillanoBuilder {
     
     public abstract  void buildVida(float inc);
     public abstract  void buildAtaque(float inc);
-    //public abstract  void buildTipo(String type);
     public abstract  void buildTipoRecompensa(String recom);
 }

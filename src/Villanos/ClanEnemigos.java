@@ -23,7 +23,6 @@ public class ClanEnemigos {
     public void crearEnemigo(int incv, int  incat, String recom){
         vBuilder.buildVida(incv);
         vBuilder.buildAtaque(incat);
-    //vBuilder.buildTipo(type);
         vBuilder.buildTipoRecompensa(recom);
     }
 }
