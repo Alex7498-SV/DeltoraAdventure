@@ -5,13 +5,13 @@ public class Armas {
     
     private String tipo = "";
     private int resistencia = 0;
-    private float valorAtaque; 
+    private int valorAtaque; 
 
     public String getTipo() {
         return tipo;
     }
 
-    public int getResistencia() {
+    public float getResistencia() {
         return resistencia;
     }
 
@@ -27,7 +27,7 @@ public class Armas {
         this.resistencia = resistencia;
     }
     
-     public void setValorAtaque(float valorAtaque) {
+     public void setValorAtaque(int valorAtaque) {
         this.valorAtaque = valorAtaque;
     }
 

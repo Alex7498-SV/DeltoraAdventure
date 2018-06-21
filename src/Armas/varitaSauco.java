@@ -13,12 +13,16 @@ public class varitaSauco extends ArmasBuilder{
     }
 
     @Override
-    public void buildResistencia(int res) {
-        armas.setResistencia(res);
+    public void buildResistencia(float res) {
+        if (res<1){
+            armas.setResistencia((int) (armas.getResistencia() + (armas.getResistencia()*res)));
+        }
+        
     } 
 
     @Override
-    public void buildCantAtaque(int ataque) {
-        armas.setValorAtaque(ataque);
+    public void buildCantAtaque(float ataque) {
+        if(ataque<1)
+        armas.setValorAtaque((int) (armas.getValorAtaque()+(armas.getValorAtaque()*ataque)));
     }
 }
