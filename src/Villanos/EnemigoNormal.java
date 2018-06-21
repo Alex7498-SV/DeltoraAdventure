@@ -1,9 +1,18 @@
 
 package Villanos;
 
-public class EnemigoNivel4 extends VillanoBuilder{
-    
-    public EnemigoNivel4() {
+/**
+ * 
+ * @author Alex
+ * 
+ */
+public class EnemigoNormal extends VillanoBuilder {
+
+    /**
+     * La clase EnemigoNivel1 se encarga de crear un tipo de enemigo con stats basicas
+     * un enemigo de este nivel sera facil de derrotar y no infringira tanto daño
+     */
+    public EnemigoNormal() {
         super.enemigo = new Enemigo();
     }
 
@@ -25,7 +34,6 @@ public class EnemigoNivel4 extends VillanoBuilder{
             System.out.println("Valor de incremento invalido");
         }
     }
-
 //    @Override
 //    public void buildTipo(String type) {
 //        enemigo.setTipo(type);
@@ -36,6 +44,5 @@ public class EnemigoNivel4 extends VillanoBuilder{
         enemigo.setRecompensa(recom);
     }
    
-    
     
 }

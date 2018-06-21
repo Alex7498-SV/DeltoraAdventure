@@ -9,9 +9,9 @@ package Villanos;
  *
  * @author Dell-Studio1558
  */
-public class BossN2 extends VillanoBuilder{
+public class Boss extends VillanoBuilder{
 
-    public BossN2() {
+    public Boss() {
         super.enemigo = new Enemigo();
     }
 
