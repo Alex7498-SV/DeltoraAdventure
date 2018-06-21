@@ -9,19 +9,27 @@ public class EnemigoNivel4 extends VillanoBuilder{
 
     @Override
     public void buildVida(float inc) {
-        enemigo.setVida((int) (enemigo.getVida()+ (enemigo.getVida()*inc)));
+        if (inc < 1){
+            enemigo.setVida((int) (enemigo.getVida()+ (enemigo.getVida()*inc)));
+        }else{
+            System.out.println("Valor de incremento invalido");
+        }
         
     }
 
     @Override
     public void buildAtaque(float inc) {
-        enemigo.setAtaque((int) (enemigo.getAtaque()+ (enemigo.getAtaque()*inc)));
+        if(inc < 0.75){
+            enemigo.setAtaque((int) (enemigo.getAtaque()+ (enemigo.getAtaque()*inc)));
+        }else{
+            System.out.println("Valor de incremento invalido");
+        }
     }
 
-    @Override
-    public void buildTipo(String type) {
-        enemigo.setTipo(type);
-    }
+//    @Override
+//    public void buildTipo(String type) {
+//        enemigo.setTipo(type);
+//    }
 
     @Override
     public void buildTipoRecompensa(String recom) {
