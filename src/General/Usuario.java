@@ -34,4 +34,5 @@ public class Usuario {
         Usuario usu = new Usuario();
         System.out.println("Username: " + usu.getUsername() + " || Score: " + usu.getScore());
     }
+    
 }
