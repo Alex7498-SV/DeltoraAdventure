@@ -34,10 +34,6 @@ public class EnemigoNormal extends VillanoBuilder {
             System.out.println("Valor de incremento invalido");
         }
     }
-//    @Override
-//    public void buildTipo(String type) {
-//        enemigo.setTipo(type);
-//    }
 
     @Override
     public void buildTipoRecompensa(String recom) {
