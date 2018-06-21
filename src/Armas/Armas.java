@@ -4,8 +4,8 @@ package Armas;
 public class Armas {
     
     private String tipo = "";
-    private int resistencia = 0;
-    private int valorAtaque; 
+    private int resistencia = 50;
+    private int valorAtaque = 50; 
 
     public String getTipo() {
         return tipo;

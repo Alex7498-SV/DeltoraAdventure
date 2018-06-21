@@ -1,7 +1,7 @@
 
 package Armas;
 
-
+//Cambiar nombre de la clase 
 public class Caldero extends ArmasBuilder{
     
     public Caldero(){
@@ -14,16 +14,15 @@ public class Caldero extends ArmasBuilder{
     }
 
 @Override
-    public void buildResistencia(float res) {
-        if (res<1){
-            armas.setResistencia((int) (armas.getResistencia() + (armas.getResistencia()*res)));
-        }
+    public void buildResistencia() {
+  
+        armas.setResistencia((int) (armas.getResistencia() + (armas.getResistencia()*0.3)));
+        
         
     } 
 
     @Override
-    public void buildCantAtaque(float ataque) {
-        if(ataque<1)
-        armas.setValorAtaque((int) (armas.getValorAtaque()+(armas.getValorAtaque()*ataque)));
+    public void buildCantAtaque() {
+        armas.setValorAtaque((int) (armas.getValorAtaque()+(armas.getValorAtaque()*0.6)));
     }
 }

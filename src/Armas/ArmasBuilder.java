@@ -10,6 +10,6 @@ public abstract class ArmasBuilder {
     }
     
     public abstract  void buildTipo();
-    public abstract  void buildResistencia(float res);
-    public abstract  void buildCantAtaque(float ataque);
+    public abstract  void buildResistencia();
+    public abstract  void buildCantAtaque();
 }

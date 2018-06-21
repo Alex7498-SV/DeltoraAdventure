@@ -13,9 +13,9 @@ public class Armeria {
         return aBuilder.getArma();
     }
     
-    public void crearArma(float res, float ataque){
+    public void crearArma(){
         aBuilder.buildTipo();
-        aBuilder.buildResistencia(res);
-        aBuilder.buildCantAtaque(ataque);
+        aBuilder.buildResistencia();
+        aBuilder.buildCantAtaque();
     }
 }
