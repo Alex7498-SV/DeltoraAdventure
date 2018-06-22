@@ -15,7 +15,6 @@ public class Armeria {
     
     public void crearArma(){
         aBuilder.buildTipo();
-        aBuilder.buildResistencia();
         aBuilder.buildCantAtaque();
     }
 }

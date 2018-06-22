@@ -11,13 +11,7 @@ public class Lanza extends ArmasBuilder{
     public void buildTipo() {
         armas.setTipo("Lanza de la muerte");
     }
-
-    @Override
-    public void buildResistencia() {
-        armas.setResistencia((int) (armas.getResistencia() + (armas.getResistencia()*0.1)));
-        
-    } 
-
+    
     @Override
     public void buildCantAtaque() {
         
