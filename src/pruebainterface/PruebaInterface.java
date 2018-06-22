@@ -3,15 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package deltoraadventure;
-
+package pruebainterface;
 import pruebainterface.VentanaDeInicio;
 
 /**
  *
- * @author Alex
+ * @author HugoJr. <Hugo Rivera at 00161417@uca.edu.sv>
  */
-public class DeltoraAdventure {
+public class PruebaInterface {
 
     /**
      * @param args the command line arguments
@@ -20,4 +19,5 @@ public class DeltoraAdventure {
         // TODO code application logic here
         new VentanaDeInicio().setVisible(true);
     }
+    
 }
