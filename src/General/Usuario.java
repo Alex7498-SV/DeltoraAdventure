@@ -1,15 +1,53 @@
 
 package General;
 
+import Armas.Armas;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Usuario {
-    
+
     Scanner scn =  new Scanner(System.in);
     private String username, score;
     boolean flag;
+    int vida = 100;
+    int ataque = 0;
+    ArrayList <Armas> inventarioArmas = new ArrayList <Armas>();
+//Corresponde a Hugo ----> ArrayList<Pociones> inventarioPociones = new ArrayList<Pociones>();
+
 
     public Usuario(){} 
+    
+    public void agregarArma(Armas ar){
+        inventarioArmas.add(ar);
+    }
+    
+    public void  usarArma(Armas ar){
+        setVida(0);
+        inventarioArmas.forEach(arma->{
+            if (arma.getTipo().equals(ar.getTipo())){
+                setVida((int) (getVida()+ arma.getValorAtaque()));
+            }
+        });
+        
+    }
+
+    public int getVida() {
+        return vida;
+    }
+
+    public void setVida(int vida) {
+        this.vida = vida;
+    }
+
+    public int getAtaque() {
+        return ataque;
+    }
+
+    public void setAtaque(int ataque) {
+        this.ataque = ataque;
+    }
+    
     
     public Usuario(String username, String score) {
         this.username = username;
