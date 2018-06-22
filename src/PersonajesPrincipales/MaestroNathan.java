@@ -38,12 +38,12 @@ public class MaestroNathan implements Maestro{
 
     @Override
     public void darVida() {
-        personajePrincipal.setVida(500);
+        personajePrincipal.setVida(100);
     }
 
     @Override
     public void darAtaque() {
-        personajePrincipal.setAtaque(100);
+        personajePrincipal.setAtaque(25);
     }
 
     @Override

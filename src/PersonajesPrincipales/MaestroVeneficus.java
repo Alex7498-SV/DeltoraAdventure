@@ -38,12 +38,12 @@ public class MaestroVeneficus implements Maestro{
 
     @Override
     public void darVida() {
-        personajePrincipal.setVida(450);
+        personajePrincipal.setVida(75);
     }
 
     @Override
     public void darAtaque() {
-        personajePrincipal.setAtaque(150);
+        personajePrincipal.setAtaque(75);
     }
 
     @Override
