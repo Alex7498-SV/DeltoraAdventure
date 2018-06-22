@@ -6,6 +6,7 @@
 package pruebainterface;
 
 import java.awt.Container;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
@@ -15,7 +16,7 @@ import javax.swing.JLabel;
  */
 public class VentanaHistoria extends JFrame {
     
-    private JLabel lblHistoria;
+    private JLabel lblHistoria, lblFondo;
     
     public VentanaHistoria(){
         super("Historia del juego");
@@ -24,15 +25,22 @@ public class VentanaHistoria extends JFrame {
         VentanaDeHistoria();
         Container container =  getContentPane();
         container.add(lblHistoria);
+        container.add(lblFondo);
         setSize(600, 600);
         this.setLocationRelativeTo(null);
     }
     
     public final void VentanaDeHistoria(){
         lblHistoria = new JLabel();
+        lblFondo = new JLabel();
         
-        lblHistoria = new JLabel("NickName :");
-        lblHistoria.setBounds(50, 350, 90, 90);
+               
+        lblHistoria = new JLabel("PUTO EL QUE LO LEA");
+        lblHistoria.setBounds(250, 200, 500, 500);
+        
+        lblFondo.setBounds(0, 0, 600, 600);
+        
+        lblFondo.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/fondoprueba.jpg")));
     }
     
     public static void main(String[] args) {

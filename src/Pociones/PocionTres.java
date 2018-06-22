@@ -10,12 +10,15 @@ package Pociones;
  * @author HugoJr. <Hugo Rivera at 00161417@uca.edu.sv>
  */
 public class PocionTres implements Pocion{
-     public int sumaDanio = 10;
-    //public int restaVida = 20;
+
+    public int sumaDanio = 10;
+    public int sumaVida = 50;
+    public int restaVida = 30;
+    public int sumaFullVida = 100;
 
     @Override
     public void sumarDanio() {
-        System.out.println(sumaDanio);
+        //System.out.println(sumaDanio);
     }
 
     @Override
@@ -25,7 +28,12 @@ public class PocionTres implements Pocion{
 
     @Override
     public void restarVida() {
-        //System.out.println(restaVida);
+        System.out.println(restaVida);
+    }
+
+    @Override
+    public void sumarFullVida() {
+        //System.out.println(sumaFullVida);
     }
 
 }
