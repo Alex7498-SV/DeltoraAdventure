@@ -32,6 +32,11 @@ public class MaestroVeneficus implements Maestro{
     }
 
     @Override
+    public void darPuntosExperiencia() {
+        personajePrincipal.setNivel(0);
+    }
+
+    @Override
     public void darVida() {
         personajePrincipal.setVida(450);
     }

@@ -20,6 +20,7 @@ public class Creador{
         this.maestro.darNombre();
         this.maestro.darTipo();
         this.maestro.darNivel();
+        this.maestro.darPuntosExperiencia();
         this.maestro.darVida();
         this.maestro.darAtaque();
     }

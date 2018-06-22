@@ -13,6 +13,7 @@ public interface PersonajeBase {
     public void setNombre(String nombre);
     public void setTipo(String tipo);
     public void setNivel(int nivel);
+    public void setPuntosExperiencia(int puntosExperiencia);
     public void setVida(int vida);
     public void setAtaque(int ataque);
 }

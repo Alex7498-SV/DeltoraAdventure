@@ -13,6 +13,7 @@ public class PersonajePrincipal implements PersonajesPrincipales.PersonajeBase{
     private String nombre;
     private String tipo;
     private int nivel;
+    private int puntosExperiencia;
     private int vida;
     private int ataque;
 
@@ -32,6 +33,11 @@ public class PersonajePrincipal implements PersonajesPrincipales.PersonajeBase{
     }
 
     @Override
+    public void setPuntosExperiencia(int puntosExperiencia) {
+        this.puntosExperiencia = puntosExperiencia;
+    }
+
+    @Override
     public void setVida(int vida) {
         this.vida = vida;
     }
@@ -43,6 +49,6 @@ public class PersonajePrincipal implements PersonajesPrincipales.PersonajeBase{
     
     @Override
     public String toString(){
-        return "El guerrero creado es: " + nombre + "con nivel: " + nivel + "su vida es: " + vida  + "su ataque: " + ataque + "y sus tipos de ataques son: " +  tipo;
+        return "El guerrero creado es: " + nombre + " con nivel: " + nivel + " sus puntos de experiencia son: " + puntosExperiencia + " su vida es: " + vida  + " su ataque: " + ataque + " y ataques son de tipo: " +  tipo;
     }
 }

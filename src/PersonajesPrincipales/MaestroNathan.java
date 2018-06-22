@@ -30,6 +30,11 @@ public class MaestroNathan implements Maestro{
     public void darNivel() {
         personajePrincipal.setNivel(0);
     }
+    
+    @Override
+    public void darPuntosExperiencia() {
+        personajePrincipal.setNivel(0);
+    }
 
     @Override
     public void darVida() {

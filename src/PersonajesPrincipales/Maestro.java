@@ -13,6 +13,7 @@ public interface Maestro {
     public  void darNombre();
     public  void darTipo();
     public  void darNivel();
+    public  void darPuntosExperiencia();
     public  void darVida();
     public  void darAtaque();
     public PersonajePrincipal getPersonajePrincipal();
