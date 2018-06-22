@@ -23,15 +23,14 @@ public class PruebaGeneracionPersonajePrincipal {
     public void GenerarPersonaje(){
         int numero;
         
-        Scanner Tipo = new Scanner(System.in);
         System.out.println("Ingrese el numero, segun el personaje principal que desea crear.");
         System.out.println("Ingrese 1 para crear a Nathan, ingrese 2 para crear a Veneficus");
     
-        numero = Tipo.nextInt();
+
         
         SeleccionarPersonaje hacerPersonaje;
         hacerPersonaje = SeleccionarPersonaje.getInstance();
-        hacerPersonaje.elegirPersonaje(numero);
+        hacerPersonaje.elegirPersonaje();
         
     }
 }
