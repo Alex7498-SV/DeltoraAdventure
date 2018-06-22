@@ -1,15 +1,15 @@
 
 package Armas;
 
-public class varitaSauco extends ArmasBuilder{
+public class Libro extends ArmasBuilder{
     
-    public varitaSauco() {
+    public Libro() {
         super.armas = new Armas();
     }
 
     @Override
     public void buildTipo() {
-        armas.setTipo("Varita de Sauco");
+        armas.setTipo("Escappini de Baldor");
     }
 
     @Override

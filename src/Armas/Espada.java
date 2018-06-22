@@ -1,15 +1,15 @@
 
 package Armas;
 
-public class Hacha extends ArmasBuilder{
+public class Espada extends ArmasBuilder{
 
-    public Hacha() {
+    public Espada() {
         super.armas = new Armas();
     }
 
     @Override
     public void buildTipo() {
-        armas.setTipo("Hachin Machin");
+        armas.setTipo("Espablo Escobar");
     }
 
     @Override
