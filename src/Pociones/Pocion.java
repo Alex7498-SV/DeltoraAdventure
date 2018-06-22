@@ -13,6 +13,7 @@ public interface Pocion {
     void sumarDanio();
     void sumarVida();
     void restarVida();
+    void sumarFullVida();
 }
 
 
@@ -28,4 +29,8 @@ public interface Pocion {
 
 //factory = FactoryProducer.getPocion("Pocion");
 //Pocion pocionTres = factory.getPocion("Pocion Tres"):
-//pocionDos.sumarDanio;
+//pocionTres.sumarDanio;
+
+//factory = FactoryProducer.getPocion("Pocion");
+//Pocion pocionTres = factory.getPocion("Pocion Cuatro"):
+//pocionCuatro.sumarDanio;

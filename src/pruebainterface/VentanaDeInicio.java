@@ -110,7 +110,7 @@ public class VentanaDeInicio extends JFrame {
             @Override
             public void mouseClicked(MouseEvent e) {
                 //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                System.out.println("Personaje 1 elejido");
+                System.out.println("Personaje 1 elegido");
             }
             
             /**
@@ -149,7 +149,7 @@ public class VentanaDeInicio extends JFrame {
         imagen2.addMouseListener(new pruebainterface.MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                System.out.println("Personaje 2 elejido");
+                System.out.println("Personaje 2 elegido");
             }
 
             @Override

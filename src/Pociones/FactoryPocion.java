@@ -21,7 +21,7 @@ public class FactoryPocion implements AbstractFactory {
             case "PocionTres":
                 return new PocionTres();
             case "PocionCuatro":
-                //return new PocionCuatro();
+                return new PocionCuatro();
         }
         return null;
     }
