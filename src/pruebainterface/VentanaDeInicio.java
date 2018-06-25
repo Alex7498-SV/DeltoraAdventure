@@ -1,6 +1,10 @@
 
 package pruebainterface;
 
+import PersonajesPrincipales.Creador;
+import PersonajesPrincipales.MaestroNathan;
+import PersonajesPrincipales.MaestroVeneficus;
+import PersonajesPrincipales.PersonajePrincipal;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -78,8 +82,8 @@ public class VentanaDeInicio extends JFrame {
         
         
         
-        imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/P51D.jpg")));
-        imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/P51D.jpg")));
+        imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago.jpg")));
+        imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/guerrero.jpg")));
         
     }
     
@@ -98,8 +102,8 @@ public class VentanaDeInicio extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Pasa a ventana de juego");
                 
-                new VentanaHistoria().setVisible(true);
-
+                new VentanaHistoria1().setVisible(true);
+                
             }
         });
         
@@ -111,6 +115,13 @@ public class VentanaDeInicio extends JFrame {
             public void mouseClicked(MouseEvent e) {
                 //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
                 System.out.println("Personaje 1 elegido");
+                MaestroVeneficus entrenadorVeneficus = new MaestroVeneficus();
+                Creador creadorVeneficus =  new Creador(entrenadorVeneficus);
+                creadorVeneficus.crearPersonaje();
+                PersonajePrincipal Veneficus =  creadorVeneficus.getPersonajePrincipal();
+
+                System.out.println(Veneficus.toString());
+                
             }
             
             /**
@@ -121,7 +132,7 @@ public class VentanaDeInicio extends JFrame {
             public void mouseEntered(MouseEvent e) {
                 System.out.println("Entered");
 
-                imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/futney.jpg")));
+                imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
                 Container container = getContentPane();
                 container.add(imagen1);
                 imagen1 = new JLabel();
@@ -137,11 +148,11 @@ public class VentanaDeInicio extends JFrame {
             public void mouseExited(MouseEvent e) {
                 System.out.println("Exited");
                 
-//                imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/P51D.jpg")));
-//                Container container = getContentPane();
-//                container.add(imagen1);
-//                imagen1 = new JLabel();
-//                imagen1.setBounds(90, 150, 100, 100);
+                imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago.jpg")));
+                Container container = getContentPane();
+                container.add(imagen1);
+                imagen1 = new JLabel();
+                imagen1.setBounds(90, 150, 100, 100);
 
             }
         });
@@ -150,13 +161,20 @@ public class VentanaDeInicio extends JFrame {
             @Override
             public void mouseClicked(MouseEvent e) {
                 System.out.println("Personaje 2 elegido");
+                MaestroNathan entrenadorNathan = new MaestroNathan();
+                Creador creadorNathan =  new Creador(entrenadorNathan);
+                creadorNathan.crearPersonaje();
+                PersonajePrincipal Nathan =  creadorNathan.getPersonajePrincipal();
+
+                System.out.println(Nathan.toString());
+                
             }
 
             @Override
             public void mouseEntered(MouseEvent e) {
                 System.out.println("Entered");
                 
-                imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/futney.jpg")));
+                imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/guerreroSi.jpg")));
                 Container container = getContentPane();
                 container.add(imagen2);
                 imagen2 = new JLabel();

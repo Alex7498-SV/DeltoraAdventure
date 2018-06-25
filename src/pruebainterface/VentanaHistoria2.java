@@ -9,17 +9,18 @@ import java.awt.Container;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import java.awt.Color;
 
 /**
  *
  * @author HugoJr. <Hugo Rivera at 00161417@uca.edu.sv>
  */
-public class VentanaHistoria extends JFrame {
+public class VentanaHistoria2 extends JFrame {
     
     private JLabel lblHistoria, lblFondo;
     
-    public VentanaHistoria(){
-        super("Historia del juego");
+    public VentanaHistoria2(){
+        super("Historia del personaje 2");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
         VentanaDeHistoria();
@@ -35,11 +36,14 @@ public class VentanaHistoria extends JFrame {
         lblFondo = new JLabel();
         
                
-        lblHistoria = new JLabel("PUTO EL QUE LO LEA");
+        lblHistoria = new JLabel("HISTORIAAAA");
         lblHistoria.setBounds(250, 200, 500, 500);
+        
+        lblHistoria.setForeground(new java.awt.Color(255, 255, 255));
         
         lblFondo.setBounds(0, 0, 600, 600);
         
+        //Fondo de la historia del personaje 1
         lblFondo.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/fondoprueba.jpg")));
     }
     
@@ -47,7 +51,7 @@ public class VentanaHistoria extends JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new VentanaHistoria().setVisible(true);
+                new VentanaHistoria2().setVisible(true);
             }
         });
     }
