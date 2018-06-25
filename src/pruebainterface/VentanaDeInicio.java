@@ -15,6 +15,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+import PersonajesPrincipales.*;
 
 /**
  *
@@ -22,11 +23,14 @@ import javax.swing.JTextField;
  */
 public class VentanaDeInicio extends JFrame {
     
+    SeleccionarPersonaje sP = new SeleccionarPersonaje();
+    
+    
   //  public JLabel = lblAlias;
     
 //    public JButton = inicio;
     private JLabel lblAlias, lblNombrePersonaje1, lblNombrePersonaje2;
-    public JTextField alias;
+    public JTextField DeltoraAdventure;
     private JButton inicio;
     public JLabel imagen1, imagen2;
      
@@ -43,7 +47,7 @@ public class VentanaDeInicio extends JFrame {
         container.add(lblAlias);
         container.add(lblNombrePersonaje1);
         container.add(lblNombrePersonaje2);
-        container.add(alias);
+        container.add(DeltoraAdventure);
         container.add(imagen1);
         container.add(imagen2);
         setSize(500, 500);
@@ -61,7 +65,7 @@ public class VentanaDeInicio extends JFrame {
     }
     
     public final void Ventana() {
-        alias = new JTextField();
+        DeltoraAdventure = new JTextField();
         
         inicio = new JButton("Iniciar");
         
@@ -69,7 +73,7 @@ public class VentanaDeInicio extends JFrame {
         imagen2 = new JLabel();
 
         
-        alias.setBounds(130, 360, 200, 20);
+        DeltoraAdventure.setBounds(130, 360, 200, 20);
         
         inicio.setBounds(350, 350, 70, ALTO);
         
@@ -91,13 +95,16 @@ public class VentanaDeInicio extends JFrame {
             }
         });
     }
-
+    
+    int seleccion = 0;
     private void eventos() {
+        
+        
         inicio.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Pasa a ventana de juego");
-                
+                sP.elegirPersonaje(seleccion);
                 new VentanaHistoria().setVisible(true);
 
             }
@@ -111,6 +118,7 @@ public class VentanaDeInicio extends JFrame {
             public void mouseClicked(MouseEvent e) {
                 //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
                 System.out.println("Personaje 1 elegido");
+                seleccion = 1;
             }
             
             /**
@@ -150,6 +158,7 @@ public class VentanaDeInicio extends JFrame {
             @Override
             public void mouseClicked(MouseEvent e) {
                 System.out.println("Personaje 2 elegido");
+                seleccion = 2;
             }
 
             @Override
@@ -174,6 +183,8 @@ public class VentanaDeInicio extends JFrame {
 //                imagen1.setBounds(90, 150, 100, 100);
             }
         });
+        
+        
         
         
         /**

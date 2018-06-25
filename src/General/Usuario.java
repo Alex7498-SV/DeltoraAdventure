@@ -26,10 +26,9 @@ public class Usuario {
         setVida(0);
         inventarioArmas.forEach(arma->{
             if (arma.getTipo().equals(ar.getTipo())){
-                setVida((int) (getVida()+ arma.getValorAtaque()));
+                setAtaque((int) (getAtaque()+ arma.getValorAtaque()));
             }
         });
-        
     }
 
     public int getVida() {
