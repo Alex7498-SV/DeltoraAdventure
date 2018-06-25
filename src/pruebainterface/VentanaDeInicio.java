@@ -1,6 +1,10 @@
 
 package pruebainterface;
 
+import PersonajesPrincipales.Creador;
+import PersonajesPrincipales.MaestroNathan;
+import PersonajesPrincipales.MaestroVeneficus;
+import PersonajesPrincipales.PersonajePrincipal;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -82,8 +86,8 @@ public class VentanaDeInicio extends JFrame {
         
         
         
-        imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/P51D.jpg")));
-        imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/P51D.jpg")));
+        imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago.jpg")));
+        imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/guerrero.jpg")));
         
     }
     
@@ -96,6 +100,7 @@ public class VentanaDeInicio extends JFrame {
         });
     }
     
+    
     int seleccion = 0;
     private void eventos() {
         
@@ -105,8 +110,14 @@ public class VentanaDeInicio extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Pasa a ventana de juego");
                 sP.elegirPersonaje(seleccion);
-                new VentanaHistoria().setVisible(true);
-
+                //new VentanaHistoria2().setVisible(true);
+                
+                if (seleccion == 1){
+                    new VentanaHistoria1().setVisible(true);
+                }
+                if (seleccion == 2){
+                    new VentanaHistoria2().setVisible(true);
+                }
             }
         });
         
@@ -116,9 +127,9 @@ public class VentanaDeInicio extends JFrame {
         imagen1.addMouseListener( new pruebainterface.MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
                 System.out.println("Personaje 1 elegido");
                 seleccion = 1;
+
             }
             
             /**
@@ -129,7 +140,7 @@ public class VentanaDeInicio extends JFrame {
             public void mouseEntered(MouseEvent e) {
                 System.out.println("Entered");
 
-                imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/futney.jpg")));
+                imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
                 Container container = getContentPane();
                 container.add(imagen1);
                 imagen1 = new JLabel();
@@ -145,7 +156,7 @@ public class VentanaDeInicio extends JFrame {
             public void mouseExited(MouseEvent e) {
                 System.out.println("Exited");
                 
-//                imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/P51D.jpg")));
+//                imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago.jpg")));
 //                Container container = getContentPane();
 //                container.add(imagen1);
 //                imagen1 = new JLabel();
@@ -165,7 +176,7 @@ public class VentanaDeInicio extends JFrame {
             public void mouseEntered(MouseEvent e) {
                 System.out.println("Entered");
                 
-                imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/futney.jpg")));
+                imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/guerreroSi.jpg")));
                 Container container = getContentPane();
                 container.add(imagen2);
                 imagen2 = new JLabel();
@@ -176,7 +187,7 @@ public class VentanaDeInicio extends JFrame {
             public void mouseExited(MouseEvent e) {
                 System.out.println("Exited");
                 
-//                imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/P51D.jpg")));
+//                imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/guerrero.jpg")));
 //                Container container = getContentPane();
 //                container.add(imagen1);
 //                imagen1 = new JLabel();

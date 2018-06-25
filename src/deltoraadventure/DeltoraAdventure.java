@@ -19,6 +19,10 @@ public class DeltoraAdventure {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+
+//        PruebaGeneracionPersonajePrincipal personaje;
+//        personaje = PruebaGeneracionPersonajePrincipal.getInstance();
+//        personaje.GenerarPersonaje();
         new VentanaDeInicio().setVisible(true);
     }
 }
