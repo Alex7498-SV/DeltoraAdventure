@@ -19,7 +19,7 @@ public interface Pocion {
 
 //Codigo para crear las pociones
 
-//facotry = FactoryProducer.getPocion("Pocion");
+//factory = FactoryProducer.getPocion("Pocion");
 //Pocion pocionUno = factory.getPocion("Pocion Uno");
 //pocionUno.sumarVida;
 
