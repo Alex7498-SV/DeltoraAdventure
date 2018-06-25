@@ -21,6 +21,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import PersonajesPrincipales.*;
 
+
 /**
  *
  * @author HugoJr. <Hugo Rivera at 00161417@uca.edu.sv>
@@ -34,7 +35,7 @@ public class VentanaDeInicio extends JFrame {
     
 //    public JButton = inicio;
     private JLabel lblAlias, lblNombrePersonaje1, lblNombrePersonaje2;
-    public JTextField DeltoraAdventure;
+    public JTextField alias;
     private JButton inicio;
     public JLabel imagen1, imagen2;
      
@@ -51,7 +52,7 @@ public class VentanaDeInicio extends JFrame {
         container.add(lblAlias);
         container.add(lblNombrePersonaje1);
         container.add(lblNombrePersonaje2);
-        container.add(DeltoraAdventure);
+        container.add(alias);
         container.add(imagen1);
         container.add(imagen2);
         setSize(500, 500);
@@ -69,7 +70,7 @@ public class VentanaDeInicio extends JFrame {
     }
     
     public final void Ventana() {
-        DeltoraAdventure = new JTextField();
+        alias = new JTextField();
         
         inicio = new JButton("Iniciar");
         
@@ -77,7 +78,7 @@ public class VentanaDeInicio extends JFrame {
         imagen2 = new JLabel();
 
         
-        DeltoraAdventure.setBounds(130, 360, 200, 20);
+        alias.setBounds(130, 360, 200, 20);
         
         inicio.setBounds(350, 350, 70, ALTO);
         
@@ -141,10 +142,7 @@ public class VentanaDeInicio extends JFrame {
                 System.out.println("Entered");
 
                 imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
-                Container container = getContentPane();
-                container.add(imagen1);
-                imagen1 = new JLabel();
-                imagen1.setBounds(90, 150, 100, 100);
+                
             }
             
             /**
@@ -156,11 +154,7 @@ public class VentanaDeInicio extends JFrame {
             public void mouseExited(MouseEvent e) {
                 System.out.println("Exited");
                 
-//                imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago.jpg")));
-//                Container container = getContentPane();
-//                container.add(imagen1);
-//                imagen1 = new JLabel();
-//                imagen1.setBounds(90, 150, 100, 100);
+                imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago.jpg")));
 
             }
         });
@@ -177,21 +171,15 @@ public class VentanaDeInicio extends JFrame {
                 System.out.println("Entered");
                 
                 imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/guerreroSi.jpg")));
-                Container container = getContentPane();
-                container.add(imagen2);
-                imagen2 = new JLabel();
-                imagen2.setBounds(300, 150, 100, 100);
+
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
                 System.out.println("Exited");
                 
-//                imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/guerrero.jpg")));
-//                Container container = getContentPane();
-//                container.add(imagen1);
-//                imagen1 = new JLabel();
-//                imagen1.setBounds(90, 150, 100, 100);
+                imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/guerrero.jpg")));
+
             }
         });
         
@@ -209,7 +197,5 @@ public class VentanaDeInicio extends JFrame {
          */
         
     }
-    
-
 }
 

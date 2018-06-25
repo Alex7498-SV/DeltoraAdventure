@@ -38,7 +38,7 @@ public class VentanaHistoria1 extends JFrame {
         lblFondo = new JLabel();
         
         lblTitulo = new JLabel("MAGO DE CHERNOBYL");
-        lblTitulo.setBounds(50, 5, 500, 500);
+        lblTitulo.setBounds(50, 20, 500, 500);
         
         lblTitulo.setFont(new java.awt.Font("Georgia", 3, 18));
         lblTitulo.setForeground(new java.awt.Color(255, 255, 255));

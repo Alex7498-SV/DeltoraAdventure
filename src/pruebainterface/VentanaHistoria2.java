@@ -38,7 +38,7 @@ public class VentanaHistoria2 extends JFrame {
         
                
         lblTitulo = new JLabel("GUERRERO SPARTANO");
-        lblTitulo.setBounds(20, 20, 500, 500);
+        lblTitulo.setBounds(50, 20, 500, 500);
         lblTitulo.setFont(new java.awt.Font("Georgia", 3, 18));
         lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
         
