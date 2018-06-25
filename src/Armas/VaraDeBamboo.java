@@ -1,9 +1,9 @@
 
 package Armas;
 
-public class varitaSauco extends ArmasBuilder{
+public class VaraDeBamboo extends ArmasBuilder{
     
-    public varitaSauco() {
+    public VaraDeBamboo() {
         super.armas = new Armas();
     }
 

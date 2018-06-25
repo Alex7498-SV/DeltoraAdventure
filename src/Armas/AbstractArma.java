@@ -8,7 +8,7 @@ public class AbstractArma {
         Hacha h = new Hacha();
         Lanza l = new Lanza();
         Caldero c = new Caldero();
-        VaritaSauco vS = new VaritaSauco();
+        VaraDeBamboo vS = new VaraDeBamboo();
         
         switch(selec){
             case 1:
