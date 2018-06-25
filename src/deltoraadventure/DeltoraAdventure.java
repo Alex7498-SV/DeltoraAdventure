@@ -6,7 +6,6 @@
 package deltoraadventure;
 
 import pruebainterface.VentanaDeInicio;
-import PersonajesPrincipales.PruebaGeneracionPersonajePrincipal;
 
 /**
  *

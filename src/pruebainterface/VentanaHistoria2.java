@@ -9,7 +9,6 @@ import java.awt.Container;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import java.awt.Color;
 
 /**
  *
@@ -17,7 +16,7 @@ import java.awt.Color;
  */
 public class VentanaHistoria2 extends JFrame {
     
-    private JLabel lblHistoria, lblFondo;
+    private JLabel lblTitulo, lblHistoria, lblFondo;
     
     public VentanaHistoria2(){
         super("Historia del personaje 2");
@@ -25,6 +24,7 @@ public class VentanaHistoria2 extends JFrame {
         setLayout(null);
         VentanaDeHistoria();
         Container container =  getContentPane();
+        container.add(lblTitulo);
         container.add(lblHistoria);
         container.add(lblFondo);
         setSize(600, 600);
@@ -32,10 +32,16 @@ public class VentanaHistoria2 extends JFrame {
     }
     
     public final void VentanaDeHistoria(){
+        lblTitulo = new JLabel();
         lblHistoria = new JLabel();
         lblFondo = new JLabel();
         
                
+        lblTitulo = new JLabel("GUERRERO SPARTANO");
+        lblTitulo.setBounds(20, 20, 500, 500);
+        lblTitulo.setFont(new java.awt.Font("Georgia", 3, 18));
+        lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        
         lblHistoria = new JLabel("HISTORIAAAA");
         lblHistoria.setBounds(250, 200, 500, 500);
         
@@ -44,7 +50,7 @@ public class VentanaHistoria2 extends JFrame {
         lblFondo.setBounds(0, 0, 600, 600);
         
         //Fondo de la historia del personaje 1
-        lblFondo.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/fondoprueba.jpg")));
+        lblFondo.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/bosque2.jpg")));
     }
     
     public static void main(String[] args) {

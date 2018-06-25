@@ -14,21 +14,16 @@ import java.util.Scanner;
 public class SeleccionarPersonaje {
     private static SeleccionarPersonaje SeleccionarPersonaje;
     
-    public static SeleccionarPersonaje getInstance(){
-        if (SeleccionarPersonaje == null){
-            SeleccionarPersonaje = new SeleccionarPersonaje();
-        }
-        return SeleccionarPersonaje;
-    }
-    
-    public void elegirPersonaje(){
-        Scanner nuevoPersonaje = new Scanner(System.in);
-        int personajeSeleccionado = 0;
-        
-        while (personajeSeleccionado == 0){
-            
-            personajeSeleccionado = nuevoPersonaje.nextInt();
-            switch (personajeSeleccionado){
+//    public static SeleccionarPersonaje getInstance(){
+//        if (SeleccionarPersonaje == null){
+//            SeleccionarPersonaje = new SeleccionarPersonaje();
+//        }
+//        return SeleccionarPersonaje;
+//    }
+//    
+    public void elegirPersonaje(int selec){
+
+            switch (selec){
                 case 1:
                     MaestroVeneficus entrenadorVeneficus = new MaestroVeneficus();
                     Creador creadorVeneficus =  new Creador(entrenadorVeneficus);
@@ -46,10 +41,8 @@ public class SeleccionarPersonaje {
                     System.out.println(Nathan.toString());
                     break;
                 default:
-                    System.out.println("Seleccion invalida, usted selecciono el numero "+ personajeSeleccionado+".");
+                    System.out.println("Seleccion invalida, usted selecciono el numero "+ selec+".");
                     System.out.println("Seleccione una opcion entre 1 y 2.");
-                    personajeSeleccionado = 0;
-            }
         }
     }
 }
