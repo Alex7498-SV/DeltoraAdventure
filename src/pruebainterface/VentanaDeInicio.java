@@ -1,6 +1,7 @@
 
 package pruebainterface;
 
+import General.Usuario;
 import PersonajesPrincipales.Creador;
 import PersonajesPrincipales.MaestroNathan;
 import PersonajesPrincipales.MaestroVeneficus;
@@ -30,6 +31,7 @@ public class VentanaDeInicio extends JFrame {
     
     SeleccionarPersonaje sP = new SeleccionarPersonaje();
     
+    Usuario usuario = new Usuario();
     
   //  public JLabel = lblAlias;
     
@@ -112,7 +114,8 @@ public class VentanaDeInicio extends JFrame {
                 System.out.println("Pasa a ventana de juego");
                 sP.elegirPersonaje(seleccion);
                 //new VentanaHistoria2().setVisible(true);
-                
+                usuario.setUsername(alias.getText());
+                System.out.println(alias.getText());
                 if (seleccion == 1){
                     new VentanaHistoria1().setVisible(true);
                 }
@@ -153,9 +156,11 @@ public class VentanaDeInicio extends JFrame {
             @Override
             public void mouseExited(MouseEvent e) {
                 System.out.println("Exited");
-                
-                imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago.jpg")));
-
+                if (seleccion == 1){
+                    imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
+                } else{
+                    imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago.jpg")));
+                }
             }
         });
         
@@ -177,10 +182,14 @@ public class VentanaDeInicio extends JFrame {
             @Override
             public void mouseExited(MouseEvent e) {
                 System.out.println("Exited");
-                
+                if (seleccion == 2){
+                    imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/guerreroSi.jpg")));
+                } else{
                 imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/guerrero.jpg")));
-
+                }
             }
+            
+            
         });
         
         

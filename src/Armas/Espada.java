@@ -9,7 +9,7 @@ public class Espada extends ArmasBuilder{
 
     @Override
     public void buildTipo() {
-        armas.setTipo("Espablo Escobar");
+        armas.setTipo("Espada de Obduliana");
     }
 
     @Override
