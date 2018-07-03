@@ -53,6 +53,16 @@ public class VentanaHistoria1 extends JFrame {
         
         //Fondo de la historia del personaje 1
         lblFondo.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/bosque1.jpg")));
+        
+        Thread mith = Thread.currentThread();
+        try{
+            mith.sleep(5000);
+            dispose();
+            new VentanaMapa().setVisible(true);
+        } catch(InterruptedException ie){
+            System.err.println("No se puede, Captured InterruptedException");
+            
+        }
     }
     
     public static void main(String[] args) {
