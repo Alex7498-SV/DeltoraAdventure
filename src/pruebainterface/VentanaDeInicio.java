@@ -130,7 +130,7 @@ public class VentanaDeInicio extends JFrame {
             public void mouseClicked(MouseEvent e) {
                 System.out.println("Personaje 1 elegido");
                 seleccion = 1;
-
+                imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
             }
             
             /**
@@ -164,6 +164,7 @@ public class VentanaDeInicio extends JFrame {
             public void mouseClicked(MouseEvent e) {
                 System.out.println("Personaje 2 elegido");
                 seleccion = 2;
+                imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/guerreroSi.jpg")));
             }
 
             @Override
