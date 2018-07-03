@@ -56,7 +56,7 @@ public class VentanaHistoria1 extends JFrame {
         
         Thread mith = Thread.currentThread();
         try{
-            mith.sleep(5000);
+            mith.sleep(2000);
             dispose();
             new VentanaMapa().setVisible(true);
         } catch(InterruptedException ie){

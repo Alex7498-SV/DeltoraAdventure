@@ -57,10 +57,6 @@ public class Usuario {
         return username;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     public String getScore() {
         return score;
     }

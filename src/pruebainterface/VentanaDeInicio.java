@@ -21,6 +21,7 @@ import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import PersonajesPrincipales.*;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -114,14 +115,23 @@ public class VentanaDeInicio extends JFrame {
                 System.out.println("Pasa a ventana de juego");
                 sP.elegirPersonaje(seleccion);
                 //new VentanaHistoria2().setVisible(true);
-                usuario.setUsername(alias.getText());
+                
+//                usuario.setNombre(alias.getText());
                 System.out.println("El nombre de usuario ingresado es: " + alias.getText());
-                if (seleccion == 1){
-                    dispose();
-                    new VentanaHistoria1().setVisible(true);
-                }
-                if (seleccion == 2){
-                    new VentanaHistoria2().setVisible(true);
+                if(usuario.setNombre(alias.getText())){
+                    
+                    if (seleccion == 1){
+                        dispose();
+                        new VentanaHistoria1().setVisible(true);
+                    }
+                    if (seleccion == 2){
+                        dispose();
+                        new VentanaHistoria2().setVisible(true);
+                    }if(seleccion == 0) JOptionPane.showMessageDialog(null, "Debes escojer un personaje antes de seguir.");
+                    
+                }else{
+                    alias.setText("");
+                    JOptionPane.showMessageDialog(null, "Nombre Invalido, escoge otro.");
                 }
             }
         });
