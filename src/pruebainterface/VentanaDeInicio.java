@@ -115,8 +115,9 @@ public class VentanaDeInicio extends JFrame {
                 sP.elegirPersonaje(seleccion);
                 //new VentanaHistoria2().setVisible(true);
                 usuario.setUsername(alias.getText());
-                System.out.println(alias.getText());
+                System.out.println("El nombre de usuario ingresado es: " + alias.getText());
                 if (seleccion == 1){
+                    dispose();
                     new VentanaHistoria1().setVisible(true);
                 }
                 if (seleccion == 2){

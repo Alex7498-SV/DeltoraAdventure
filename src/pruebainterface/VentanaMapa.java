@@ -37,6 +37,8 @@ public class VentanaMapa extends JFrame {
         
         //Fondo de la historia del personaje 1
         lblFondo.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/MapaPrincipal.jpg")));
+        
+        
     }
     
     public static void main(String[] args) {
