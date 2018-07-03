@@ -38,7 +38,17 @@ public class VentanaMapa extends JFrame {
         //Fondo de la historia del personaje 1
         lblFondo.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/MapaPrincipal.jpg")));
         
-        
+        dispose();
+        Thread mith = Thread.currentThread();
+        try{
+            mith.sleep(1000);
+//            dispose();
+//            new VentanaMapa().setVisible(true);
+        } catch(InterruptedException ie){
+            System.err.println("No se puede, Captured InterruptedException");
+            
+        }
+        dispose();
     }
     
     public static void main(String[] args) {
