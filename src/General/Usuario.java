@@ -99,7 +99,7 @@ public class Usuario {
     
     public boolean Validar(String username){
         char usrname;
-        if (username.length()>2 && username.length()<12){
+        if (username.length()>2 && username.length()<13){
             for (int i = 0; i<username.length(); i++){
                 usrname = username.charAt(i);
                 if(!(Character.isAlphabetic(usrname) || Character.isDigit(usrname))){

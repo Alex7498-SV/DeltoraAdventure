@@ -21,6 +21,7 @@ import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import PersonajesPrincipales.*;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 
@@ -36,21 +37,27 @@ public class VentanaDeInicio extends JFrame {
     
   //  public JLabel = lblAlias;
     
+
+    
 //    public JButton = inicio;
     private JLabel lblAlias, lblNombrePersonaje1, lblNombrePersonaje2;
     public JTextField alias;
     private JButton inicio;
-    public JLabel imagen1, imagen2;
+    public JLabel imagen1, imagen2,fondo;
      
     private static final int  ALTO = 40;
     
     public VentanaDeInicio(){
-        super("Ventana Alias");
+        
+        this.getContentPane().setBackground(Color.black);
+        
+        //super("Ventana Alias");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
         agregarLabels();
         Ventana();
         Container container = getContentPane();
+        container.add(fondo);
         container.add(inicio);
         container.add(lblAlias);
         container.add(lblNombrePersonaje1);
@@ -58,6 +65,7 @@ public class VentanaDeInicio extends JFrame {
         container.add(alias);
         container.add(imagen1);
         container.add(imagen2);
+        
         setSize(500, 500);
         eventos();
         this.setLocationRelativeTo(null);
@@ -69,6 +77,7 @@ public class VentanaDeInicio extends JFrame {
         lblNombrePersonaje2 = new JLabel("NATHAN");
         lblAlias.setBounds(50, 350, 90, ALTO);
         lblNombrePersonaje1.setBounds(110, 50, 90, ALTO);
+        lblAlias.setForeground(Color.white);
         lblNombrePersonaje2.setBounds(320, 50, 90, ALTO);
     }
     
@@ -79,6 +88,8 @@ public class VentanaDeInicio extends JFrame {
         
         imagen1 = new JLabel();
         imagen2 = new JLabel();
+        fondo = new JLabel();
+        
 
         
         alias.setBounds(130, 360, 200, 20);
@@ -87,6 +98,7 @@ public class VentanaDeInicio extends JFrame {
         
         imagen1.setBounds(90, 150, 100, 100);
         imagen2.setBounds(300, 150, 100, 100);
+        //fondo.setBounds(, , WIDTH, HEIGHT);
         
         
         
@@ -122,7 +134,8 @@ public class VentanaDeInicio extends JFrame {
                     
                     if (seleccion == 1){
                         dispose();
-                        new VentanaHistoria1().setVisible(true);
+                       //new VentanaHistoria1().setVisible(true);
+                       new VentanaMapa().setVisible(true);
                     }
                     if (seleccion == 2){
                         dispose();
@@ -131,7 +144,7 @@ public class VentanaDeInicio extends JFrame {
                     
                 }else{
                     alias.setText("");
-                    JOptionPane.showMessageDialog(null, "Nombre Invalido, escoge otro.");
+                    JOptionPane.showMessageDialog(null, "Nombre Invalido, escoge otro.\nTu nombre debe contener como minimo 3 caracteres\nY como maximo 12 caracteres");
                 }
             }
         });
