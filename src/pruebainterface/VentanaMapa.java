@@ -41,8 +41,8 @@ public class VentanaMapa extends JFrame {
         
         personaje = new JButton(":v");
         personaje.setBounds(x, y, ancho, alto);
-        //personaje.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
-            setTitle("Deltora´s World");
+        personaje.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
+            setTitle("Deltora´s World.");
         personaje.addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
