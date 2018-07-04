@@ -14,34 +14,34 @@ public class PersonajePrincipal implements PersonajesPrincipales.PersonajeBase{
     private String tipo;
     private int nivel;
     private int puntosExperiencia;
-    private int vida;
-    private int ataque;
+    private int vida = 0;
+    private int ataque = 0;
 
     @Override
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
+    
     @Override
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-
+    
     @Override
     public void setNivel(int nivel) {
         this.nivel = nivel;
     }
-
+    
     @Override
     public void setPuntosExperiencia(int puntosExperiencia) {
         this.puntosExperiencia = puntosExperiencia;
     }
-
+    
     @Override
     public void setVida(int vida) {
         this.vida = vida;
     }
-
+    
     @Override
     public void setAtaque(int ataque) {
         this.ataque = ataque;
@@ -50,5 +50,23 @@ public class PersonajePrincipal implements PersonajesPrincipales.PersonajeBase{
     @Override
     public String toString(){
         return "El guerrero creado es: " + nombre + " con nivel: " + nivel + " sus puntos de experiencia son: " + puntosExperiencia + " su vida es: " + vida  + " su ataque: " + ataque + " y ataques son de tipo: " +  tipo;
+    }
+
+    @Override
+    public void sumarVida(int suma) {
+        this.vida = vida + suma;
+        System.out.println("La vida es: " + this.vida);
+    }
+
+    @Override
+    public void restarVida(int resta) {
+        this.vida = vida - resta;
+        System.out.println("La vida es: " + this.vida);
+    }
+
+    @Override
+    public void sumarDanio(int danio) {
+        this.ataque = this.ataque + danio;
+        System.out.println("El nuevo ataque es: " + this.ataque);
     }
 }

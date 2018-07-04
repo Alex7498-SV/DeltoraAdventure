@@ -5,6 +5,9 @@
  */
 package pruebainterface;
 
+import Pociones.PocionCuatro;
+import Pociones.PocionTres;
+import Pociones.PocionUno;
 import java.awt.Container;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -54,15 +57,25 @@ public class VentanaHistoria1 extends JFrame {
         //Fondo de la historia del personaje 1
         lblFondo.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/bosque1.jpg")));
         
-        Thread mith = Thread.currentThread();
-        try{
-            mith.sleep(2000);
-            dispose();
-            new VentanaMapa().setVisible(true);
-        } catch(InterruptedException ie){
-            System.err.println("No se puede, Captured InterruptedException");
-            
-        }
+// PRUEBA, NO BORRAR NI MODIFICAR        
+        PocionUno pocionUno = new PocionUno();
+        pocionUno.sumarDanio();
+        
+        PocionTres pocionTres = new PocionTres();
+        pocionTres.sumarVida();
+        
+//        PocionCuatro pocionCuatro = new PocionCuatro();
+//        pocionCuatro.sumarFullVida();
+
+//        Thread mith = Thread.currentThread();
+//        try{
+//            mith.sleep(2000);
+//            dispose();
+//            new VentanaMapa().setVisible(true);
+//        } catch(InterruptedException ie){
+//            System.err.println("No se puede, Captured InterruptedException");
+//            
+//        }
     }
     
     public static void main(String[] args) {

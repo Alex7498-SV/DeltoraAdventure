@@ -5,6 +5,8 @@
  */
 package Pociones;
 
+import PersonajesPrincipales.PersonajePrincipal;
+
 /**
  *
  * @author HugoJr. <Hugo Rivera at 00161417@uca.edu.sv>
@@ -23,6 +25,8 @@ public class PocionDos implements Pocion {
 
     @Override
     public void sumarVida() {
+        PersonajesPrincipales.PersonajePrincipal personajePrincipal = new PersonajePrincipal();
+        personajePrincipal.sumarVida(sumaVida);
         System.out.println(sumaVida);
     }
 

@@ -16,4 +16,7 @@ public interface PersonajeBase {
     public void setPuntosExperiencia(int puntosExperiencia);
     public void setVida(int vida);
     public void setAtaque(int ataque);
+    public void sumarVida(int suma);
+    public void sumarDanio(int danio);
+    public void restarVida(int resta);
 }

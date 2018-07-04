@@ -5,6 +5,8 @@
  */
 package Pociones;
 
+import PersonajesPrincipales.PersonajePrincipal;
+
 /**
  *
  * @author HugoJr. <Hugo Rivera at 00161417@uca.edu.sv>
@@ -18,6 +20,8 @@ public class PocionUno implements Pocion {
 
     @Override
     public void sumarDanio() {
+        PersonajesPrincipales.PersonajePrincipal personajePrincipal = new PersonajePrincipal();
+        personajePrincipal.sumarDanio(sumaDanio);
         System.out.println(sumaDanio);
     }
 
