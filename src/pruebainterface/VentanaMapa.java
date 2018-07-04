@@ -25,10 +25,11 @@ public class VentanaMapa extends JFrame {
     private JButton personaje;
     private int x = 80;
     private int y = 70;
-    private final int alto = 25;
-    private final int ancho = 25;
+    private final int alto = 40;
+    private final int ancho = 40;
     
     Container container =  getContentPane();
+
     
     public VentanaMapa(){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -40,7 +41,8 @@ public class VentanaMapa extends JFrame {
         
         personaje = new JButton(":v");
         personaje.setBounds(x, y, ancho, alto);
-        
+        personaje.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
+            setTitle("Deltora´s World.");
         personaje.addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
