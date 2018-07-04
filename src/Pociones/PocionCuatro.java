@@ -5,12 +5,18 @@
  */
 package Pociones;
 
+import PersonajesPrincipales.PersonajePrincipal;
+
 /**
  *
  * @author HugoJr. <Hugo Rivera at 00161417@uca.edu.sv>
  */
 public class PocionCuatro extends PocionesBuilder{
 
+    PersonajePrincipal personajePrincipal = new PersonajePrincipal();
+    
+    public int sumarVidaFull = 500;
+    
     public PocionCuatro() {
         super.pociones = new Pociones();
     }
@@ -20,4 +26,8 @@ public class PocionCuatro extends PocionesBuilder{
         pociones.setTipo("Pocion Cuatro sumar full vida?");
     }
     
+    public void sumarFullVida(){
+        System.out.println("Se ha sumado " + sumarVidaFull + " a la vida del jugador");
+        personajePrincipal.sumarVida(sumarVidaFull);
+    }
 }

@@ -5,11 +5,17 @@
  */
 package Pociones;
 
+import PersonajesPrincipales.PersonajePrincipal;
+
 /**
  *
  * @author HugoJr. <Hugo Rivera at 00161417@uca.edu.sv>
  */
 public class PocionUno extends PocionesBuilder{
+    
+    PersonajePrincipal personajePrincipal = new PersonajePrincipal();
+    
+    public int sumarVida = 50;
 
     public PocionUno(){
         super.pociones = new Pociones();
@@ -17,7 +23,13 @@ public class PocionUno extends PocionesBuilder{
     
     @Override
     public void buildTipo() {
-        pociones.setTipo("Pcoion uno suma vida?");
+        pociones.setTipo("Pocion uno suma vida?");
+    }
+    
+    public void sumarVida(){
+
+        System.out.println("Se ha sumado " + sumarVida + " a la vida del personaje");
+        personajePrincipal.sumarVida(sumarVida);
     }
     
 }
