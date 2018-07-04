@@ -5,40 +5,19 @@
  */
 package Pociones;
 
-import PersonajesPrincipales.PersonajePrincipal;
-
 /**
  *
  * @author HugoJr. <Hugo Rivera at 00161417@uca.edu.sv>
  */
-public class PocionDos implements Pocion {
+public class PocionDos extends PocionesBuilder{
 
-    public int sumaDanio = 10;
-    public int sumaVida = 50;
-    public int restaVida = 30;
-    public int sumaFullVida = 100;
-
-    @Override
-    public void sumarDanio() {
-        //System.out.println(sumaDanio);
+    public PocionDos() {
+        super.pociones = new Pociones();
     }
 
     @Override
-    public void sumarVida() {
-        PersonajesPrincipales.PersonajePrincipal personajePrincipal = new PersonajePrincipal();
-        System.out.println(personajePrincipal.vidaP);
-        personajePrincipal.sumarVida(sumaVida);
-        System.out.println(sumaVida);
-    }
-
-    @Override
-    public void restarVida() {
-        //System.out.println(restaVida);
-    }
-
-    @Override
-    public void sumarFullVida() {
-        //System.out.println(sumaFullVida);
+    public void buildTipo() {
+        pociones.setTipo("Pocion Dos resta vida?");
     }
     
 }

@@ -9,12 +9,14 @@ package Pociones;
  *
  * @author HugoJr. <Hugo Rivera at 00161417@uca.edu.sv>
  */
-public class FactoryProducer {
-    public static AbstractFactory getPocion(String type){
-        switch(type){
-            case "Pocion":
-                return new FactoryPocion();
-        }
-        return null;
+public class Pociones {
+    private String tipo = "";
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 }

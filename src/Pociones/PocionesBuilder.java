@@ -9,6 +9,12 @@ package Pociones;
  *
  * @author HugoJr. <Hugo Rivera at 00161417@uca.edu.sv>
  */
-public interface AbstractFactory {
-    Pocion getPocion (String type);
+public abstract class PocionesBuilder {
+    protected Pociones pociones;
+
+    public Pociones getPociones() {
+        return pociones;
+    }
+    
+    public abstract void buildTipo();
 }
