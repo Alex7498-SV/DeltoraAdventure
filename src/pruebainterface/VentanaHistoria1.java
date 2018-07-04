@@ -6,6 +6,7 @@
 package pruebainterface;
 
 import Pociones.PocionCuatro;
+import Pociones.PocionDos;
 import Pociones.PocionTres;
 import Pociones.PocionUno;
 import java.awt.Container;
@@ -61,11 +62,14 @@ public class VentanaHistoria1 extends JFrame {
         PocionUno pocionUno = new PocionUno();
         pocionUno.sumarDanio();
         
+        PocionDos pocionDos = new PocionDos();
+        pocionDos.sumarVida();
+        
         PocionTres pocionTres = new PocionTres();
         pocionTres.sumarVida();
         
-//        PocionCuatro pocionCuatro = new PocionCuatro();
-//        pocionCuatro.sumarFullVida();
+        PocionCuatro pocionCuatro = new PocionCuatro();
+        pocionCuatro.sumarFullVida();
 
 //        Thread mith = Thread.currentThread();
 //        try{

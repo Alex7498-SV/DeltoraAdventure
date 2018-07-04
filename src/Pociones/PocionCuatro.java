@@ -36,8 +36,8 @@ public class PocionCuatro implements Pocion {
     @Override
     public void sumarFullVida() {
         PersonajesPrincipales.PersonajePrincipal personajePrincipal = new PersonajePrincipal();
-        personajePrincipal.sumarVida(sumaFullVida);
         System.out.println("Se ha sumado " + sumaFullVida + " a la vida del personaje");
+        personajePrincipal.sumarVida(sumaFullVida);
     }
     
 }

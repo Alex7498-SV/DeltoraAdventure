@@ -26,6 +26,7 @@ public class PocionDos implements Pocion {
     @Override
     public void sumarVida() {
         PersonajesPrincipales.PersonajePrincipal personajePrincipal = new PersonajePrincipal();
+        System.out.println(personajePrincipal.vidaP);
         personajePrincipal.sumarVida(sumaVida);
         System.out.println(sumaVida);
     }
