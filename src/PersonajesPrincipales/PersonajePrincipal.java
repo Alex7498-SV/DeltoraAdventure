@@ -58,20 +58,20 @@ public class PersonajePrincipal implements PersonajesPrincipales.PersonajeBase{
     
     @Override
     public void sumarVida(int suma) {
-        vida = getVida() + suma;
-        System.out.println("La vida es: " + vida);
+        setVida(getVida() + suma);
+        System.out.println("La vida es: " + getVida());
     }
 
     @Override
     public void restarVida(int resta) {
-        this.vida = getVida() - resta;
-        System.out.println("La vida es: " + this.vida);
+        setVida(getVida() - resta);
+        System.out.println("La vida es: " + getVida());
     }
     
     @Override
     public void sumarDanio(int danio) {
-        this.ataque = this.ataque + danio;
-        System.out.println("El nuevo ataque es: " + this.ataque);
+        setAtaque(getAtaque() + danio);
+        System.out.println("El daño actual es de:"+ getAtaque());
     }
     
     ////////////////////////////////////////////////////////// GETTERS /////////////////////////////////////////////////
