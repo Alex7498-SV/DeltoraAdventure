@@ -10,7 +10,10 @@ import Pociones.PocionDos;
 import Pociones.PocionTres;
 import Pociones.PocionUno;
 import java.awt.Container;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
@@ -20,7 +23,8 @@ import javax.swing.JLabel;
  */
 public class VentanaHistoria1 extends JFrame {
     
-    private JLabel lblTitulo, lblHistoria, lblFondo;
+    private JLabel lblFondo;
+    private JButton Jugar;
     
     public VentanaHistoria1(){
         super("Historia del personaje 1");
@@ -28,35 +32,21 @@ public class VentanaHistoria1 extends JFrame {
         setLayout(null);
         VentanaDeHistoria();
         Container container =  getContentPane();
-        container.add(lblTitulo);
-        container.add(lblHistoria);
         container.add(lblFondo);
+        container.add(Jugar);
         setSize(600, 600);
+        events();
         this.setLocationRelativeTo(null);
     }
     
     public final void VentanaDeHistoria(){
-        
-        lblTitulo = new JLabel();
-        lblHistoria = new JLabel();
+
         lblFondo = new JLabel();
+        lblFondo.setBounds(-15, 0, 600, 600);        
+        lblFondo.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/HistoriaMago.jpg")));
         
-        lblTitulo = new JLabel("MAGO DE CHERNOBYL");
-        lblTitulo.setBounds(50, 20, 500, 500);
-        
-        lblTitulo.setFont(new java.awt.Font("Georgia", 3, 18));
-        lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        
-        lblHistoria = new JLabel("HISTORIAAAAA");
-        lblHistoria.setBounds(250, 200, 500, 500);
-        
-        lblHistoria.setForeground(new java.awt.Color(255, 255, 255));
-        lblHistoria.setFont(new java.awt.Font("Georgia", 3, 12));
-        
-        lblFondo.setBounds(0, 0, 600, 600);
-        
-        //Fondo de la historia del personaje 1
-        lblFondo.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/bosque1.jpg")));
+        Jugar = new JButton("Jugar");
+        Jugar.setBounds(500, 500, 70, 40);
         
 
 //        Thread mith = Thread.currentThread();
@@ -79,4 +69,12 @@ public class VentanaHistoria1 extends JFrame {
         });
     }
     
+    public void events(){
+        Jugar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new VentanaMapa().setVisible(true);
+            }
+        });
+    }
 }
