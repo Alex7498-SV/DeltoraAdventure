@@ -28,7 +28,7 @@ public class VentanaHistoria1 extends JFrame {
     
     public VentanaHistoria1(){
         super("Historia del personaje 1");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
         VentanaDeHistoria();
         Container container =  getContentPane();
@@ -49,6 +49,8 @@ public class VentanaHistoria1 extends JFrame {
         Jugar.setBounds(500, 500, 70, 40);
         
 
+       PocionUno pocionUno = new PocionUno();
+       pocionUno.sumarVida();
 //        Thread mith = Thread.currentThread();
 //        try{
 //            mith.sleep(2000);
@@ -73,6 +75,7 @@ public class VentanaHistoria1 extends JFrame {
         Jugar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                dispose();
                 new VentanaMapa().setVisible(true);
             }
         });

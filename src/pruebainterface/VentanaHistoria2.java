@@ -58,6 +58,7 @@ public class VentanaHistoria2 extends JFrame {
         Jugar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                dispose();
                 new VentanaMapa().setVisible(true);
             }
         });
