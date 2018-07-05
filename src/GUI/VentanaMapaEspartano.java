@@ -63,7 +63,7 @@ public class VentanaMapaEspartano extends JFrame {
             public void keyPressed(KeyEvent e) {
                 System.out.println(e.getKeyText(e.getKeyCode()));
                 String action = e.getKeyText(e.getKeyCode());
-                if((y >= 35 && y <= 650)&&(x >= 45 && x <= 1025)) {
+                if((y >= 45 && y <= 620)&&(x >= 45 && x <= 990)) {
                     if(action.equalsIgnoreCase("Arriba")){
                         y -= 5;
                         personaje.setBounds(x, y, ancho, alto);
@@ -80,7 +80,7 @@ public class VentanaMapaEspartano extends JFrame {
                         x += 5;
                         personaje.setBounds(x, y, ancho, alto);
                     }
-                }else{
+                }else {
                     JOptionPane.showMessageDialog(null, "You Died");
                     x = 80;
                     y = 70;

@@ -28,7 +28,7 @@ public class PocionUno extends PocionesBuilder{
     
     public void sumarVida(){
 
-        personajePrincipal.getVida();
+//        personajePrincipal.getVida();
         System.out.println(personajePrincipal.getVida());
         System.out.println("Se ha sumado " + sumarVida + " a la vida del personaje");
         personajePrincipal.sumarVida(sumarVida);
