@@ -9,6 +9,8 @@ public class AbstractArma {
         Lanza l = new Lanza();
         Caldero c = new Caldero();
         VaraDeBamboo vS = new VaraDeBamboo();
+        Espada es = new Espada();
+        Libro lb = new Libro();
         
         switch(selec){
             case 1:
@@ -25,6 +27,14 @@ public class AbstractArma {
                 return ar.getArma();
             case 4:
                 ar.setArmaBuild(vS);
+                ar.crearArma();
+                return ar.getArma();
+            case 5:
+                ar.setArmaBuild(es);
+                ar.crearArma();
+                return ar.getArma();
+            case 6:
+                ar.setArmaBuild(lb);
                 ar.crearArma();
                 return ar.getArma();
         }

@@ -13,14 +13,7 @@ import java.util.Scanner;
  */
 public class SeleccionarPersonaje {
     private static SeleccionarPersonaje SeleccionarPersonaje;
-    
-//    public static SeleccionarPersonaje getInstance(){
-//        if (SeleccionarPersonaje == null){
-//            SeleccionarPersonaje = new SeleccionarPersonaje();
-//        }
-//        return SeleccionarPersonaje;
-//    }
-//    
+ 
     public void elegirPersonaje(int selec){
 
             switch (selec){

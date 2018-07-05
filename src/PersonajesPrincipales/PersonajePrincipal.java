@@ -14,7 +14,7 @@ public class PersonajePrincipal implements PersonajesPrincipales.PersonajeBase{
     private String tipo;
     private int nivel = 0;
     private int puntosExperiencia = 0;
-    private int vida = 0;
+    private int vida = 100;
     private int ataque = 0;
     
     
