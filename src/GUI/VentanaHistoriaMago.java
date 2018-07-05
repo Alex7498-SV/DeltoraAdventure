@@ -3,12 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pruebainterface;
+package GUI;
 
-import Pociones.PocionCuatro;
-import Pociones.PocionDos;
-import Pociones.PocionTres;
-import Pociones.PocionUno;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,13 +17,13 @@ import javax.swing.JLabel;
  *
  * @author HugoJr. <Hugo Rivera at 00161417@uca.edu.sv>
  */
-public class VentanaHistoria1 extends JFrame {
+public class VentanaHistoriaMago extends JFrame {
     
     private JLabel lblFondo;
     private JButton Jugar;
     
-    public VentanaHistoria1(){
-        super("Historia del personaje 1");
+    public VentanaHistoriaMago(){
+        super("Historia del personaje 2");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
         VentanaDeHistoria();
@@ -42,29 +38,18 @@ public class VentanaHistoria1 extends JFrame {
     public final void VentanaDeHistoria(){
 
         lblFondo = new JLabel();
-        lblFondo.setBounds(-15, 0, 600, 600);        
-        lblFondo.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/HistoriaMago.jpg")));
+        lblFondo.setBounds(0, 0, 600, 600);        
+        lblFondo.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/HistoriaSpartano.jpg")));
         
         Jugar = new JButton("Jugar");
         Jugar.setBounds(500, 500, 70, 40);
-        
-
-//        Thread mith = Thread.currentThread();
-//        try{
-//            mith.sleep(2000);
-//            dispose();
-//            new VentanaMapa().setVisible(true);
-//        } catch(InterruptedException ie){
-//            System.err.println("No se puede, Captured InterruptedException");
-//            
-//        }
     }
     
     public static void main(String[] args) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new VentanaHistoria1().setVisible(true);
+                new VentanaHistoriaMago().setVisible(true);
             }
         });
     }
@@ -73,7 +58,7 @@ public class VentanaHistoria1 extends JFrame {
         Jugar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new VentanaMapa().setVisible(true);
+                new VentanaMapaEspartano().setVisible(true);
             }
         });
     }

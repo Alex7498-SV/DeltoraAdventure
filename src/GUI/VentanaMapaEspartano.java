@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pruebainterface;
+package GUI;
 
 import java.awt.Container;
 import javax.swing.ImageIcon;
@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
  *
  * @author HugoJr. <Hugo Rivera at 00161417@uca.edu.sv>
  */
-public class VentanaMapa extends JFrame {
+public class VentanaMapaEspartano extends JFrame {
 
     private JLabel lblFondo;
     private JButton personaje;
@@ -31,7 +31,7 @@ public class VentanaMapa extends JFrame {
     Container container =  getContentPane();
 
     
-    public VentanaMapa(){
+    public VentanaMapaEspartano(){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
         //events();
@@ -104,7 +104,7 @@ public class VentanaMapa extends JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new VentanaMapa().setVisible(true);
+                new VentanaMapaEspartano().setVisible(true);
             }
         });
     }

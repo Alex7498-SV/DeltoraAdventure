@@ -5,7 +5,7 @@
  */
 package deltoraadventure;
 
-import pruebainterface.VentanaDeInicio;
+import GUI.VentanaDeInicio;
 
 /**
  *
