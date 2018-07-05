@@ -9,100 +9,55 @@ package PersonajesPrincipales;
  *
  * @author uca
  */
-public class PersonajePrincipal implements PersonajesPrincipales.PersonajeBase{
-    private String nombre;
-    private String tipo;
-    private int nivel = 0;
-    private int puntosExperiencia = 0;
+public class PersonajePrincipal {
     private int vida = 0;
+    private int puntosExperiencia = 0;
+    private int nivel = 0;
     private int ataque = 0;
-    
-    
+    private String nombre = "";
+    private String tipo = "";
+//    private boolean atacando = false;
 
-    @Override
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+    /////////////////////////////// SETTERS ///////////////////////////////
     
-    @Override
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-    
-    @Override
-    public void setNivel(int nivel) {
-        this.nivel = nivel;
-    }
-    
-    @Override
-    public void setPuntosExperiencia(int puntosExperiencia) {
-        this.puntosExperiencia = puntosExperiencia;
-    }
-    
-    @Override
     public void setVida(int vida) {
         this.vida = vida;
     }
-    
-    @Override
     public void setAtaque(int ataque) {
         this.ataque = ataque;
     }
-    
-    @Override
-    public String toString(){
-        return "El guerrero creado es: " + getNombre() + " con nivel: " + getNivel() + " sus puntos de experiencia son: " + getPuntosExperiencia() + " su vida es: " + getVida()  + " su ataque: " + getAtaque() + " y ataques son de tipo: " +  getTipo();
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
     }
-
-    ////////////////////////////////////////////////////////// SUMAR Y RESTAR VIDA Y ATAQUE /////////////////////////////////////////////////
-    
-    @Override
-    public void sumarVida(int suma) {
-        setVida(getVida() + suma);
-        System.out.println("La vida es: " + getVida());
+    public void setPuntosExperiencia(int puntosExperiencia) {
+        this.puntosExperiencia = puntosExperiencia;
     }
-
-    @Override
-    public void restarVida(int resta) {
-        setVida(getVida() - resta);
-        System.out.println("La vida es: " + getVida());
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    public void setTipo(String tipo){
+        this.tipo = tipo;
     }
     
-    @Override
-    public void sumarDanio(int danio) {
-        setAtaque(getAtaque() + danio);
-        System.out.println("El daño actual es de:"+ getAtaque());
-    }
+    ///////////////////////////// GETTERS ////////////////////////////////
     
-    ////////////////////////////////////////////////////////// GETTERS /////////////////////////////////////////////////
-    
-    @Override
-    public String getNombre() {
-        return nombre;
-    }
-
-    @Override
-    public String getTipo() {
-        return tipo;
-    }
-
-    @Override
     public int getVida() {
         return vida;
     }
-
-    @Override
     public int getAtaque() {
         return ataque;
     }
-
-    @Override
     public int getNivel() {
         return nivel;
     }
-
-    @Override
     public int getPuntosExperiencia() {
         return puntosExperiencia;
     }
+    public String getNombre() {
+        return nombre;
+    }
+    public String getTipo() {
+        return nombre;
+    }
+
 }
