@@ -11,33 +11,23 @@ import PersonajesPrincipales.PersonajePrincipal;
  *
  * @author HugoJr. <Hugo Rivera at 00161417@uca.edu.sv>
  */
-public class PocionCuatro implements Pocion {
+public class PocionCuatro extends PocionesBuilder{
+
+    PersonajePrincipal personajePrincipal = new PersonajePrincipal();
     
-    public int sumaDanio = 10;
-    public int sumaVida = 50;
-    public int restaVida = 30;
-    public int sumaFullVida = 100;
+    public int sumarVidaFull = 500;
     
-    @Override
-    public void sumarDanio() {
-        //Sytem.out.println(sumaDanio);
+    public PocionCuatro() {
+        super.pociones = new Pociones();
     }
 
     @Override
-    public void sumarVida() {
-        //System.out.println(sumaVida);
-    }
-
-    @Override
-    public void restarVida() {
-        //System.out.println(restaVida);
-    }
-
-    @Override
-    public void sumarFullVida() {
-        PersonajesPrincipales.PersonajePrincipal personajePrincipal = new PersonajePrincipal();
-        System.out.println("Se ha sumado " + sumaFullVida + " a la vida del personaje");
-        personajePrincipal.sumarVida(sumaFullVida);
+    public void buildTipo() {
+        pociones.setTipo("Pocion Cuatro sumar full vida?");
     }
     
+    public void sumarFullVida(){
+        System.out.println("Se ha sumado " + sumarVidaFull + " a la vida del jugador");
+        personajePrincipal.sumarVida(sumarVidaFull);
+    }
 }

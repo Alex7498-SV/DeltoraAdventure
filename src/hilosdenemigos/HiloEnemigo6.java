@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Pociones;
+package hilosdenemigos;
 
 /**
  *
- * @author HugoJr. <Hugo Rivera at 00161417@uca.edu.sv>
+ * @author LN710Q
  */
-public interface AbstractFactory {
-    Pocion getPocion (String type);
+public class HiloEnemigo6 {
+    
 }

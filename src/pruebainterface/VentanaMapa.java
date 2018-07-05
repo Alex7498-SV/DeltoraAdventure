@@ -20,27 +20,39 @@ import javax.swing.JOptionPane;
  * @author HugoJr. <Hugo Rivera at 00161417@uca.edu.sv>
  */
 public class VentanaMapa extends JFrame {
-    
+
     private JLabel lblFondo;
     private JButton personaje;
     private int x = 80;
     private int y = 70;
-    private final int alto = 25;
-    private final int ancho = 25;
+    private final int alto = 40;
+    private final int ancho = 40;
     
     Container container =  getContentPane();
+
     
     public VentanaMapa(){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
+        //events();
         
         lblFondo = new JLabel();
         lblFondo.setBounds(0, 0, 1080, 700);
         lblFondo.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mapaf.jpg")));
-        
+                
         personaje = new JButton(":v");
         personaje.setBounds(x, y, ancho, alto);
+        personaje.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
+            setTitle("Deltora´s World.");
         
+        personaje.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("ventana inventario");
+                new VentanaInventario().setVisible(true);
+            }
+        });
+            
         personaje.addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
@@ -97,4 +109,12 @@ public class VentanaMapa extends JFrame {
         });
     }
     
+//    private void events(){
+//        personaje.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                System.out.println("ventana inventario");
+//            }
+//        });
+//    }
 }

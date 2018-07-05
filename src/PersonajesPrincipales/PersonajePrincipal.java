@@ -12,8 +12,8 @@ package PersonajesPrincipales;
 public class PersonajePrincipal implements PersonajesPrincipales.PersonajeBase{
     private String nombre;
     private String tipo;
-    private int nivel;
-    private int puntosExperiencia;
+    private int nivel = 0;
+    private int puntosExperiencia = 0;
     private int vida = 0;
     private int ataque = 0;
     public int vidaP;
@@ -56,22 +56,56 @@ public class PersonajePrincipal implements PersonajesPrincipales.PersonajeBase{
         return "El guerrero creado es: " + nombre + " con nivel: " + nivel + " sus puntos de experiencia son: " + puntosExperiencia + " su vida es: " + vida  + " su ataque: " + ataque + " y ataques son de tipo: " +  tipo;
     }
 
-//    @Override
+    ////////////////////////////////////////////////////////// SUMAR Y RESTAR VIDA Y ATAQUE /////////////////////////////////////////////////
+    
+    @Override
     public void sumarVida(int suma) {
 //      this.vida = vida + suma;
         vidaP = vidaP + suma;
         System.out.println("La vida es: " + vidaP);
     }
 
-//    @Override
+    @Override
     public void restarVida(int resta) {
         this.vida = vida - resta;
         System.out.println("La vida es: " + this.vida);
     }
     
-//    @Override
+    @Override
     public void sumarDanio(int danio) {
         this.ataque = this.ataque + danio;
         System.out.println("El nuevo ataque es: " + this.ataque);
+    }
+    
+    ////////////////////////////////////////////////////////// GETTERS /////////////////////////////////////////////////
+    
+    @Override
+    public String getNombre() {
+        return nombre;
+    }
+
+    @Override
+    public String getTipo() {
+        return tipo;
+    }
+
+    @Override
+    public int getVida() {
+        return vida;
+    }
+
+    @Override
+    public int getAtaque() {
+        return ataque;
+    }
+
+    @Override
+    public int getNivel() {
+        return nivel;
+    }
+
+    @Override
+    public int getPuntosExperiencia() {
+        return puntosExperiencia;
     }
 }

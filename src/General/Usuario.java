@@ -2,6 +2,7 @@
 package General;
 
 import Armas.Armas;
+import Pociones.Pociones;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -13,13 +14,17 @@ public class Usuario {
     int vida = 100;
     int ataque = 0;
     ArrayList <Armas> inventarioArmas = new ArrayList <Armas>();
-//Corresponde a Hugo ----> ArrayList<Pociones> inventarioPociones = new ArrayList<Pociones>();
+    ArrayList<Pociones> inventarioPociones = new ArrayList<Pociones>();
 
 
     public Usuario(){} 
     
     public void agregarArma(Armas ar){
         inventarioArmas.add(ar);
+    }
+    
+    public void agregarPocion(Pociones poci){
+        inventarioPociones.add(poci);
     }
     
     public void  usarArma(Armas ar){
@@ -31,6 +36,10 @@ public class Usuario {
         });
     }
 
+    public void usarPocion(Pociones poci){
+        
+    }
+    
     public int getVida() {
         return vida;
     }

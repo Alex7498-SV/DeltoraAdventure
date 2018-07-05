@@ -135,8 +135,8 @@ public class VentanaDeInicio extends JFrame {
                     
                     if (seleccion == 1){
                         dispose();
-                       //new VentanaHistoria1().setVisible(true);
-                       new VentanaMapa().setVisible(true);
+                       new VentanaHistoria1().setVisible(true);
+                       //new VentanaMapa().setVisible(true);
                     }
                     if (seleccion == 2){
                         dispose();

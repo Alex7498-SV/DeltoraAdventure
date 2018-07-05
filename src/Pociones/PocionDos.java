@@ -11,34 +11,44 @@ import PersonajesPrincipales.PersonajePrincipal;
  *
  * @author HugoJr. <Hugo Rivera at 00161417@uca.edu.sv>
  */
-public class PocionDos implements Pocion {
+public class PocionDos extends PocionesBuilder{
 
-    public int sumaDanio = 10;
-    public int sumaVida = 50;
-    public int restaVida = 30;
-    public int sumaFullVida = 100;
-
-    @Override
-    public void sumarDanio() {
-        //System.out.println(sumaDanio);
+    PersonajesPrincipales.PersonajePrincipal personajePrincipal =  new PersonajePrincipal();
+    
+    public int sumarVida = 100 ;
+    public int restarVida = 50;
+    public boolean suma = true;
+    
+    public PocionDos() {
+        super.pociones = new Pociones();
     }
 
     @Override
-    public void sumarVida() {
-        PersonajesPrincipales.PersonajePrincipal personajePrincipal = new PersonajePrincipal();
-        System.out.println(personajePrincipal.vidaP);
-        personajePrincipal.sumarVida(sumaVida);
-        System.out.println(sumaVida);
-    }
-
-    @Override
-    public void restarVida() {
-        //System.out.println(restaVida);
-    }
-
-    @Override
-    public void sumarFullVida() {
-        //System.out.println(sumaFullVida);
+    public void buildTipo() {
+        pociones.setTipo("Pocion Dos suma o resta vida?");
     }
     
+    public boolean numeroAleatorio(){
+        int aleatorio = (int)(Math.random()*100)+1;
+        
+        if (aleatorio % 2 == 0){
+            suma = true;
+        } 
+        else{
+            suma = false;
+        }
+        return suma;
+    }
+    
+    public void pocionMisteriosa(){
+        numeroAleatorio();
+        if (suma == true){
+            System.out.println("Se ha sumado " + sumarVida + " a la vida del jugador");
+            personajePrincipal.sumarVida(sumarVida);
+        }
+        else{
+            System.out.println("Se ha restado " + sumarVida + " a la vida del jugador");
+            personajePrincipal.restarVida(restarVida);
+        }
+    }
 }
