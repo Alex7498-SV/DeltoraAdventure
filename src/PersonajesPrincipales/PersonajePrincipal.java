@@ -16,7 +16,6 @@ public class PersonajePrincipal implements PersonajesPrincipales.PersonajeBase{
     private int puntosExperiencia = 0;
     private int vida = 0;
     private int ataque = 0;
-    public int vidaP;
     
     
 
@@ -43,7 +42,6 @@ public class PersonajePrincipal implements PersonajesPrincipales.PersonajeBase{
     @Override
     public void setVida(int vida) {
         this.vida = vida;
-        vidaP = this.vida;
     }
     
     @Override
@@ -53,21 +51,20 @@ public class PersonajePrincipal implements PersonajesPrincipales.PersonajeBase{
     
     @Override
     public String toString(){
-        return "El guerrero creado es: " + nombre + " con nivel: " + nivel + " sus puntos de experiencia son: " + puntosExperiencia + " su vida es: " + vida  + " su ataque: " + ataque + " y ataques son de tipo: " +  tipo;
+        return "El guerrero creado es: " + getNombre() + " con nivel: " + getNivel() + " sus puntos de experiencia son: " + getPuntosExperiencia() + " su vida es: " + getVida()  + " su ataque: " + getAtaque() + " y ataques son de tipo: " +  getTipo();
     }
 
     ////////////////////////////////////////////////////////// SUMAR Y RESTAR VIDA Y ATAQUE /////////////////////////////////////////////////
     
     @Override
     public void sumarVida(int suma) {
-//      this.vida = vida + suma;
-        vidaP = vidaP + suma;
-        System.out.println("La vida es: " + vidaP);
+        vida = getVida() + suma;
+        System.out.println("La vida es: " + vida);
     }
 
     @Override
     public void restarVida(int resta) {
-        this.vida = vida - resta;
+        this.vida = getVida() - resta;
         System.out.println("La vida es: " + this.vida);
     }
     

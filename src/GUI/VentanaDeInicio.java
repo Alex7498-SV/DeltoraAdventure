@@ -1,5 +1,5 @@
 
-package pruebainterface;
+package GUI;
 
 import General.Usuario;
 import PersonajesPrincipales.Creador;
@@ -135,13 +135,13 @@ public class VentanaDeInicio extends JFrame {
                     
                     if (seleccion == 1){
                         dispose();
-                       new VentanaHistoria1().setVisible(true);
+                       new VentanaHistoriaEspartano().setVisible(true);
                        //new VentanaMapa().setVisible(true);
                     }
                     if (seleccion == 2){
                         dispose();
-                        //new VentanaHistoria2().setVisible(true);
-                        new VentanaHistoria2().setVisible(true);
+                        new VentanaHistoriaMago().setVisible(true);
+                        //new VentanaMapa().setVisible(true);
                     }if(seleccion == 0) JOptionPane.showMessageDialog(null, "Debes escojer un personaje antes de seguir.");
                     
                 }else{
@@ -154,7 +154,7 @@ public class VentanaDeInicio extends JFrame {
         /**
          * Aqui se utiliza el metodo eliminado en la clase MouseListener
          */
-        imagen1.addMouseListener( new pruebainterface.MouseListener() {
+        imagen1.addMouseListener(new GUI.MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 System.out.println("Personaje 1 elegido");
@@ -191,7 +191,7 @@ public class VentanaDeInicio extends JFrame {
             }
         });
         
-        imagen2.addMouseListener(new pruebainterface.MouseListener() {
+        imagen2.addMouseListener(new GUI.MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 System.out.println("Personaje 2 elegido");

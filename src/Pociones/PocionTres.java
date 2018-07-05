@@ -12,9 +12,9 @@ import PersonajesPrincipales.PersonajePrincipal;
  * @author HugoJr. <Hugo Rivera at 00161417@uca.edu.sv>
  */
 public class PocionTres extends PocionesBuilder{
-
+    
     PersonajePrincipal personajePrincipal = new PersonajePrincipal();
-
+    
     public int sumarDanio = 15;
     
     public PocionTres() {
