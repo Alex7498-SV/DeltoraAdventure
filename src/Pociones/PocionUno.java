@@ -13,7 +13,7 @@ import PersonajesPrincipales.PersonajePrincipal;
  */
 public class PocionUno extends PocionesBuilder{
     
-    PersonajePrincipal personajePrincipal = new PersonajePrincipal();
+//    PersonajePrincipal personajePrincipal = new PersonajePrincipal();
     
     public int sumarVida = 50;
 
@@ -29,9 +29,9 @@ public class PocionUno extends PocionesBuilder{
     public void sumarVida(){
 
 //        personajePrincipal.getVida();
-        System.out.println(personajePrincipal.getVida());
-        System.out.println("Se ha sumado " + sumarVida + " a la vida del personaje");
-        personajePrincipal.sumarVida(sumarVida);
+//        System.out.println(personajePrincipal.getVida());
+//        System.out.println("Se ha sumado " + sumarVida + " a la vida del personaje");
+//        personajePrincipal.sumarVida(sumarVida);
     }
     
 }

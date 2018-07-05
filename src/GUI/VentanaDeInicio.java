@@ -2,9 +2,7 @@
 package GUI;
 
 import General.Usuario;
-import PersonajesPrincipales.Creador;
-import PersonajesPrincipales.MaestroNathan;
-import PersonajesPrincipales.MaestroVeneficus;
+
 import PersonajesPrincipales.PersonajePrincipal;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
@@ -31,7 +29,7 @@ import javax.swing.JOptionPane;
  */
 public class VentanaDeInicio extends JFrame {
     
-    SeleccionarPersonaje sP = new SeleccionarPersonaje();
+    AbstractPersonajePrincipal sP = new AbstractPersonajePrincipal();
     
     Usuario usuario = new Usuario();
     
@@ -126,7 +124,7 @@ public class VentanaDeInicio extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Pasa a ventana de juego");
-                sP.elegirPersonaje(seleccion);
+                sP.getPersonajePrincipal(seleccion);
                 //new VentanaHistoria2().setVisible(true);
                 
 //                usuario.setNombre(alias.getText());

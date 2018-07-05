@@ -48,16 +48,8 @@ public class VentanaHistoriaEspartano extends JFrame {
         Jugar = new JButton("Jugar");
         Jugar.setBounds(500, 500, 70, 40);
         
-
-//        Thread mith = Thread.currentThread();
-//        try{
-//            mith.sleep(2000);
-//            dispose();
-//            new VentanaMapa().setVisible(true);
-//        } catch(InterruptedException ie){
-//            System.err.println("No se puede, Captured InterruptedException");
-//            
-//        }
+        PocionUno pocionUno = new PocionUno();
+        pocionUno.sumarVida();
     }
     
     public static void main(String[] args) {

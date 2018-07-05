@@ -63,7 +63,20 @@ public class VentanaMapaEspartano extends JFrame {
             public void keyPressed(KeyEvent e) {
                 System.out.println(e.getKeyText(e.getKeyCode()));
                 String action = e.getKeyText(e.getKeyCode());
-                if((y >= 45 && y <= 620)&&(x >= 45 && x <= 990)) {
+                
+                if((x < 45 || x > 990) || (y < 45 || y > 620)){
+                    JOptionPane.showMessageDialog(null, "You Died in the fire");
+                    x = 80;
+                    y = 70;
+                    personaje.setBounds(x, y, ancho, alto);
+                } else if ((x >= 275 && x <= 378) && (y >= 45 && y <= 216)){
+                    JOptionPane.showMessageDialog(null, "You Didrowneded drowned");
+                    x -= 1;
+                    
+//                    x = 80;
+//                    y = 70;
+//                    personaje.setBounds(x, y, ancho, alto);
+                } else {
                     if(action.equalsIgnoreCase("Arriba")){
                         y -= 5;
                         personaje.setBounds(x, y, ancho, alto);
@@ -80,12 +93,30 @@ public class VentanaMapaEspartano extends JFrame {
                         x += 5;
                         personaje.setBounds(x, y, ancho, alto);
                     }
-                }else {
-                    JOptionPane.showMessageDialog(null, "You Died");
-                    x = 80;
-                    y = 70;
-                    personaje.setBounds(x, y, ancho, alto);
                 }
+//                if((y >= 45 && y <= 620)&&(x >= 45 && x <= 990)) {
+//                    if(action.equalsIgnoreCase("Arriba")){
+//                        y -= 5;
+//                        personaje.setBounds(x, y, ancho, alto);
+//                    }
+//                    if(action.equalsIgnoreCase("Abajo")){
+//                        y += 5;
+//                        personaje.setBounds(x, y, ancho, alto);
+//                    }
+//                    if(action.equalsIgnoreCase("Izquierda")){
+//                        x -= 5;
+//                        personaje.setBounds(x, y, ancho, alto);
+//                    }
+//                    if(action.equalsIgnoreCase("Derecha")){
+//                        x += 5;
+//                        personaje.setBounds(x, y, ancho, alto);
+//                    }
+//                }else {
+//                    JOptionPane.showMessageDialog(null, "You Died");
+//                    x = 80;
+//                    y = 70;
+//                    personaje.setBounds(x, y, ancho, alto);
+//                }
             }
 
             @Override

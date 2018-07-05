@@ -62,4 +62,5 @@ public class Veneficus extends PersonajePrincipalBuilder{
         personajePrincipal.setAtaque((int) (personajePrincipal.getAtaque() + sumaAtaque));
     }
     
+    /////////////////////////// REGRESO ///////////////
 }
