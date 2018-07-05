@@ -62,6 +62,7 @@ public class VentanaHistoriaMago extends JFrame {
         Jugar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                dispose();
                 new VentanaMapaEspartano().setVisible(true);
             }
         });
