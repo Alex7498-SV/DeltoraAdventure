@@ -40,10 +40,10 @@ public class VentanaDeInicio extends JFrame {
 
     
 //    public JButton = inicio;
-    private JLabel lblAlias, lblNombrePersonaje1, lblNombrePersonaje2;
+    private JLabel lblAlias, lblNombrePersonaje1, lblNombrePersonaje2, imagen1, imagen2, nombreJuego, fondo;
     public JTextField alias;
     private JButton inicio;
-    public JLabel imagen1, imagen2,fondo;
+
      
     private static final int  ALTO = 40;
     
@@ -55,9 +55,9 @@ public class VentanaDeInicio extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
         agregarLabels();
-        Ventana();
         Container container = getContentPane();
-        container.add(fondo);
+
+        container.add(nombreJuego);
         container.add(inicio);
         container.add(lblAlias);
         container.add(lblNombrePersonaje1);
@@ -65,8 +65,9 @@ public class VentanaDeInicio extends JFrame {
         container.add(alias);
         container.add(imagen1);
         container.add(imagen2);
+        container.add(fondo);
         
-        setSize(500, 500);
+        setSize(430, 270);
         eventos();
         this.setLocationRelativeTo(null);
     }    
@@ -75,37 +76,37 @@ public class VentanaDeInicio extends JFrame {
         lblAlias = new JLabel("NickName :");
         lblNombrePersonaje1 = new JLabel("VENEFICUS");
         lblNombrePersonaje2 = new JLabel("NATHAN");
-        lblAlias.setBounds(50, 350, 90, ALTO);
-        lblNombrePersonaje1.setBounds(110, 50, 90, ALTO);
-        lblAlias.setForeground(Color.white);
-        lblNombrePersonaje2.setBounds(320, 50, 90, ALTO);
-    }
-    
-    public final void Ventana() {
+        nombreJuego = new JLabel("Deltora's Adventure");
         alias = new JTextField();
-        
         inicio = new JButton("Iniciar");
-        
         imagen1 = new JLabel();
         imagen2 = new JLabel();
         fondo = new JLabel();
         
-
+        lblAlias.setBounds(30, 180, 90, ALTO);
+        lblNombrePersonaje1.setBounds(80, 30, 90, ALTO);
+        lblNombrePersonaje2.setBounds(260, 30, 90, ALTO);
+        nombreJuego.setBounds(150, 10, 200, 10);
+        fondo.setBounds(0, 0, 430, 270);
+        alias.setBounds(110, 190, 200, 20);
+        inicio.setBounds(315, 190, 70, 20);
+        imagen1.setBounds(60, 70, 100, 100);
+        imagen2.setBounds(230, 70, 100, 100);
         
-        alias.setBounds(130, 360, 200, 20);
+        lblAlias.setForeground(Color.white);
+        lblNombrePersonaje1.setForeground(Color.white);
+        lblNombrePersonaje2.setForeground(Color.white);
+        nombreJuego.setForeground(Color.white);
+        alias.setBackground(Color.BLACK);
+        alias.setForeground(Color.WHITE);
         
-        inicio.setBounds(350, 350, 70, ALTO);
-        
-        imagen1.setBounds(90, 150, 100, 100);
-        imagen2.setBounds(300, 150, 100, 100);
-        //fondo.setBounds(, , WIDTH, HEIGHT);
-        
-        
-        
-        imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago.jpg")));
-        imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/guerrero.jpg")));
+        imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago.png")));
+        imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/guerrero1.png")));
+        fondo.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/minimapa.jpg")));
+       
         
     }
+
     
     public static void main(String[] args) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -139,7 +140,8 @@ public class VentanaDeInicio extends JFrame {
                     }
                     if (seleccion == 2){
                         dispose();
-                        new VentanaHistoria2().setVisible(true);
+                        //new VentanaHistoria2().setVisible(true);
+                        new VentanaMapa().setVisible(true);
                     }if(seleccion == 0) JOptionPane.showMessageDialog(null, "Debes escojer un personaje antes de seguir.");
                     
                 }else{
@@ -157,7 +159,8 @@ public class VentanaDeInicio extends JFrame {
             public void mouseClicked(MouseEvent e) {
                 System.out.println("Personaje 1 elegido");
                 seleccion = 1;
-                imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
+                imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.png")));
+                imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/guerrero1.png")));
             }
             
             /**
@@ -168,7 +171,7 @@ public class VentanaDeInicio extends JFrame {
             public void mouseEntered(MouseEvent e) {
                 System.out.println("Entered");
 
-                imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
+                imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.png")));
                 
             }
             
@@ -181,9 +184,9 @@ public class VentanaDeInicio extends JFrame {
             public void mouseExited(MouseEvent e) {
                 System.out.println("Exited");
                 if (seleccion == 1){
-                    imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
+                    imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.png")));
                 } else{
-                    imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago.jpg")));
+                    imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago.png")));
                 }
             }
         });
@@ -193,14 +196,15 @@ public class VentanaDeInicio extends JFrame {
             public void mouseClicked(MouseEvent e) {
                 System.out.println("Personaje 2 elegido");
                 seleccion = 2;
-                imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/guerreroSi.jpg")));
+                imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/guerreroSi.png")));
+                imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago.png")));
             }
 
             @Override
             public void mouseEntered(MouseEvent e) {
                 System.out.println("Entered");
                 
-                imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/guerreroSi.jpg")));
+                imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/guerreroSi.png")));
 
             }
 
@@ -208,9 +212,9 @@ public class VentanaDeInicio extends JFrame {
             public void mouseExited(MouseEvent e) {
                 System.out.println("Exited");
                 if (seleccion == 2){
-                    imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/guerreroSi.jpg")));
+                    imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/guerreroSi.png")));
                 } else{
-                imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/guerrero.jpg")));
+                imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/guerrero1.png")));
                 }
             }
             
