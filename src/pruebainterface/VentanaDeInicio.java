@@ -141,7 +141,7 @@ public class VentanaDeInicio extends JFrame {
                     if (seleccion == 2){
                         dispose();
                         //new VentanaHistoria2().setVisible(true);
-                        new VentanaMapa().setVisible(true);
+                        new VentanaHistoria2().setVisible(true);
                     }if(seleccion == 0) JOptionPane.showMessageDialog(null, "Debes escojer un personaje antes de seguir.");
                     
                 }else{
