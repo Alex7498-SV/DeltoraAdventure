@@ -9,7 +9,6 @@ package PersonajesPrincipales;
  *
  * @author uca
  */
-
 public class PersonajePrincipal {
     private int vida = 0;
     private int puntosExperiencia = 0;

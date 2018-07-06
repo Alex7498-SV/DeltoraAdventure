@@ -58,7 +58,7 @@ public class VentanaMapaEspartano extends JFrame {
             public void keyTyped(KeyEvent e) {
                 //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
-
+//////////////////////////////54 a lo ancho y 64 a lo largo //////////////////////
             @Override
             public void keyPressed(KeyEvent e) {
                 System.out.println(e.getKeyText(e.getKeyCode()));
@@ -69,14 +69,78 @@ public class VentanaMapaEspartano extends JFrame {
                     x = 80;
                     y = 70;
                     personaje.setBounds(x, y, ancho, alto);
-                } else if ((x >= 275 && x <= 378) && (y >= 45 && y <= 216)){
-                    JOptionPane.showMessageDialog(null, "You Didrowneded drowned");
-                    x -= 1;
-                    
-//                    x = 80;
-//                    y = 70;
-//                    personaje.setBounds(x, y, ancho, alto);
-                } else {
+                } else if ((x >= 275 && x <= 378) && (y >= 45 && y <= 432)){
+                    JOptionPane.showMessageDialog(null, "You dont go in this way");
+                    if (y == 430 ){
+                        y += 5;
+                    } else if (x == 375){
+                        x += 5;
+                    } 
+                    else{
+                    x -= 5;
+                    }
+                } else if ((x >= 210 && x <= 375) && (y >= 180 && y <= 378)){
+                    JOptionPane.showMessageDialog(null, "You dont go in this way");
+                    if (y == 375 ){
+                        y += 5;
+                    } else if(y == 180){
+                        y -= 5;
+                    } else if(x == 375){
+                        x += 5;
+                    }
+                    else{
+                    x -= 5;
+                    } 
+                } else if ((x >= 90 && x <= 195) && (y >= 180 && y <= 378)){
+                    JOptionPane.showMessageDialog(null, "You dont go in this way");
+                    if (y == 375 ){
+                        y += 5;
+                    } else if(x == 195){
+                        x += 5;
+                    } else if(y == 180){
+                        y -= 5;
+                    } 
+                    else{
+                    x -= 5;
+                    } 
+                } else if ((x >= 45 && x <= 195) && (y >= 240 && y <= 315)){
+                    JOptionPane.showMessageDialog(null, "You dont go in this way");
+                    if (y == 315 ){
+                        y += 5;
+                    } else if(x == 195){
+                        x += 5;
+                    } else if(y == 240){
+                        y -= 5;
+                    } 
+                    else{
+                    x -= 5;
+                    }
+                } else if ((x >= 275 && x <= 750) && (y >= 315 && y <= 432)){
+                    JOptionPane.showMessageDialog(null, "You dont go in this way");
+                    if (y == 430 ){
+                        y += 5;
+                    } else if(x == 750){
+                        x += 5;
+                    } else if(y == 275){
+                        y -= 5;
+                    } 
+                    else{
+                    x -= 5;
+                    }
+                } else if ((x >= 275 && x <= 325) && (y >= 135 && y <= 180)){
+                    JOptionPane.showMessageDialog(null, "You dont go in this way");
+                    if (y == 180 ){
+                        y += 5;
+                    } else if(x == 325){
+                        x += 5;
+                    } else if(y == 135){
+                        y -= 5;
+                    } 
+                    else{
+                    x -= 5;
+                    }
+                } 
+                else {
                     if(action.equalsIgnoreCase("Arriba")){
                         y -= 5;
                         personaje.setBounds(x, y, ancho, alto);
