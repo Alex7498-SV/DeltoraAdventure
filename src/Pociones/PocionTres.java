@@ -26,9 +26,9 @@ public class PocionTres extends PocionesBuilder{
         pociones.setTipo("Pocion Tres sumar danio?");
     }
     
-    public void sumarDanio(){
-        System.out.println("Se ha sumado " + sumarDanio + " al ataque del jugador");
-        personajePrincipal.sumarDanio(sumarDanio);
-    }
+//    public void sumarDanio(){
+//        System.out.println("Se ha sumado " + sumarDanio + " al ataque del jugador");
+//        personajePrincipal.sumarDanio(sumarDanio);
+//    }
     
 }

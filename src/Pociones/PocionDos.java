@@ -40,15 +40,15 @@ public class PocionDos extends PocionesBuilder{
         return suma;
     }
     
-    public void pocionMisteriosa(){
-        numeroAleatorio();
-        if (suma == true){
-            System.out.println("Se ha sumado " + sumarVida + " a la vida del jugador");
-            personajePrincipal.sumarVida(sumarVida);
-        }
-        else{
-            System.out.println("Se ha restado " + sumarVida + " a la vida del jugador");
-            personajePrincipal.restarVida(restarVida);
-        }
-    }
+//    public void pocionMisteriosa(){
+//        numeroAleatorio();
+//        if (suma == true){
+//            System.out.println("Se ha sumado " + sumarVida + " a la vida del jugador");
+//            personajePrincipal.sumarVida(sumarVida);
+//        }
+//        else{
+//            System.out.println("Se ha restado " + sumarVida + " a la vida del jugador");
+//            personajePrincipal.restarVida(restarVida);
+//        }
+//    }
 }

@@ -25,9 +25,9 @@ public class PocionCuatro extends PocionesBuilder{
     public void buildTipo() {
         pociones.setTipo("Pocion Cuatro sumar full vida?");
     }
-    
-    public void sumarFullVida(){
-        System.out.println("Se ha sumado " + sumarVidaFull + " a la vida del jugador");
-        personajePrincipal.sumarVida(sumarVidaFull);
-    }
+//    
+//    public void sumarFullVida(){
+//        System.out.println("Se ha sumado " + sumarVidaFull + " a la vida del jugador");
+//        personajePrincipal.sumarVida(sumarVidaFull);
+//    }
 }
