@@ -115,23 +115,35 @@ public class VentanaMapaEspartano extends JFrame {
                     else{
                     x -= 5;
                     }
-                } else if ((x >= 275 && x <= 750) && (y >= 315 && y <= 432)){
+                } else if ((x >= 275 && x <= 750) && (y >= 345 && y <= 432)){
                     JOptionPane.showMessageDialog(null, "You dont go in this way");
                     if (y == 430 ){
                         y += 5;
                     } else if(x == 750){
                         x += 5;
-                    } else if(y == 275){
+                    } else if(y == 345){
                         y -= 5;
                     } 
                     else{
                     x -= 5;
                     }
-                } else if ((x >= 275 && x <= 325) && (y >= 135 && y <= 180)){
+                } else if ((x >= 660 && x <= 750) && (y >= 135 && y <= 540)){
                     JOptionPane.showMessageDialog(null, "You dont go in this way");
-                    if (y == 180 ){
+                    if (y == 540 ){
                         y += 5;
-                    } else if(x == 325){
+                    } else if(x == 750){
+                        x += 5;
+                    } else if(y == 135){
+                        y -= 5;
+                    } 
+                    else{
+                    x -= 5;
+                    }
+                } else if ((x >= 660 && x <= 750) && (y >= 135 && y <= 540)){
+                    JOptionPane.showMessageDialog(null, "You dont go in this way");
+                    if (y == 540 ){
+                        y += 5;
+                    } else if(x == 750){
                         x += 5;
                     } else if(y == 135){
                         y -= 5;
