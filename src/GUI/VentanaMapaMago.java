@@ -130,7 +130,7 @@ public class VentanaMapaMago extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("ventana inventario");
-                new VentanaInventario().setVisible(true);
+                new VentanaInventarioMago().setVisible(true);
             }
         });
 
