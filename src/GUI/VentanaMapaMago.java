@@ -144,6 +144,100 @@ public class VentanaMapaMago extends JFrame {
             public void keyPressed(KeyEvent e) {
                 System.out.println(e.getKeyText(e.getKeyCode()));
                 String action = e.getKeyText(e.getKeyCode());
+                if (x == 80 && y == 200) {
+                    //860, 540
+                    x = 900;
+                    y = 600;
+                    personaje.setBounds(x, y, ancho, alto);
+                }
+                if (x == 925 && y == 600) {
+                    //860, 540
+                    x = 80;
+                    y = 150;
+                    personaje.setBounds(x, y, ancho, alto);
+                }
+
+                if ((x < 45 || x > 990) || (y < 45 || y > 620)) {
+                    JOptionPane.showMessageDialog(null, "You Died in the fire");
+                    x = 80;
+                    y = 70;
+                    personaje.setBounds(x, y, ancho, alto);
+                } else if ((x >= 275 && x <= 378) && (y >= 45 && y <= 432)) {
+                    JOptionPane.showMessageDialog(null, "You dont go in this way");
+                    if (y == 430) {
+                        y += 5;
+                    } else if (x == 375) {
+                        x += 5;
+                    } else {
+                        x -= 5;
+                    }
+                } else if ((x >= 210 && x <= 375) && (y >= 180 && y <= 378)) {
+                    JOptionPane.showMessageDialog(null, "You dont go in this way");
+                    if (y == 375) {
+                        y += 5;
+                    } else if (y == 180) {
+                        y -= 5;
+                    } else if (x == 375) {
+                        x += 5;
+                    } else {
+                        x -= 5;
+                    }
+                } else if ((x >= 90 && x <= 195) && (y >= 180 && y <= 378)) {
+                    JOptionPane.showMessageDialog(null, "You dont go in this way");
+                    if (y == 375) {
+                        y += 5;
+                    } else if (x == 195) {
+                        x += 5;
+                    } else if (y == 180) {
+                        y -= 5;
+                    } else {
+                        x -= 5;
+                    }
+                } else if ((x >= 45 && x <= 195) && (y >= 240 && y <= 315)) {
+                    JOptionPane.showMessageDialog(null, "You dont go in this way");
+                    if (y == 315) {
+                        y += 5;
+                    } else if (x == 195) {
+                        x += 5;
+                    } else if (y == 240) {
+                        y -= 5;
+                    } else {
+                        x -= 5;
+                    }
+                } else if ((x >= 275 && x <= 750) && (y >= 345 && y <= 432)) {
+                    JOptionPane.showMessageDialog(null, "You dont go in this way");
+                    if (y == 430) {
+                        y += 5;
+                    } else if (x == 750) {
+                        x += 5;
+                    } else if (y == 345) {
+                        y -= 5;
+                    } else {
+                        x -= 5;
+                    }
+                } else if ((x >= 660 && x <= 750) && (y >= 135 && y <= 540)) {
+                    JOptionPane.showMessageDialog(null, "You dont go in this way");
+                    if (y == 540) {
+                        y += 5;
+                    } else if (x == 750) {
+                        x += 5;
+                    } else if (y == 135) {
+                        y -= 5;
+                    } else {
+                        x -= 5;
+                    }
+                } else if ((x >= 660 && x <= 750) && (y >= 135 && y <= 540)) {
+                    JOptionPane.showMessageDialog(null, "You dont go in this way");
+                    if (y == 540) {
+                        y += 5;
+                    } else if (x == 750) {
+                        x += 5;
+                    } else if (y == 135) {
+                        y -= 5;
+                    } else {
+                        x -= 5;
+                    }
+                }
                 if ((y >= 35 && y <= 650) && (x >= 45 && x <= 1025)) {
                     if (action.equalsIgnoreCase("Arriba")) {
                         y -= 5;
