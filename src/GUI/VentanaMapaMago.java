@@ -48,12 +48,12 @@ public class VentanaMapaMago extends JFrame {
         setTitle("Deltora´s World.");
 
         labels = new JLabel[12];
-
+//aallaallla
         for (int i = 0; i <= 12; i++) {
             if (i == 0) {
                 labels[i] = new JLabel();
                 labels[i].setIcon(new ImageIcon(getClass().getResource("/personajeimagen/guerrero1.png")));
-                labels[i].setBounds(250, 100, 40, 40);
+                labels[i].setBounds(250, 175, 40, 40);
                 container.add(labels[i]);
             }
             if (i == 1) {
@@ -77,25 +77,25 @@ public class VentanaMapaMago extends JFrame {
             if (i == 4) {
                 labels[i] = new JLabel();
                 labels[i].setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
-                labels[i].setBounds(600, 700, 40, 40);
+                labels[i].setBounds(770, 575, 40, 40);
                 container.add(labels[i]);
             }
             if (i == 5) {
                 labels[i] = new JLabel();
                 labels[i].setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
-                labels[i].setBounds(860, 300, 40, 40);
+                labels[i].setBounds(890, 325, 40, 40);
                 container.add(labels[i]);
             }
             if (i == 6) {
                 labels[i] = new JLabel();
                 labels[i].setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
-                labels[i].setBounds(800, 50, 40, 40);
+                labels[i].setBounds(700, 50, 40, 40);
                 container.add(labels[i]);
             }
             if (i == 7) {
                 labels[i] = new JLabel();
                 labels[i].setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
-                labels[i].setBounds(500, 175, 40, 40);
+                labels[i].setBounds(500, 150, 40, 40);
                 container.add(labels[i]);
             }
             if (i == 8) {
@@ -103,18 +103,19 @@ public class VentanaMapaMago extends JFrame {
                 labels[i].setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
                 labels[i].setBounds(500, 300, 40, 40);
                 container.add(labels[i]);
-            }
+            }//aallallla175,300,250,650,600,890,700,500,300
         }
+        //aallallla
 
         HiloArribaAbajo enemigo0 = new HiloArribaAbajo("enemigo0", 200, labels[0], labels[0].getX(), labels[0].getY());
-        HiloArribaAbajo enemigo1 = new HiloArribaAbajo("enemigo1", 450, labels[1], labels[1].getX(), labels[1].getY());
-        HiloDerechaIzquierda enemigo2 = new HiloDerechaIzquierda("enemigo2", 150, labels[2], labels[2].getX(), labels[2].getY());
-        HiloDerechaIzquierda enemigo3 = new HiloDerechaIzquierda("enemigo3", 325, labels[3], labels[3].getX(), labels[3].getY());
-        HiloDerechaIzquierda enemigo4 = new HiloDerechaIzquierda("enemigo4", 525, labels[4], labels[4].getX(), labels[4].getY());
-        HiloDerechaIzquierda enemigo5 = new HiloDerechaIzquierda("enemigo5", 900, labels[5], labels[5].getX(), labels[5].getY());
-        HiloArribaAbajo enemigo6 = new HiloArribaAbajo("enemigo6", 400, labels[6], labels[6].getX(), labels[6].getY());
-        HiloArribaAbajo enemigo7 = new HiloArribaAbajo("enemigo7", 200, labels[7], labels[7].getX(), labels[7].getY());
-        HiloDerechaIzquierda enemigo8 = new HiloDerechaIzquierda("enemigo8", 775, labels[8], labels[8].getX(), labels[8].getY());
+        HiloArribaAbajo enemigo1 = new HiloArribaAbajo("enemigo1", 325, labels[1], labels[1].getX(), labels[1].getY());
+        HiloDerechaIzquierda enemigo2 = new HiloDerechaIzquierda("enemigo2", 275, labels[2], labels[2].getX(), labels[2].getY());
+        HiloDerechaIzquierda enemigo3 = new HiloDerechaIzquierda("enemigo3", 675, labels[3], labels[3].getX(), labels[3].getY());
+        HiloArribaAbajo enemigo4 = new HiloArribaAbajo("enemigo4", 600, labels[4], labels[4].getX(), labels[4].getY());
+        HiloDerechaIzquierda enemigo5 = new HiloDerechaIzquierda("enemigo5", 915, labels[5], labels[5].getX(), labels[5].getY());
+        HiloDerechaIzquierda enemigo6 = new HiloDerechaIzquierda("enemigo6", 725, labels[6], labels[6].getX(), labels[6].getY());
+        HiloDerechaIzquierda enemigo7 = new HiloDerechaIzquierda("enemigo7", 525, labels[7], labels[7].getX(), labels[7].getY());
+        HiloArribaAbajo enemigo8 = new HiloArribaAbajo("enemigo8", 325, labels[8], labels[8].getX(), labels[8].getY());
         enemigo0.start();
         enemigo1.start();
         enemigo2.start();
