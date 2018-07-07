@@ -47,7 +47,9 @@ public class VentanaDeInicio extends JFrame {
     private static final int  ALTO = 40;
     
     public VentanaDeInicio(){
-        
+        AudioClip sonido;
+        sonido = java.applet.Applet.newAudioClip(getClass().getResource("/music/HL1_song14.wav"));
+        sonido.play();
         this.getContentPane().setBackground(Color.black);
         
         //super("Ventana Alias");
@@ -136,13 +138,20 @@ public class VentanaDeInicio extends JFrame {
                     
                     if (seleccion == 1){
                         dispose();
-                       new VentanaHistoriaEspartano().setVisible(true);
+                        new VentanaHistoriaMago().setVisible(true);//abre ventana historia MAGOwtf
                        //new VentanaMapa().setVisible(true);
+                        AudioClip sonido;
+                        sonido = java.applet.Applet.newAudioClip(getClass().getResource("/music/battle_loop2.wav"));
+                        sonido.play();
+                        //cuando sa clic en inicio, la musica de ventana inicio no para y tampoco para al dar click en jugar
                     }
                     if (seleccion == 2){
                         dispose();
-                        new VentanaHistoriaMago().setVisible(true);
+                        new VentanaHistoriaEspartano().setVisible(true);//abre ventana historia ESPARTANO wtf
                         //new VentanaMapa().setVisible(true);
+                        AudioClip sonido;
+                        sonido = java.applet.Applet.newAudioClip(getClass().getResource("/music/HL1_song26.wav"));
+                        sonido.play();
                     }if(seleccion == 0) JOptionPane.showMessageDialog(null, "Debes escojer un personaje antes de seguir.");
                     
                 }else{
@@ -163,7 +172,7 @@ public class VentanaDeInicio extends JFrame {
                 imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.png")));
                 imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/guerrero1.png")));
                 AudioClip sonido;
-                sonido = java.applet.Applet.newAudioClip(getClass().getResource("/personajeimagen/yes.wav"));
+                sonido = java.applet.Applet.newAudioClip(getClass().getResource("/music/yes.wav"));
                 sonido.play();
             }
             
@@ -194,7 +203,7 @@ public class VentanaDeInicio extends JFrame {
                 imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/guerreroSi.png")));
                 imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago.png")));
                 AudioClip sonido;
-                sonido = java.applet.Applet.newAudioClip(getClass().getResource("/personajeimagen/9.wav"));
+                sonido = java.applet.Applet.newAudioClip(getClass().getResource("/music/9.wav"));
                 sonido.play();
             }
 

@@ -9,6 +9,7 @@ import Pociones.PocionCuatro;
 import Pociones.PocionDos;
 import Pociones.PocionTres;
 import Pociones.PocionUno;
+import java.applet.AudioClip;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -43,7 +44,7 @@ public class VentanaHistoriaEspartano extends JFrame {
 
         lblFondo = new JLabel();
         lblFondo.setBounds(-15, 0, 600, 600);        
-        lblFondo.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/HistoriaMago.jpg")));
+        lblFondo.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/HistoriaSpartano.jpg")));
         
         Jugar = new JButton("Jugar");
         Jugar.setBounds(500, 500, 70, 40);
@@ -59,6 +60,8 @@ public class VentanaHistoriaEspartano extends JFrame {
                 new VentanaHistoriaEspartano().setVisible(true);
             }
         });
+        VentanaHistoriaEspartano reproducir = new VentanaHistoriaEspartano();
+        reproducir.setVisible(true);
     }
     
     public void events(){
@@ -67,6 +70,10 @@ public class VentanaHistoriaEspartano extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 dispose();
                 new VentanaMapaMago().setVisible(true);
+                AudioClip sonido;
+                sonido = java.applet.Applet.newAudioClip(getClass().getResource("/music/HL2_song4.wav"));
+                sonido.play();
+                        //La musica deja de sonar y la duracion de la musica aun no termina...
             }
         });
     }
