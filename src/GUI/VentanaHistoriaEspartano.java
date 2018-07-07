@@ -73,7 +73,7 @@ public class VentanaHistoriaEspartano extends JFrame {
                 AudioClip sonido;
                 sonido = java.applet.Applet.newAudioClip(getClass().getResource("/music/HL2_song4.wav"));
                 sonido.play();
-                        //La musica deja de sonar y la duracion de la musica aun no termina....
+                        //La musica deja de sonar y la duracion de la musica aun no termina...
             }
         });
     }
