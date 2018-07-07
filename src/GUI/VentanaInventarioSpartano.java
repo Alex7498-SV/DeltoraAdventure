@@ -19,7 +19,8 @@ import javax.swing.JLabel;
  */
 public class VentanaInventarioSpartano extends JFrame{
     
-    private JLabel espada, hacha, lanza, nomEspada, nomHacha, nomLanza;
+    private JLabel espada, hacha, lanza, nomEspada, nomHacha, nomLanza,
+            pocion1, pocion2, pocion3, pocion4, nomPo1, nomPo2, nomPo3, nomPo4;
     
     public VentanaInventarioSpartano(){
         super("Inventario");
@@ -33,6 +34,14 @@ public class VentanaInventarioSpartano extends JFrame{
         container.add(nomEspada);
         container.add(nomHacha);
         container.add(nomLanza);
+        container.add(pocion1);
+        container.add(pocion2);
+        container.add(pocion3);
+        container.add(pocion4);
+        container.add(nomPo1);
+        container.add(nomPo2);
+        container.add(nomPo3);
+        container.add(nomPo4);
         setSize(500, 500);
         //events();
         this.setLocationRelativeTo(null);
@@ -67,6 +76,43 @@ public class VentanaInventarioSpartano extends JFrame{
         lanza = new JLabel();
         lanza.setBounds(340, 75, 100, 100);
         lanza.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/lanza.png")));
+        
+        nomPo1 = new JLabel("POCION UNO");
+        nomPo1.setBounds(25, 250, 150, 40);
+        nomPo1.setFont(new java.awt.Font("Tempus Sans ITC", 0, 12));
+        nomPo1.setForeground(Color.white);
+        
+        pocion1 = new JLabel();
+        pocion1.setBounds(30, 300, 100, 100);
+        pocion1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/pocion1.png")));
+        
+        nomPo2 = new JLabel("POCION UNO");
+        nomPo2.setBounds(140, 250, 150, 40);
+        nomPo2.setFont(new java.awt.Font("Tempus Sans ITC", 0, 12));
+        nomPo2.setForeground(Color.white);
+        
+        pocion2 = new JLabel();
+        pocion2.setBounds(145, 300, 100, 100);
+        pocion2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/pocion2.png")));
+        
+        nomPo3 = new JLabel("POCION UNO");
+        nomPo3.setBounds(255, 250, 150, 40);
+        nomPo3.setFont(new java.awt.Font("Tempus Sans ITC", 0, 12));
+        nomPo3.setForeground(Color.white);
+        
+        
+        pocion3 = new JLabel();
+        pocion3.setBounds(260, 300, 100, 100);
+        pocion3.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/pocion3.png")));
+        
+        nomPo4 = new JLabel("POCION UNO");
+        nomPo4.setBounds(370, 250, 150, 40);
+        nomPo4.setFont(new java.awt.Font("Tempus Sans ITC", 0, 12));
+        nomPo4.setForeground(Color.white);
+        
+        pocion4 = new JLabel();
+        pocion4.setBounds(375, 300, 100, 100);
+        pocion4.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/pocion4.png")));
     }
     
     public static void main(String[] args) {

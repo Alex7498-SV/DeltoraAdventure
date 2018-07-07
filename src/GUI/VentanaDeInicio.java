@@ -19,6 +19,7 @@ import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import PersonajesPrincipales.*;
+import java.applet.AudioClip;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 
@@ -113,6 +114,8 @@ public class VentanaDeInicio extends JFrame {
                 new VentanaDeInicio().setVisible(true);
             }
         });
+        VentanaDeInicio reproducir = new VentanaDeInicio();
+        reproducir.setVisible(true);
     }
     
     
@@ -159,12 +162,11 @@ public class VentanaDeInicio extends JFrame {
                 seleccion = 1;
                 imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.png")));
                 imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/guerrero1.png")));
+                AudioClip sonido;
+                sonido = java.applet.Applet.newAudioClip(getClass().getResource("/personajeimagen/yes.wav"));
+                sonido.play();
             }
             
-            /**
-             * Quiero que cuanto entre, semmuestre mi otra imagen que tengo pensado que sea un .gif
-             * @param e 
-             */
             @Override
             public void mouseEntered(MouseEvent e) {
                 System.out.println("Entered");
@@ -173,11 +175,6 @@ public class VentanaDeInicio extends JFrame {
                 
             }
             
-            /**
-             * No me tira la imagen base cuando sale
-             * Lo mismo para la imagen 2
-             * @param e 
-             */
             @Override
             public void mouseExited(MouseEvent e) {
                 System.out.println("Exited");
@@ -196,6 +193,9 @@ public class VentanaDeInicio extends JFrame {
                 seleccion = 2;
                 imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/guerreroSi.png")));
                 imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago.png")));
+                AudioClip sonido;
+                sonido = java.applet.Applet.newAudioClip(getClass().getResource("/personajeimagen/9.wav"));
+                sonido.play();
             }
 
             @Override
@@ -218,20 +218,6 @@ public class VentanaDeInicio extends JFrame {
             
             
         });
-        
-        
-        
-        
-        /**
-         * Si les quito el comentario en el Exit, si me voy a la primera imagen me aparece la imagen diferente y 
-         * despues a la segunda, en la segunda no me aparece la imagen diferente, sino que la misma de base y cambia de pos.
-         * pero si me voy primero a la 2da imagen me aparece la imagen diferente y
-         * despues a la primera, no me cambia la imagen por la diferente
-         * 
-         * la imagen diferente es la que deberia de aparecer si entra
-         * 
-         */
-        
     }
 }
 
