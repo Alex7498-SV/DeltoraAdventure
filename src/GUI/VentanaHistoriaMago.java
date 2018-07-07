@@ -6,6 +6,7 @@
 package GUI;
 
 import Pociones.PocionUno;
+import java.applet.AudioClip;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -40,7 +41,7 @@ public class VentanaHistoriaMago extends JFrame {
 
         lblFondo = new JLabel();
         lblFondo.setBounds(0, 0, 600, 600);        
-        lblFondo.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/HistoriaSpartano.jpg")));
+        lblFondo.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/HistoriaMago.jpg")));
         
         Jugar = new JButton("Jugar");
         Jugar.setBounds(500, 500, 70, 40);
@@ -56,6 +57,8 @@ public class VentanaHistoriaMago extends JFrame {
                 new VentanaHistoriaMago().setVisible(true);
             }
         });
+        VentanaHistoriaMago reproducir = new VentanaHistoriaMago();
+        reproducir.setVisible(true);
     }
     
     public void events(){
@@ -64,6 +67,10 @@ public class VentanaHistoriaMago extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 dispose();
                 new VentanaMapaEspartano().setVisible(true);
+                AudioClip sonido;
+                sonido = java.applet.Applet.newAudioClip(getClass().getResource("/music/HL2_song3.wav"));
+                sonido.play();
+                //La musica deja de sonar y la duracion de la musica aun no termina...
             }
         });
     }
