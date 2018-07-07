@@ -138,7 +138,7 @@ public class VentanaDeInicio extends JFrame {
                     
                     if (seleccion == 1){
                         dispose();
-                        new VentanaHistoriaMago().setVisible(true);//abre ventana historia MAGOwtf
+                        new VentanaHistoriaEspartano().setVisible(true);//abre ventana historia MAGOwtf
                        //new VentanaMapa().setVisible(true);
                         AudioClip sonido;
                         sonido = java.applet.Applet.newAudioClip(getClass().getResource("/music/battle_loop2.wav"));
@@ -147,7 +147,7 @@ public class VentanaDeInicio extends JFrame {
                     }
                     if (seleccion == 2){
                         dispose();
-                        new VentanaHistoriaEspartano().setVisible(true);//abre ventana historia ESPARTANO wtf
+                        new VentanaHistoriaMago().setVisible(true);//abre ventana historia ESPARTANO wtf
                         //new VentanaMapa().setVisible(true);
                         AudioClip sonido;
                         sonido = java.applet.Applet.newAudioClip(getClass().getResource("/music/HL1_song26.wav"));

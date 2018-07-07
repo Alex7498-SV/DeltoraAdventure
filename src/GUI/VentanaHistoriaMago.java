@@ -41,7 +41,7 @@ public class VentanaHistoriaMago extends JFrame {
 
         lblFondo = new JLabel();
         lblFondo.setBounds(0, 0, 600, 600);        
-        lblFondo.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/HistoriaMago.jpg")));
+        lblFondo.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/HistoriaSpartano.jpg")));
         
         Jugar = new JButton("Jugar");
         Jugar.setBounds(500, 500, 70, 40);
