@@ -101,8 +101,8 @@ public class VentanaDeInicio extends JFrame {
         alias.setBackground(Color.BLACK);
         alias.setForeground(Color.WHITE);
         
-        imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago.png")));
-        imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/guerrero1.png")));
+        imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/veneficuspPlano.png")));
+        imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/nathanpPlano.png")));
         fondo.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/minimapa.jpg")));
        
         
@@ -169,8 +169,8 @@ public class VentanaDeInicio extends JFrame {
             public void mouseClicked(MouseEvent e) {
                 System.out.println("Personaje 1 elegido");
                 seleccion = 1;
-                imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.png")));
-                imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/guerrero1.png")));
+                imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/veneficuspPlanoselec.png")));
+                imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/nathanpPlano.png")));
                 AudioClip sonido;
                 sonido = java.applet.Applet.newAudioClip(getClass().getResource("/music/yes.wav"));
                 sonido.play();
@@ -180,7 +180,7 @@ public class VentanaDeInicio extends JFrame {
             public void mouseEntered(MouseEvent e) {
                 System.out.println("Entered");
 
-                imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.png")));
+                imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/veneficuspPlanoselec.png")));
                 
             }
             
@@ -188,9 +188,9 @@ public class VentanaDeInicio extends JFrame {
             public void mouseExited(MouseEvent e) {
                 System.out.println("Exited");
                 if (seleccion == 1){
-                    imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.png")));
+                    imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/veneficuspPlanoselec.png")));
                 } else{
-                    imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago.png")));
+                    imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/veneficuspPlano.png")));
                 }
             }
         });
@@ -200,8 +200,8 @@ public class VentanaDeInicio extends JFrame {
             public void mouseClicked(MouseEvent e) {
                 System.out.println("Personaje 2 elegido");
                 seleccion = 2;
-                imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/guerreroSi.png")));
-                imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago.png")));
+                imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/nathanpPlanoselec.png")));
+                imagen1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/veneficuspPlano.png")));
                 AudioClip sonido;
                 sonido = java.applet.Applet.newAudioClip(getClass().getResource("/music/9.wav"));
                 sonido.play();
@@ -211,7 +211,7 @@ public class VentanaDeInicio extends JFrame {
             public void mouseEntered(MouseEvent e) {
                 System.out.println("Entered");
                 
-                imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/guerreroSi.png")));
+                imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/nathanpPlanoselec.png")));
 
             }
 
@@ -219,9 +219,9 @@ public class VentanaDeInicio extends JFrame {
             public void mouseExited(MouseEvent e) {
                 System.out.println("Exited");
                 if (seleccion == 2){
-                    imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/guerreroSi.png")));
+                    imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/nathanpPlanoselec.png")));
                 } else{
-                imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/guerrero1.png")));
+                imagen2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/nathanpPlano.png")));
                 }
             }
             
