@@ -147,7 +147,7 @@ public class VentanaDeInicio extends JFrame {
                     }
                     if (seleccion == 2){
                         dispose();
-                        new VentanaHistoriaMago().setVisible(true);//abre ventana historia ESPARTANO wtf
+                        new VentanaHistoriaMago().setVisible(true);//abre ventana historia ESPARTANO wtf.
                         //new VentanaMapa().setVisible(true);
                         AudioClip sonido;
                         sonido = java.applet.Applet.newAudioClip(getClass().getResource("/music/HL1_song26.wav"));
