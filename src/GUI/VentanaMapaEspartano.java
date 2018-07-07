@@ -44,79 +44,79 @@ public class VentanaMapaEspartano extends JFrame {
 
         personaje = new JButton(":v");
         personaje.setBounds(x, y, ancho, alto);
-        personaje.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
+        personaje.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/nathanFrontal.png")));
         setTitle("Deltora´s World.");
-        
+
         for (int i = 0; i <= 12; i++) {
             if (i == 0) {
                 labels[i] = new JLabel();
-                labels[i].setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
+                labels[i].setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/enemigoNathanF.png")));
                 labels[i].setBounds(200, 150, 40, 40);
                 container.add(labels[i]);
             }
             if (i == 1) {
                 labels[i] = new JLabel();
-                labels[i].setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
+                labels[i].setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/enemigoNathanF.png")));
                 labels[i].setBounds(200, 400, 40, 40);
                 container.add(labels[i]);
             }
             if (i == 2) {
                 labels[i] = new JLabel();
-                labels[i].setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
+                labels[i].setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/enemigoNathanF.png")));
                 labels[i].setBounds(100, 540, 40, 40);
                 container.add(labels[i]);
             }
             if (i == 3) {
                 labels[i] = new JLabel();
-                labels[i].setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
+                labels[i].setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/enemigoNathanF.png")));
                 labels[i].setBounds(300, 540, 40, 40);
                 container.add(labels[i]);
             }
             if (i == 4) {
                 labels[i] = new JLabel();
-                labels[i].setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
+                labels[i].setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/enemigoNathanF.png")));
                 labels[i].setBounds(500, 540, 40, 40);
                 container.add(labels[i]);
             }
             if (i == 5) {
                 labels[i] = new JLabel();
-                labels[i].setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
+                labels[i].setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/enemigoNathanF.png")));
                 labels[i].setBounds(860, 540, 40, 40);
                 container.add(labels[i]);
             }
             if (i == 6) {
                 labels[i] = new JLabel();
-                labels[i].setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
+                labels[i].setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/enemigoNathanF.png")));
                 labels[i].setBounds(900, 380, 40, 40);
                 container.add(labels[i]);
             }
             if (i == 7) {
                 labels[i] = new JLabel();
-                labels[i].setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
+                labels[i].setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/enemigoNathanF.png")));
                 labels[i].setBounds(825, 175, 40, 40);
                 container.add(labels[i]);
             }
             if (i == 8) {
                 labels[i] = new JLabel();
-                labels[i].setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
+                labels[i].setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/enemigoNathanF.png")));
                 labels[i].setBounds(750, 55, 40, 40);
                 container.add(labels[i]);
             }
             if (i == 9) {
                 labels[i] = new JLabel();
-                labels[i].setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
+                labels[i].setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/enemigoNathanF.png")));
                 labels[i].setBounds(625, 55, 40, 40);
                 container.add(labels[i]);
             }
             if (i == 10) {
                 labels[i] = new JLabel();
-                labels[i].setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
+                labels[i].setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/enemigoNathanF.png")));
                 labels[i].setBounds(500, 55, 40, 40);
                 container.add(labels[i]);
             }
             if (i == 11) {
                 labels[i] = new JLabel();
-                labels[i].setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
+                labels[i].setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/enemigoNathanF.png")));
                 labels[i].setBounds(500, 270, 40, 40);
                 container.add(labels[i]);
             }
@@ -166,17 +166,17 @@ public class VentanaMapaEspartano extends JFrame {
             public void keyPressed(KeyEvent e) {
                 System.out.println(e.getKeyText(e.getKeyCode()));
                 String action = e.getKeyText(e.getKeyCode());
-                if(x== 80 && y==200){
+                if (x == 80 && y == 200) {
                     //860, 540
-                  x=900;
-                  y=600;
-                personaje.setBounds(x, y, ancho, alto);
+                    x = 900;
+                    y = 600;
+                    personaje.setBounds(x, y, ancho, alto);
                 }
-                  if(x== 925 && y==600){
+                if (x == 925 && y == 600) {
                     //860, 540
-                  x=80;
-                  y=150;
-                personaje.setBounds(x, y, ancho, alto);
+                    x = 80;
+                    y = 150;
+                    personaje.setBounds(x, y, ancho, alto);
                 }
 
                 if ((x < 45 || x > 990) || (y < 45 || y > 620)) {
@@ -185,7 +185,7 @@ public class VentanaMapaEspartano extends JFrame {
                     y = 70;
                     personaje.setBounds(x, y, ancho, alto);
                 } else if ((x >= 275 && x <= 378) && (y >= 45 && y <= 432)) {
-                    JOptionPane.showMessageDialog(null, "You dont go in this way");
+                    //JOptionPane.showMessageDialog(null, "You dont go in this way");
                     if (y == 430) {
                         y += 5;
                     } else if (x == 375) {
@@ -194,7 +194,7 @@ public class VentanaMapaEspartano extends JFrame {
                         x -= 5;
                     }
                 } else if ((x >= 210 && x <= 375) && (y >= 180 && y <= 378)) {
-                    JOptionPane.showMessageDialog(null, "You dont go in this way");
+                    //JOptionPane.showMessageDialog(null, "You dont go in this way");
                     if (y == 375) {
                         y += 5;
                     } else if (y == 180) {
@@ -205,7 +205,7 @@ public class VentanaMapaEspartano extends JFrame {
                         x -= 5;
                     }
                 } else if ((x >= 90 && x <= 195) && (y >= 180 && y <= 378)) {
-                    JOptionPane.showMessageDialog(null, "You dont go in this way");
+                    //JOptionPane.showMessageDialog(null, "You dont go in this way");
                     if (y == 375) {
                         y += 5;
                     } else if (x == 195) {
@@ -216,7 +216,7 @@ public class VentanaMapaEspartano extends JFrame {
                         x -= 5;
                     }
                 } else if ((x >= 45 && x <= 195) && (y >= 240 && y <= 315)) {
-                    JOptionPane.showMessageDialog(null, "You dont go in this way");
+                    //JOptionPane.showMessageDialog(null, "You dont go in this way");
                     if (y == 315) {
                         y += 5;
                     } else if (x == 195) {
@@ -227,7 +227,7 @@ public class VentanaMapaEspartano extends JFrame {
                         x -= 5;
                     }
                 } else if ((x >= 275 && x <= 750) && (y >= 345 && y <= 432)) {
-                    JOptionPane.showMessageDialog(null, "You dont go in this way");
+                    //JOptionPane.showMessageDialog(null, "You dont go in this way");
                     if (y == 430) {
                         y += 5;
                     } else if (x == 750) {
@@ -238,7 +238,7 @@ public class VentanaMapaEspartano extends JFrame {
                         x -= 5;
                     }
                 } else if ((x >= 660 && x <= 750) && (y >= 135 && y <= 540)) {
-                    JOptionPane.showMessageDialog(null, "You dont go in this way");
+                    //JOptionPane.showMessageDialog(null, "You dont go in this way");
                     if (y == 540) {
                         y += 5;
                     } else if (x == 750) {
@@ -249,7 +249,7 @@ public class VentanaMapaEspartano extends JFrame {
                         x -= 5;
                     }
                 } else if ((x >= 660 && x <= 750) && (y >= 135 && y <= 540)) {
-                    JOptionPane.showMessageDialog(null, "You dont go in this way");
+                    //JOptionPane.showMessageDialog(null, "You dont go in this way");
                     if (y == 540) {
                         y += 5;
                     } else if (x == 750) {
@@ -258,9 +258,9 @@ public class VentanaMapaEspartano extends JFrame {
                         y -= 5;
                     } else {
                         x -= 5;
-                    } 
+                    }
                 } else if ((x >= 590 && x <= 825) && (y >= 450 && y <= 540)) {
-                    JOptionPane.showMessageDialog(null, "You dont go in this way");
+                  //  JOptionPane.showMessageDialog(null, "You dont go in this way");
                     if (y == 540) {
                         y += 5;
                     } else if (x == 825) {
@@ -269,9 +269,9 @@ public class VentanaMapaEspartano extends JFrame {
                         y -= 5;
                     } else {
                         x -= 5;
-                    } 
+                    }
                 } else if ((x >= 590 && x <= 825) && (y >= 555 && y <= 700)) {
-                    JOptionPane.showMessageDialog(null, "You dont go in this way");
+                   // JOptionPane.showMessageDialog(null, "You dont go in this way");
                     if (y == 700) {
                         y += 5;
                     } else if (x == 825) {
@@ -280,9 +280,9 @@ public class VentanaMapaEspartano extends JFrame {
                         y -= 5;
                     } else {
                         x -= 5;
-                    } 
+                    }
                 } else if ((x >= 460 && x <= 750) && (y >= 135 && y <= 210)) {
-                    JOptionPane.showMessageDialog(null, "You dont go in this way");
+                    //JOptionPane.showMessageDialog(null, "You dont go in this way");
                     if (y == 210) {
                         y += 5;
                     } else if (x == 750) {
@@ -291,9 +291,9 @@ public class VentanaMapaEspartano extends JFrame {
                         y -= 5;
                     } else {
                         x -= 5;
-                    } 
+                    }
                 } else if ((x >= 375 && x <= 445) && (y >= 135 && y <= 210)) {
-                    JOptionPane.showMessageDialog(null, "You dont go in this way");
+                   // JOptionPane.showMessageDialog(null, "You dont go in this way");
                     if (y == 210) {
                         y += 5;
                     } else if (x == 445) {
@@ -302,9 +302,9 @@ public class VentanaMapaEspartano extends JFrame {
                         y -= 5;
                     } else {
                         x -= 5;
-                    } 
+                    }
                 } else if ((x >= 750 && x <= 895) && (y >= 240 && y <= 315)) {
-                    JOptionPane.showMessageDialog(null, "You dont go in this way");
+                  //  JOptionPane.showMessageDialog(null, "You dont go in this way");
                     if (y == 315) {
                         y += 5;
                     } else if (x == 895) {
@@ -313,9 +313,9 @@ public class VentanaMapaEspartano extends JFrame {
                         y -= 5;
                     } else {
                         x -= 5;
-                    } 
+                    }
                 } else if ((x >= 905 && x <= 1080) && (y >= 240 && y <= 315)) {
-                    JOptionPane.showMessageDialog(null, "You dont go in this way");
+                    //JOptionPane.showMessageDialog(null, "You dont go in this way");
                     if (y == 315) {
                         y += 5;
                     } else if (x == 1080) {
@@ -324,23 +324,27 @@ public class VentanaMapaEspartano extends JFrame {
                         y -= 5;
                     } else {
                         x -= 5;
-                    } 
+                    }
                 } else {
                     if (action.equalsIgnoreCase("Arriba")) {
                         y -= 5;
                         personaje.setBounds(x, y, ancho, alto);
+                        personaje.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/nathanTrasera.png")));
                     }
                     if (action.equalsIgnoreCase("Abajo")) {
                         y += 5;
                         personaje.setBounds(x, y, ancho, alto);
+                        personaje.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/nathanFrontal.png")));
                     }
                     if (action.equalsIgnoreCase("Izquierda")) {
                         x -= 5;
                         personaje.setBounds(x, y, ancho, alto);
+                        personaje.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/nathanIzquierda.png")));
                     }
                     if (action.equalsIgnoreCase("Derecha")) {
                         x += 5;
                         personaje.setBounds(x, y, ancho, alto);
+                        personaje.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/nathanDerecha.png")));
                     }
                 }
 //                if((y >= 45 && y <= 620)&&(x >= 45 && x <= 990)) {
