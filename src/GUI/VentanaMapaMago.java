@@ -107,15 +107,15 @@ public class VentanaMapaMago extends JFrame {
         }
         //aallallla
 
-        HiloArribaAbajo enemigo0 = new HiloArribaAbajo("enemigo0", 200, labels[0], labels[0].getX(), labels[0].getY());
-        HiloArribaAbajo enemigo1 = new HiloArribaAbajo("enemigo1", 325, labels[1], labels[1].getX(), labels[1].getY());
-        HiloDerechaIzquierda enemigo2 = new HiloDerechaIzquierda("enemigo2", 275, labels[2], labels[2].getX(), labels[2].getY());
-        HiloDerechaIzquierda enemigo3 = new HiloDerechaIzquierda("enemigo3", 675, labels[3], labels[3].getX(), labels[3].getY());
-        HiloArribaAbajo enemigo4 = new HiloArribaAbajo("enemigo4", 600, labels[4], labels[4].getX(), labels[4].getY());
-        HiloDerechaIzquierda enemigo5 = new HiloDerechaIzquierda("enemigo5", 915, labels[5], labels[5].getX(), labels[5].getY());
-        HiloDerechaIzquierda enemigo6 = new HiloDerechaIzquierda("enemigo6", 725, labels[6], labels[6].getX(), labels[6].getY());
-        HiloDerechaIzquierda enemigo7 = new HiloDerechaIzquierda("enemigo7", 525, labels[7], labels[7].getX(), labels[7].getY());
-        HiloArribaAbajo enemigo8 = new HiloArribaAbajo("enemigo8", 325, labels[8], labels[8].getX(), labels[8].getY());
+        HiloArribaAbajo enemigo0 = new HiloArribaAbajo("Mago0", 200, labels[0], labels[0].getX(), labels[0].getY());
+        HiloArribaAbajo enemigo1 = new HiloArribaAbajo("Mago1", 325, labels[1], labels[1].getX(), labels[1].getY());
+        HiloDerechaIzquierda enemigo2 = new HiloDerechaIzquierda("Mago2", 275, labels[2], labels[2].getX(), labels[2].getY());
+        HiloDerechaIzquierda enemigo3 = new HiloDerechaIzquierda("Mago3", 675, labels[3], labels[3].getX(), labels[3].getY());
+        HiloArribaAbajo enemigo4 = new HiloArribaAbajo("Mago4", 600, labels[4], labels[4].getX(), labels[4].getY());
+        HiloDerechaIzquierda enemigo5 = new HiloDerechaIzquierda("Mago5", 915, labels[5], labels[5].getX(), labels[5].getY());
+        HiloDerechaIzquierda enemigo6 = new HiloDerechaIzquierda("Mago6", 725, labels[6], labels[6].getX(), labels[6].getY());
+        HiloDerechaIzquierda enemigo7 = new HiloDerechaIzquierda("Mago7", 525, labels[7], labels[7].getX(), labels[7].getY());
+        HiloArribaAbajo enemigo8 = new HiloArribaAbajo("Mago8", 325, labels[8], labels[8].getX(), labels[8].getY());
         enemigo0.start();
         enemigo1.start();
         enemigo2.start();
