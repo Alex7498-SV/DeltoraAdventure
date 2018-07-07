@@ -166,6 +166,18 @@ public class VentanaMapaEspartano extends JFrame {
             public void keyPressed(KeyEvent e) {
                 System.out.println(e.getKeyText(e.getKeyCode()));
                 String action = e.getKeyText(e.getKeyCode());
+                if(x== 80 && y==200){
+                    //860, 540
+                  x=900;
+                  y=600;
+                personaje.setBounds(x, y, ancho, alto);
+                }
+                  if(x== 925 && y==600){
+                    //860, 540
+                  x=80;
+                  y=150;
+                personaje.setBounds(x, y, ancho, alto);
+                }
 
                 if ((x < 45 || x > 990) || (y < 45 || y > 620)) {
                     JOptionPane.showMessageDialog(null, "You Died in the fire");
