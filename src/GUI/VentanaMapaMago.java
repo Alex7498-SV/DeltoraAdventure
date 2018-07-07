@@ -44,7 +44,7 @@ public class VentanaMapaMago extends JFrame {
 
         personaje = new JButton(":v");
         personaje.setBounds(x, y, ancho, alto);
-        personaje.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
+        personaje.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/veneficusFrontal.png")));
         setTitle("Deltora´s World.");
 
         labels = new JLabel[12];
@@ -52,55 +52,55 @@ public class VentanaMapaMago extends JFrame {
         for (int i = 0; i <= 12; i++) {
             if (i == 0) {
                 labels[i] = new JLabel();
-                labels[i].setIcon(new ImageIcon(getClass().getResource("/personajeimagen/guerrero1.png")));
+                labels[i].setIcon(new ImageIcon(getClass().getResource("/imagenesMago/enemigoVeneficusF.png")));
                 labels[i].setBounds(250, 175, 40, 40);
                 container.add(labels[i]);
             }
             if (i == 1) {
                 labels[i] = new JLabel();
-                labels[i].setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
+                labels[i].setIcon(new ImageIcon(getClass().getResource("/imagenesMago/enemigoVeneficusF.png")));
                 labels[i].setBounds(200, 300, 40, 40);
                 container.add(labels[i]);
             }
             if (i == 2) {
                 labels[i] = new JLabel();
-                labels[i].setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
+                labels[i].setIcon(new ImageIcon(getClass().getResource("/imagenesMago/enemigoVeneficusD.png")));
                 labels[i].setBounds(250, 550, 40, 40);
                 container.add(labels[i]);
             }
             if (i == 3) {
                 labels[i] = new JLabel();
-                labels[i].setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
+                labels[i].setIcon(new ImageIcon(getClass().getResource("/imagenesMago/enemigoVeneficusD.png")));
                 labels[i].setBounds(650, 500, 40, 40);
                 container.add(labels[i]);
             }
             if (i == 4) {
                 labels[i] = new JLabel();
-                labels[i].setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
+                labels[i].setIcon(new ImageIcon(getClass().getResource("/imagenesMago/enemigoVeneficusF.png")));
                 labels[i].setBounds(770, 575, 40, 40);
                 container.add(labels[i]);
             }
             if (i == 5) {
                 labels[i] = new JLabel();
-                labels[i].setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
+                labels[i].setIcon(new ImageIcon(getClass().getResource("/imagenesMago/enemigoVeneficusD.png")));
                 labels[i].setBounds(890, 325, 40, 40);
                 container.add(labels[i]);
             }
             if (i == 6) {
                 labels[i] = new JLabel();
-                labels[i].setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
+                labels[i].setIcon(new ImageIcon(getClass().getResource("/imagenesMago/enemigoVeneficusD.png")));
                 labels[i].setBounds(700, 50, 40, 40);
                 container.add(labels[i]);
             }
             if (i == 7) {
                 labels[i] = new JLabel();
-                labels[i].setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
+                labels[i].setIcon(new ImageIcon(getClass().getResource("/imagenesMago/enemigoVeneficusD.png")));
                 labels[i].setBounds(500, 150, 40, 40);
                 container.add(labels[i]);
             }
             if (i == 8) {
                 labels[i] = new JLabel();
-                labels[i].setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mago1.jpg")));
+                labels[i].setIcon(new ImageIcon(getClass().getResource("/imagenesMago/BossVeneficusF.png")));
                 labels[i].setBounds(500, 300, 40, 40);
                 container.add(labels[i]);
             }//aallallla175,300,250,650,600,890,700,500,300
@@ -125,7 +125,7 @@ public class VentanaMapaMago extends JFrame {
         enemigo6.start();
         enemigo7.start();
         enemigo8.start();
-      
+
         personaje.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -148,18 +148,22 @@ public class VentanaMapaMago extends JFrame {
                     if (action.equalsIgnoreCase("Arriba")) {
                         y -= 5;
                         personaje.setBounds(x, y, ancho, alto);
+                        personaje.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/veneficusTrasera.png")));
                     }
                     if (action.equalsIgnoreCase("Abajo")) {
                         y += 5;
                         personaje.setBounds(x, y, ancho, alto);
+                        personaje.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/veneficusFrontal.png")));
                     }
                     if (action.equalsIgnoreCase("Izquierda")) {
                         x -= 5;
                         personaje.setBounds(x, y, ancho, alto);
+                        personaje.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/veneficusIzquierda.png")));
                     }
                     if (action.equalsIgnoreCase("Derecha")) {
                         x += 5;
                         personaje.setBounds(x, y, ancho, alto);
+                        personaje.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/veneficusDerecha.png")));
                     }
                 } else {
                     JOptionPane.showMessageDialog(null, "You Died");
@@ -178,6 +182,7 @@ public class VentanaMapaMago extends JFrame {
         container.add(personaje);
         container.add(lblFondo);
         setSize(1080, 740);
+
         this.setLocationRelativeTo(null);
     }
 
