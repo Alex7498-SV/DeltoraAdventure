@@ -258,7 +258,73 @@ public class VentanaMapaEspartano extends JFrame {
                         y -= 5;
                     } else {
                         x -= 5;
-                    }
+                    } 
+                } else if ((x >= 590 && x <= 825) && (y >= 450 && y <= 540)) {
+                    JOptionPane.showMessageDialog(null, "You dont go in this way");
+                    if (y == 540) {
+                        y += 5;
+                    } else if (x == 825) {
+                        x += 5;
+                    } else if (y == 450) {
+                        y -= 5;
+                    } else {
+                        x -= 5;
+                    } 
+                } else if ((x >= 590 && x <= 825) && (y >= 555 && y <= 700)) {
+                    JOptionPane.showMessageDialog(null, "You dont go in this way");
+                    if (y == 700) {
+                        y += 5;
+                    } else if (x == 825) {
+                        x += 5;
+                    } else if (y == 555) {
+                        y -= 5;
+                    } else {
+                        x -= 5;
+                    } 
+                } else if ((x >= 460 && x <= 750) && (y >= 135 && y <= 210)) {
+                    JOptionPane.showMessageDialog(null, "You dont go in this way");
+                    if (y == 210) {
+                        y += 5;
+                    } else if (x == 750) {
+                        x += 5;
+                    } else if (y == 135) {
+                        y -= 5;
+                    } else {
+                        x -= 5;
+                    } 
+                } else if ((x >= 375 && x <= 445) && (y >= 135 && y <= 210)) {
+                    JOptionPane.showMessageDialog(null, "You dont go in this way");
+                    if (y == 210) {
+                        y += 5;
+                    } else if (x == 445) {
+                        x += 5;
+                    } else if (y == 135) {
+                        y -= 5;
+                    } else {
+                        x -= 5;
+                    } 
+                } else if ((x >= 750 && x <= 895) && (y >= 240 && y <= 315)) {
+                    JOptionPane.showMessageDialog(null, "You dont go in this way");
+                    if (y == 315) {
+                        y += 5;
+                    } else if (x == 895) {
+                        x += 5;
+                    } else if (y == 240) {
+                        y -= 5;
+                    } else {
+                        x -= 5;
+                    } 
+                } else if ((x >= 905 && x <= 1080) && (y >= 240 && y <= 315)) {
+                    JOptionPane.showMessageDialog(null, "You dont go in this way");
+                    if (y == 315) {
+                        y += 5;
+                    } else if (x == 1080) {
+                        x += 5;
+                    } else if (y == 240) {
+                        y -= 5;
+                    } else {
+                        x -= 5;
+                    } 
                 } else {
                     if (action.equalsIgnoreCase("Arriba")) {
                         y -= 5;
