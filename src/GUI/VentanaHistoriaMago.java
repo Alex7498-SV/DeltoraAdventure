@@ -57,8 +57,8 @@ public class VentanaHistoriaMago extends JFrame {
                 new VentanaHistoriaMago().setVisible(true);
             }
         });
-        VentanaHistoriaMago reproducir = new VentanaHistoriaMago();
-        reproducir.setVisible(true);
+//        VentanaHistoriaMago reproducir = new VentanaHistoriaMago();
+//        reproducir.setVisible(true);
     }
     
     public void events(){
@@ -67,9 +67,9 @@ public class VentanaHistoriaMago extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 dispose();
                 new VentanaMapaEspartano().setVisible(true);
-                AudioClip sonido;
-                sonido = java.applet.Applet.newAudioClip(getClass().getResource("/music/HL2_song3.wav"));
-                sonido.play();
+//                AudioClip sonido;
+//                sonido = java.applet.Applet.newAudioClip(getClass().getResource("/music/HL2_song3.wav"));
+//                sonido.play();
                 //La musica deja de sonar y la duracion de la musica aun no termina...
             }
         });

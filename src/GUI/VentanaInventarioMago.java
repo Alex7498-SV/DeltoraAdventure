@@ -5,8 +5,14 @@
  */
 package GUI;
 
+import Armas.AbstractArma;
+import General.Usuario;
+import Pociones.AbstractPocion;
+import Pociones.*;
+import Pociones.Pociones;
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.event.MouseEvent;
 import static java.awt.image.ImageObserver.HEIGHT;
 import static java.awt.image.ImageObserver.WIDTH;
 import javax.swing.ImageIcon;
@@ -23,7 +29,7 @@ public class VentanaInventarioMago extends JFrame{
             pocion1, pocion2, pocion3, pocion4, nomPo1, nomPo2, nomPo3, nomPo4;
     
     public VentanaInventarioMago(){
-        super("Inventario");
+        super("Inventario Mago");
 //        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
         VentanaDeInventario();
@@ -43,7 +49,7 @@ public class VentanaInventarioMago extends JFrame{
         container.add(nomPo3);
         container.add(nomPo4);
         setSize(500, 500);
-        //events();
+        events();
         this.setLocationRelativeTo(null);
     }
 
@@ -125,5 +131,91 @@ public class VentanaInventarioMago extends JFrame{
             }
         });
     }
+    
+    public void events(){
+        libro.addMouseListener(new GUI.MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                AbstractArma abs = new AbstractArma();
+                System.out.println("Arma libro elegida");
+                Usuario.inventarioArmas.add(abs.getNuevaArma(6));//numero del arma en AbstractArma 'case 6'
+                System.out.println("Arma: "+Usuario.inventarioArmas.get(Usuario.inventarioArmas.size()-1).getTipo()+". Ataque: "+Usuario.inventarioArmas.get(Usuario.inventarioArmas.size()-1).getValorAtaque());
+                System.out.println(Usuario.inventarioArmas.size());
+                //agregarle el arma al personaje
+                //solo toma una pos y esa es la pos 0 que es en donde se guarda la primera arma a la que se le de click
+            }
+        });
+        
+        varita.addMouseListener(new GUI.MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                AbstractArma abs = new AbstractArma();
+                System.out.println("Arma varita elegida");
+                Usuario.inventarioArmas.add(abs.getNuevaArma(4));
+                System.out.println("Arma: "+Usuario.inventarioArmas.get(Usuario.inventarioArmas.size()-1).getTipo()+". Ataque: "+Usuario.inventarioArmas.get(Usuario.inventarioArmas.size()-1).getValorAtaque());
+                //agregarle el arma al personaje
+            }
+        });
+        
+        caldero.addMouseListener(new GUI.MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                AbstractArma abs = new AbstractArma();
+                System.out.println("Arma caldero elegida");
+                Usuario.inventarioArmas.add(abs.getNuevaArma(3));
+                
+                System.out.println("Arma: "+Usuario.inventarioArmas.get(Usuario.inventarioArmas.size()-1).getTipo()+". Ataque: "+Usuario.inventarioArmas.get(Usuario.inventarioArmas.size()-1).getValorAtaque());
+                //agregarle el arma al personaje
+            }
+        });
+        
+        pocion1.addMouseListener(new GUI.MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                AbstractPocion abs = new AbstractPocion();
+                System.out.println("Pocion uno elegida");
+                Usuario.inventarioPociones.add(abs.getNuevaPocion(1));
+                System.out.println("Pocion: "+Usuario.inventarioPociones.get(Usuario.inventarioPociones.size()-1).getTipo());
+                //System.out.println(Pociones.PocionUno);
+                PocionUno pocionUno = new PocionUno();
+                pocionUno.sumarVida();
+            }
+        });
+        
+        pocion2.addMouseListener(new GUI.MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                AbstractPocion abs = new AbstractPocion();
+                System.out.println("Pocion dos elegida");
+                Usuario.inventarioPociones.add(abs.getNuevaPocion(2));
+                System.out.println("Pocion: "+Usuario.inventarioPociones.get(Usuario.inventarioPociones.size()-1).getTipo());
+                PocionDos pocionDos = new PocionDos();
+                pocionDos.pocionMisteriosa();
+            }
+        });
+        
+        pocion3.addMouseListener(new GUI.MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                AbstractPocion abs = new AbstractPocion();
+                System.out.println("Pocion tres elegida");
+                Usuario.inventarioPociones.add(abs.getNuevaPocion(3));
+                System.out.println("Pocion: "+Usuario.inventarioPociones.get(Usuario.inventarioPociones.size()-1).getTipo());
+                PocionTres pocionTres = new PocionTres();
+                pocionTres.sumarDanio();
+            }
+        });
+        
+        pocion4.addMouseListener(new GUI.MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                AbstractPocion abs = new AbstractPocion();
+                System.out.println("Pocion cuatro elegida");
+                Usuario.inventarioPociones.add(abs.getNuevaPocion(4));
+                System.out.println("Pocion: "+Usuario.inventarioPociones.get(Usuario.inventarioPociones.size()-1).getTipo());
+                PocionCuatro pocionCuatro = new PocionCuatro();
+                pocionCuatro.sumarFullVida();
+            }
+        });
+    }
 }
-

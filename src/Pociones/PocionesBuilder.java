@@ -17,4 +17,9 @@ public abstract class PocionesBuilder {
     }
     
     public abstract void buildTipo();
+    public abstract void sumarVida();
+    public abstract void sumarDanio();
+    public abstract void pocionMisteriosa();
+    public abstract void sumarFullVida();
+    public abstract void restarVida();
 }

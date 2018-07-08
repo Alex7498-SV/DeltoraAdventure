@@ -5,8 +5,12 @@
  */
 package GUI;
 
+import Armas.AbstractArma;
+import General.Usuario;
+import Pociones.AbstractPocion;
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.event.MouseEvent;
 import static java.awt.image.ImageObserver.HEIGHT;
 import static java.awt.image.ImageObserver.WIDTH;
 import javax.swing.ImageIcon;
@@ -23,7 +27,7 @@ public class VentanaInventarioSpartano extends JFrame{
             pocion1, pocion2, pocion3, pocion4, nomPo1, nomPo2, nomPo3, nomPo4;
     
     public VentanaInventarioSpartano(){
-        super("Inventario");
+        super("Inventario Espartano");
 //        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
         VentanaDeInventario();
@@ -43,7 +47,7 @@ public class VentanaInventarioSpartano extends JFrame{
         container.add(nomPo3);
         container.add(nomPo4);
         setSize(500, 500);
-        //events();
+        events();
         this.setLocationRelativeTo(null);
     }
 
@@ -120,6 +124,83 @@ public class VentanaInventarioSpartano extends JFrame{
             @Override
             public void run() {
                 new VentanaInventarioSpartano().setVisible(true);
+            }
+        });
+    }
+    
+    public void events(){
+        espada.addMouseListener(new GUI.MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                AbstractArma abs = new AbstractArma();
+                System.out.println("Arma espada elegida");
+                Usuario.inventarioArmas.add(abs.getNuevaArma(5));//numero del arma en AbstractArma 'case 5'
+                System.out.println("Arma: "+Usuario.inventarioArmas.get(0).getTipo()+". Ataque: "+Usuario.inventarioArmas.get(0).getValorAtaque());
+                //agregarle el arma al personaje
+                //solo toma una pos y esa es la pos 0 que es en donde se guarda la primera arma a la que se le de click
+            }
+        });
+        
+        hacha.addMouseListener(new GUI.MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                AbstractArma abs = new AbstractArma();
+                System.out.println("Arma hacha elegida");
+                Usuario.inventarioArmas.add(abs.getNuevaArma(1));
+                System.out.println("Arma: "+Usuario.inventarioArmas.get(1).getTipo()+". Ataque: "+Usuario.inventarioArmas.get(1).getValorAtaque());
+                //agregarle el arma al personaje
+            }
+        });
+        
+        lanza.addMouseListener(new GUI.MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                AbstractArma abs = new AbstractArma();
+                System.out.println("Arma lanza elegida");
+                Usuario.inventarioArmas.add(abs.getNuevaArma(2));
+                System.out.println("Arma: "+Usuario.inventarioArmas.get(2).getTipo()+". Ataque: "+Usuario.inventarioArmas.get(2).getValorAtaque());
+                //agregarle el arma al personaje
+            }
+        });
+        
+        pocion1.addMouseListener(new GUI.MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                AbstractPocion abs = new AbstractPocion();
+                System.out.println("Pocion uno elegida");
+                Usuario.inventarioPociones.add(abs.getNuevaPocion(1));
+                System.out.println("Pocion: "+Usuario.inventarioPociones.get(0).getTipo());
+                //cero por la pos de la pocion en inventarioPociones
+            }
+        });
+        
+        pocion2.addMouseListener(new GUI.MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                AbstractPocion abs = new AbstractPocion();
+                System.out.println("Pocion dos elegida");
+                Usuario.inventarioPociones.add(abs.getNuevaPocion(2));
+                System.out.println("Pocion: "+Usuario.inventarioPociones.get(1).getTipo());
+            }
+        });
+        
+        pocion3.addMouseListener(new GUI.MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                AbstractPocion abs = new AbstractPocion();
+                System.out.println("Pocion tres elegida");
+                Usuario.inventarioPociones.add(abs.getNuevaPocion(3));
+                System.out.println("Pocion: "+Usuario.inventarioPociones.get(2).getTipo());
+            }
+        });
+        
+        pocion4.addMouseListener(new GUI.MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                AbstractPocion abs = new AbstractPocion();
+                System.out.println("Pocion cuatro elegida");
+                Usuario.inventarioPociones.add(abs.getNuevaPocion(4));
+                System.out.println("Pocion: "+Usuario.inventarioPociones.get(3).getTipo());
             }
         });
     }

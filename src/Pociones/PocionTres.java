@@ -26,9 +26,36 @@ public class PocionTres extends PocionesBuilder{
         pociones.setTipo("Pocion Tres sumar danio?");
     }
     
-//    public void sumarDanio(){
-//        System.out.println("Se ha sumado " + sumarDanio + " al ataque del jugador");
-//        personajePrincipal.sumarDanio(sumarDanio);
-//    }
+    
+    
+    @Override
+    public void sumarDanio(){
+        Personaje pp = new Personaje();
+        
+        System.out.println("Ataque: "+pp.getAtaque());
+        System.out.println("Se ha sumado " + sumarDanio + " al ataque del jugador");
+        pp.setAtaque(pp.getAtaque()+sumarDanio);
+        System.out.println("Ataque nuevo: "+ pp.getAtaque());
+    }
+
+    @Override
+    public void sumarVida() {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void pocionMisteriosa() {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void sumarFullVida() {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void restarVida() {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
