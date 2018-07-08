@@ -10,11 +10,11 @@ package PersonajesPrincipales;
  * @author uca
  */
 public class PersonajePrincipal {
-    private int vida = 0;
+    private int vida = 100;
     private int puntosExperiencia = 0;
     private int nivel = 0;
     private int ataque = 0;
-    private String nombre = "";
+    private String nombre;
     private String tipo = "";
 //    private boolean atacando = false;
 

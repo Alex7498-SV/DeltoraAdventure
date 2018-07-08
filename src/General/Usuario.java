@@ -13,8 +13,8 @@ public class Usuario {
     boolean flag;
     int vida = 100;
     int ataque = 0;
-    ArrayList <Armas> inventarioArmas = new ArrayList <Armas>();
-    ArrayList<Pociones> inventarioPociones = new ArrayList<Pociones>();
+    public static ArrayList <Armas> inventarioArmas = new ArrayList <Armas>();
+    public static ArrayList<Pociones> inventarioPociones = new ArrayList <Pociones>();
 
 
     public Usuario(){} 

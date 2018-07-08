@@ -26,11 +26,11 @@ public class AbstractPersonajePrincipal {
         
         switch (personaje){
             case 1:
-                entrenador.setPersonajeBuilder(veneficus);
+                entrenador.setPersonajeBuilder(nathan);
                 entrenador.crearPersonaje(vida = 100, ataque = 100, nivel = 0, puntosExperiencia = 0, nombre = "Nathan", tipo = "fisico");
                 return entrenador.getPersonajePrincipal();
             case 2:
-                entrenador.setPersonajeBuilder(nathan);
+                entrenador.setPersonajeBuilder(veneficus);
                 entrenador.crearPersonaje(vida = 85, ataque = 115, nivel = 0, puntosExperiencia = 0, nombre = "Veneficus", tipo = "magico");
                 return entrenador.getPersonajePrincipal();
         }

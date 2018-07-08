@@ -49,8 +49,8 @@ public class VentanaHistoriaEspartano extends JFrame {
         Jugar = new JButton("Jugar");
         Jugar.setBounds(500, 500, 70, 40);
         
-        PocionUno pocionUno = new PocionUno();
-        pocionUno.sumarVida();
+//        PocionUno pocionUno = new PocionUno();
+//        pocionUno.sumarVida();
     }
     
     public static void main(String[] args) {
@@ -60,8 +60,8 @@ public class VentanaHistoriaEspartano extends JFrame {
                 new VentanaHistoriaEspartano().setVisible(true);
             }
         });
-        VentanaHistoriaEspartano reproducir = new VentanaHistoriaEspartano();
-        reproducir.setVisible(true);
+//        VentanaHistoriaEspartano reproducir = new VentanaHistoriaEspartano();
+//        reproducir.setVisible(true);
     }
     
     public void events(){
@@ -70,9 +70,9 @@ public class VentanaHistoriaEspartano extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 dispose();
                 new VentanaMapaMago().setVisible(true);
-                AudioClip sonido;
-                sonido = java.applet.Applet.newAudioClip(getClass().getResource("/music/HL2_song4.wav"));
-                sonido.play();
+//                AudioClip sonido;
+//                sonido = java.applet.Applet.newAudioClip(getClass().getResource("/music/HL2_song4.wav"));
+//                sonido.play();
                         //La musica deja de sonar y la duracion de la musica aun no termina...
             }
         });

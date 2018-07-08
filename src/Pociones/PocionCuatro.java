@@ -25,9 +25,38 @@ public class PocionCuatro extends PocionesBuilder{
     public void buildTipo() {
         pociones.setTipo("Pocion Cuatro sumar full vida?");
     }
-//    
-//    public void sumarFullVida(){
+    
+    @Override
+    public void sumarFullVida(){
+        PersonajePrincipal pp = new PersonajePrincipal();
+        
+        System.out.println("Vida: "+pp.getVida());
+        System.out.println("Se ha sunado "+ sumarVidaFull+" a la vida del jugador");
+        pp.setVida(pp.getVida()+sumarVidaFull);
+        System.out.println("La nueva vida es: "+pp.getVida());
+        
+        
 //        System.out.println("Se ha sumado " + sumarVidaFull + " a la vida del jugador");
-//        personajePrincipal.sumarVida(sumarVidaFull);
-//    }
+//        pp.sumarVida(sumarVidaFull);
+    }
+
+    @Override
+    public void sumarVida() {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void sumarDanio() {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void pocionMisteriosa() {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void restarVida() {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
