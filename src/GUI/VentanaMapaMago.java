@@ -24,27 +24,28 @@ import javax.swing.JOptionPane;
 public class VentanaMapaMago extends JFrame {
 
     private JLabel lblFondo;
-    private JButton personaje;
-    private int x = 80;
-    private int y = 70;
-    private final int alto = 40;
-    private final int ancho = 40;
+    static JLabel personaj = new JLabel();
+    static private int x = 80;
+    static private int y = 80;
+    static private int alto = 40;
+    static private int ancho = 40;
     private JLabel[] labels;
 
     Container container = getContentPane();
 
     public VentanaMapaMago() {
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
         //events();
+        addKeyListener(new TAdapter());
 
         lblFondo = new JLabel();
         lblFondo.setBounds(0, 0, 1080, 700);
         lblFondo.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mapam.jpg")));
 
-        personaje = new JButton(":v");
-        personaje.setBounds(x, y, ancho, alto);
-        personaje.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/veneficusFrontal.png")));
+        personaj.setBounds(x, y, ancho, alto);
+        personaj.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/veneficusFrontal.png")));
         setTitle("Deltora´s World.");
 
         labels = new JLabel[12];
@@ -116,6 +117,9 @@ public class VentanaMapaMago extends JFrame {
         HiloDerechaIzquierda enemigo6 = new HiloDerechaIzquierda("Mago6", 725, labels[6], labels[6].getX(), labels[6].getY());
         HiloDerechaIzquierda enemigo7 = new HiloDerechaIzquierda("Mago7", 525, labels[7], labels[7].getX(), labels[7].getY());
         HiloArribaAbajo enemigo8 = new HiloArribaAbajo("Mago8", 325, labels[8], labels[8].getX(), labels[8].getY());
+
+
+
         enemigo0.start();
         enemigo1.start();
         enemigo2.start();
@@ -123,158 +127,13 @@ public class VentanaMapaMago extends JFrame {
 //        enemigo4.start();
         enemigo5.start();
         enemigo6.start();
+
         enemigo7.start();
-//        enemigo8.start();
 
-        personaje.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("ventana inventario");
-                new VentanaInventarioMago().setVisible(true);
-            }
-        });
+        enemigo8.start();
 
-        personaje.addKeyListener(new KeyListener() {
-            @Override
-            public void keyTyped(KeyEvent e) {
-                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
+        container.add(personaj);
 
-            @Override
-            public void keyPressed(KeyEvent e) {
-                System.out.println(e.getKeyText(e.getKeyCode()));
-                String action = e.getKeyText(e.getKeyCode());
-                if (x == 80 && y == 200) {
-                    //860, 540
-                    x = 900;
-                    y = 600;
-                    personaje.setBounds(x, y, ancho, alto);
-                }
-                if (x == 925 && y == 600) {
-                    //860, 540
-                    x = 80;
-                    y = 150;
-                    personaje.setBounds(x, y, ancho, alto);
-                }
-
-                if ((x < 45 || x > 990) || (y < 45 || y > 620)) {
-                    JOptionPane.showMessageDialog(null, "You Died in the fire");
-                    x = 80;
-                    y = 70;
-                    personaje.setBounds(x, y, ancho, alto);
-                } else if ((x >= 275 && x <= 378) && (y >= 45 && y <= 432)) {
-                    JOptionPane.showMessageDialog(null, "You dont go in this way");
-                    if (y == 430) {
-                        y += 5;
-                    } else if (x == 375) {
-                        x += 5;
-                    } else {
-                        x -= 5;
-                    }
-                } else if ((x >= 210 && x <= 375) && (y >= 180 && y <= 378)) {
-                    JOptionPane.showMessageDialog(null, "You dont go in this way");
-                    if (y == 375) {
-                        y += 5;
-                    } else if (y == 180) {
-                        y -= 5;
-                    } else if (x == 375) {
-                        x += 5;
-                    } else {
-                        x -= 5;
-                    }
-                } else if ((x >= 90 && x <= 195) && (y >= 180 && y <= 378)) {
-                    JOptionPane.showMessageDialog(null, "You dont go in this way");
-                    if (y == 375) {
-                        y += 5;
-                    } else if (x == 195) {
-                        x += 5;
-                    } else if (y == 180) {
-                        y -= 5;
-                    } else {
-                        x -= 5;
-                    }
-                } else if ((x >= 45 && x <= 195) && (y >= 240 && y <= 315)) {
-                    JOptionPane.showMessageDialog(null, "You dont go in this way");
-                    if (y == 315) {
-                        y += 5;
-                    } else if (x == 195) {
-                        x += 5;
-                    } else if (y == 240) {
-                        y -= 5;
-                    } else {
-                        x -= 5;
-                    }
-                } else if ((x >= 275 && x <= 750) && (y >= 345 && y <= 432)) {
-                    JOptionPane.showMessageDialog(null, "You dont go in this way");
-                    if (y == 430) {
-                        y += 5;
-                    } else if (x == 750) {
-                        x += 5;
-                    } else if (y == 345) {
-                        y -= 5;
-                    } else {
-                        x -= 5;
-                    }
-                } else if ((x >= 660 && x <= 750) && (y >= 135 && y <= 540)) {
-                    JOptionPane.showMessageDialog(null, "You dont go in this way");
-                    if (y == 540) {
-                        y += 5;
-                    } else if (x == 750) {
-                        x += 5;
-                    } else if (y == 135) {
-                        y -= 5;
-                    } else {
-                        x -= 5;
-                    }
-                } else if ((x >= 660 && x <= 750) && (y >= 135 && y <= 540)) {
-                    JOptionPane.showMessageDialog(null, "You dont go in this way");
-                    if (y == 540) {
-                        y += 5;
-                    } else if (x == 750) {
-                        x += 5;
-                    } else if (y == 135) {
-                        y -= 5;
-                    } else {
-                        x -= 5;
-                    }
-                }
-                if ((y >= 35 && y <= 650) && (x >= 45 && x <= 1025)) {
-                    if (action.equalsIgnoreCase("Arriba")) {
-                        y -= 5;
-                        personaje.setBounds(x, y, ancho, alto);
-                        personaje.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/veneficusTrasera.png")));
-                        
-                    }
-                    if (action.equalsIgnoreCase("Abajo")) {
-                        y += 5;
-                        personaje.setBounds(x, y, ancho, alto);
-                        personaje.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/veneficusFrontal.png")));
-                    }
-                    if (action.equalsIgnoreCase("Izquierda")) {
-                        x -= 5;
-                        personaje.setBounds(x, y, ancho, alto);
-                        personaje.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/veneficusIzquierda.png")));
-                    }
-                    if (action.equalsIgnoreCase("Derecha")) {
-                        x += 5;
-                        personaje.setBounds(x, y, ancho, alto);
-                        personaje.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/veneficusDerecha.png")));
-                    }
-                } else {
-                    JOptionPane.showMessageDialog(null, "You Died");
-                    x = 80;
-                    y = 70;
-                    personaje.setBounds(x, y, ancho, alto);
-                }
-            }
-
-            @Override
-            public void keyReleased(KeyEvent e) {
-                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
-        });
-
-        container.add(personaje);
         container.add(lblFondo);
         setSize(1080, 740);
 
@@ -289,6 +148,266 @@ public class VentanaMapaMago extends JFrame {
             }
         });
     }
+
+//    private void events(){
+//        personaje.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                System.out.println("ventana inventario");
+//            }
+//        });
+//    }
+    private static class TAdapter extends KeyAdapter {
+
+        @Override
+        public void keyPressed(KeyEvent e) {
+            System.out.println(e.getKeyText(e.getKeyCode()));
+            String action = e.getKeyText(e.getKeyCode());
+
+            int key = e.getKeyCode();
+            if ((personaj.getX() < 65 || personaj.getX() > 1034) || (personaj.getY() < 40 || personaj.getY() > 680)) {
+                JOptionPane.showMessageDialog(null, "Moriste en el vacio DDDD:");
+                x = 80;
+                y = 70;
+                personaj.setBounds(x, y, ancho, alto);
+            } else if ((personaj.getX() >= 300 && personaj.getX() <= 360) && (personaj.getY() >= 80 && personaj.getY() <= 250)) {
+                if (personaj.getX() == 300) {
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                }
+            } else if ((personaj.getX() >= 350 && personaj.getX() <= 425) && (personaj.getY() >= 180 && personaj.getY() <= 580)) {
+
+                if (personaj.getY() == 350) {
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                } else if (personaj.getX() == 425) {
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                } else if (personaj.getY() == 580) {
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                }
+            } else if ((personaj.getX() >= 65 && personaj.getX() <= 185) && (personaj.getY() >= 400 && personaj.getY() <= 475)) {
+
+                if (personaj.getY() == 400) {
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                } else if (personaj.getX() == 185) {
+                    personaj.setBounds(personaj.getX() + 5, personaj.getY(), ancho, alto);
+                } else if (personaj.getY() == 475) {
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+
+                }
+            } else if ((personaj.getX() >= 100 && personaj.getX() <= 185) && (personaj.getY() >= 330 && personaj.getY() <= 475)) {
+                if (personaj.getY() == 330) {
+                           JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                } else if (personaj.getX() == 100) {
+                          JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                } else if (personaj.getY() == 475) {
+                           JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                } else {
+                    personaj.setBounds(personaj.getX() +5, personaj.getY(), ancho, alto);
+                }
+            } else if ((personaj.getX() >= 235 && personaj.getX() <= 425) && (personaj.getY() >= 350 && personaj.getY() <= 475)) {
+
+                if (personaj.getY() == 350) {
+                           JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                } else if (personaj.getX() ==235) {
+                    personaj.setBounds(personaj.getX() - 5, personaj.getY(), ancho, alto);
+                } else if (personaj.getY() == 475) {
+                          JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                } else {
+                          JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                }
+            } else if ((personaj.getX() >= 425 && personaj.getX() <= 860) && (personaj.getY() >= 400 && personaj.getY() <= 475)) {
+
+              
+                if (personaj.getY() == 400) {
+                          JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                } else if (personaj.getX() == 475) {
+                           JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                } else if (personaj.getY() == 475) {
+                          JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                } else {
+                           JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+            }} 
+                else if ((personaj.getX() >= 805 && personaj.getX() <= 870) && (personaj.getY() >= 180 && personaj.getY() <= 310)) {
+
+                
+                if (personaj.getY() == 180) {
+                          JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                } else if (personaj.getX() == 805) {
+                          JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                } else if (personaj.getY() == 310) {
+                           JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                } else {
+                          personaj.setBounds(personaj.getX() + 5, personaj.getY(), ancho, alto);
+                }
+            } else if ((personaj.getX() >= 805 && personaj.getX() <= 870) && (personaj.getY() >= 400 && personaj.getY() <= 580)) {
+
+                if (personaj.getY() == 400) {
+                           JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                } else if (personaj.getX() == 805) {
+                           JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                } else if (personaj.getY() == 580) {
+                          JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                } else {
+                    personaj.setBounds(personaj.getX() + 5, personaj.getY(), ancho, alto);
+                }
+            } else if ((personaj.getX() >= 870 && personaj.getX() <= 945) && (personaj.getY() >= 180 && personaj.getY() <= 260)) {
+
+              
+                if (personaj.getY() == 180) {
+                   personaj.setBounds(personaj.getX(), personaj.getY() -5, ancho, alto);
+                    personaj.setBounds(x, y, ancho, alto);
+                } else if (personaj.getX() == 870) {
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                } else if (personaj.getY() == 240) {
+                 JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                }
+            } else if ((personaj.getX() >= 922 && personaj.getX() <= 1025) && (personaj.getY() >= 510 && personaj.getY() <= 580)) {
+
+                if (personaj.getY() == 510) {
+                   JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                } else if (personaj.getX() == 922) {
+                    personaj.setBounds(personaj.getX() - 5, personaj.getY(), ancho, alto);
+                } else if (personaj.getY() == 1025) {
+                   JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                } else {
+                   JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                }
+            } else if ((personaj.getX() >= 425 && personaj.getX() <= 500) && (personaj.getY() >= 510 && personaj.getY() <= 585)) {
+
+         
+                if (personaj.getY() == 510) {
+                   JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                } else if (personaj.getX() == 425) {
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                } else if (personaj.getY() == 585) {
+                    personaj.setBounds(personaj.getX(), personaj.getY() - 5, ancho, alto);
+                } else {
+                   JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                }
+            } else if ((personaj.getX() >= 675 && personaj.getX() <= 750) && (personaj.getY() >= 180 && personaj.getY() <= 475)) {
+
+                personaj.setBounds(x, y, ancho, alto);
+                if (personaj.getY() == 180) {
+                    personaj.setBounds(personaj.getX(), personaj.getY() -5, ancho, alto);
+                } else if (personaj.getX() == 675) {
+                  JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                } else if (personaj.getY() == 475) {
+                   JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                } else {
+                  JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                }
+            } else if ((personaj.getX() >= 470 && personaj.getX() <= 750) && (personaj.getY() >= 180 && personaj.getY() <= 260)) {
+
+          
+                if (personaj.getY() == 180) {
+                    personaj.setBounds(personaj.getX(), personaj.getY() - 5, ancho, alto);
+                } else if (personaj.getX() == 470) {
+                    personaj.setBounds(personaj.getX() - 5, personaj.getY(), ancho, alto);
+                } else if (personaj.getY() == 260) {
+                   JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                } else {
+                   JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                }
+            } else if ((personaj.getX() >= 550 && personaj.getX() <= 750) && (personaj.getY() >= 80 && personaj.getY() <= 145)) {
+
+               
+                if (personaj.getY() == 80) {
+                   JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                } else if (personaj.getX() == 550) {
+                   JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                } else if (personaj.getY() == 145) {
+                    personaj.setBounds(personaj.getX(), personaj.getY() + 15, ancho, alto);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                }
+            } else if ((personaj.getX() >= 550 && personaj.getX() <= 615) && (personaj.getY() >= 10 && personaj.getY() <= 80)) {
+
+                
+                if (personaj.getY() == 10) {
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                } else if (personaj.getX() == 550) {
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                } else if (personaj.getY() == 80) {
+                   JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                } else {
+                  JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    personaj.setBounds(x, y, ancho, alto);
+                }
+            } else {
+                if (action.equalsIgnoreCase("Arriba")) {
+
+                    personaj.setBounds(personaj.getX(), personaj.getY() - 5, ancho, alto);
+                    personaj.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/nathanTrasera.png")));
+                }
+                if (action.equalsIgnoreCase("Abajo")) {
+
+                    personaj.setBounds(personaj.getX(), personaj.getY() + 5, ancho, alto);
+                    personaj.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/nathanFrontal.png")));
+                }
+                if (action.equalsIgnoreCase("Izquierda")) {
+
+                    personaj.setBounds(personaj.getX() - 5, personaj.getY(), ancho, alto);
+                    personaj.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/nathanIzquierda.png")));
+                }
+                if (action.equalsIgnoreCase("Derecha")) {
+
+                    personaj.setBounds(personaj.getX() + 5, personaj.getY(), ancho, alto);
+                    personaj.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/nathanDerecha.png")));
+                }
+            }
+        }
+
+    }
+
 
 //    private void events(){
 //        personaje.addActionListener(new ActionListener() {
