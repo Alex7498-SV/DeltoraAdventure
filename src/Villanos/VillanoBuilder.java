@@ -16,7 +16,7 @@ public abstract class VillanoBuilder {
         return enemigo;
     }
     
-    public abstract  void buildVida(float inc);
-    public abstract  void buildAtaque(float inc);
-    public abstract  void buildTipoRecompensa(String recom);
+    public abstract  void buildVida(int inc);
+    public abstract  void buildAtaque(int inc);
+    public abstract  void buildTipoRecompensa();
 }

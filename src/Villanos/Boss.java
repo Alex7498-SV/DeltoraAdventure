@@ -5,6 +5,10 @@
  */
 package Villanos;
 
+import Pociones.AbstractPocion;
+import Pociones.PocionUno;
+import Pociones.Pociones;
+
 /**
  *
  * @author Dell-Studio1558
@@ -18,27 +22,27 @@ public class Boss extends VillanoBuilder{
     
     
     @Override
-    public void buildVida(float inc) {
-         if(inc < 2){
-            enemigo.setVida((int) (enemigo.getVida()+(enemigo.getVida()*inc)));
-        }else{
-            System.out.println("Valor de incremento invalido");
-        }
+    public void buildVida(int inc) {
+
+        enemigo.setVida(enemigo.getVida()+ inc);
+
         
     }
 
     @Override
-    public void buildAtaque(float inc) {
+    public void buildAtaque(int inc) {
         if(inc < 1.25){
-            enemigo.setAtaque((int) (enemigo.getAtaque()+ (enemigo.getAtaque()*inc)));
+            enemigo.setAtaque(enemigo.getAtaque()+ inc);
         }else{
             System.out.println("Valor de incremento invalido");
         }
     }
 
     @Override
-    public void buildTipoRecompensa(String recom) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void buildTipoRecompensa() {
+        PocionUno pocionUno = new PocionUno();
+        pocionUno.sumarVida();
+        
     }
     
 }

@@ -1,6 +1,9 @@
 
 package Villanos;
 
+import Pociones.PocionCuatro;
+import Pociones.PocionUno;
+
 /**
  * 
  * @author Alex
@@ -17,27 +20,20 @@ public class EnemigoNormal extends VillanoBuilder {
     }
 
     @Override
-    public void buildVida(float inc) {
-        if (inc < 1){
-            enemigo.setVida((int) (enemigo.getVida()+ (enemigo.getVida()*inc)));
-        }else{
-            System.out.println("Valor de incremento invalido");
-        }
-        
+    public void buildVida(int inc) {
+        enemigo.setVida(enemigo.getVida()+ inc);
     }
 
     @Override
-    public void buildAtaque(float inc) {
-        if(inc < 0.75){
-            enemigo.setAtaque((int) (enemigo.getAtaque()+ (enemigo.getAtaque()*inc)));
-        }else{
-            System.out.println("Valor de incremento invalido");
-        }
+    public void buildAtaque(int inc) {
+        enemigo.setAtaque(enemigo.getAtaque()+ inc);
+
     }
 
     @Override
-    public void buildTipoRecompensa(String recom) {
-        enemigo.setRecompensa(recom);
+    public void buildTipoRecompensa() {
+        PocionCuatro pocionCuatro = new PocionCuatro();
+        pocionCuatro.sumarFullVida();
     }
    
     
