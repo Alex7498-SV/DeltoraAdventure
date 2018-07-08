@@ -359,22 +359,22 @@ public class VentanaMapaMago extends JFrame {
                 if (action.equalsIgnoreCase("Arriba")) {
 
                     personaj.setBounds(personaj.getX(), personaj.getY() - 5, ancho, alto);
-                    personaj.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/nathanTrasera.png")));
+                    personaj.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/veneficusTrasera.png")));
                 }
                 if (action.equalsIgnoreCase("Abajo")) {
 
                     personaj.setBounds(personaj.getX(), personaj.getY() + 5, ancho, alto);
-                    personaj.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/nathanFrontal.png")));
+                    personaj.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/veneficusFrontal.png")));
                 }
                 if (action.equalsIgnoreCase("Izquierda")) {
 
                     personaj.setBounds(personaj.getX() - 5, personaj.getY(), ancho, alto);
-                    personaj.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/nathanIzquierda.png")));
+                    personaj.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/veneficusIzquierda.png")));
                 }
                 if (action.equalsIgnoreCase("Derecha")) {
 
                     personaj.setBounds(personaj.getX() + 5, personaj.getY(), ancho, alto);
-                    personaj.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/nathanDerecha.png")));
+                    personaj.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/veneficusDerecha.png")));
                 }
             }
         }

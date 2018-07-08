@@ -96,7 +96,7 @@ public class VentanaMapaEspartano extends JFrame {
 
         }
 
-        HiloAEspartano1 enemigo1 = new HiloAEspartano1("enemigo1", 450, labels[1], personaje, labels[1].getX(), labels[1].getY());
+        HiloAEspartano1 enemigo1 = new HiloAEspartano1("enemigo1", 425, labels[1], personaje, labels[1].getX(), labels[1].getY());
         HiloDEspartano3 enemigo3 = new HiloDEspartano3("enemigo3", 325,  labels[3],personaje, labels[3].getX(), labels[3].getY());
 
         HiloAEspartano6 enemigo6 = new HiloAEspartano6("enemigo6", 450, labels[6], personaje, labels[6].getX(), labels[6].getY());
@@ -104,7 +104,7 @@ public class VentanaMapaEspartano extends JFrame {
         HiloAEspartano7 enemigo7 = new HiloAEspartano7("enemigo7", 200, labels[7],personaje, labels[7].getX(), labels[7].getY());
         HiloDEspartano9 enemigo9 = new HiloDEspartano9("enemigo9", 650, labels[9],personaje, labels[9].getX(), labels[9].getY());
 
-        HiloAEspartano11 enemigo11 = new HiloAEspartano11("enemigo11", 450, labels[11], personaje, labels[11].getX(), labels[11].getY());
+        HiloAEspartano11 enemigo11 = new HiloAEspartano11("enemigo11", 300, labels[11], personaje, labels[11].getX(), labels[11].getY());
 
         enemigo1.start();    
         enemigo3.start();  
