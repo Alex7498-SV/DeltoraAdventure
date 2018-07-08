@@ -39,7 +39,7 @@ public class HiloDerechaIzquierda extends Thread {
      @Override 
      public void run(){
          while(true){
-             for(int i=x; i<= this.limite; i+=15){
+             for(int i=x; i<= this.limite; i+=1){
                  this.enemigo.setLocation(i, y);
                  try {
                      if (this.nombre.equals("Mago8")) {
@@ -105,7 +105,7 @@ public class HiloDerechaIzquierda extends Thread {
                         sleep(250);
                     } else if (this.nombre.equals("enemigo11")) {
                         this.enemigo.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/BossNathanD.png")));
-                        sleep(250);
+                        sleep(50);
                     } else {
                         // this.enemigo.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/enemigoVeneficusF.png")));
                         sleep(250);
@@ -115,7 +115,7 @@ public class HiloDerechaIzquierda extends Thread {
                      e.printStackTrace();
                  }
              }
-            for(int i=this.limite; i>= x; i-=15){
+            for(int i=this.limite; i>= x; i-=1){
                 this.enemigo.setLocation(i, y);
                 try{
                      if (this.nombre.equals("Mago8")) {
@@ -180,7 +180,7 @@ public class HiloDerechaIzquierda extends Thread {
                         sleep(250);
                     } else if (this.nombre.equals("enemigo11")) {
                         this.enemigo.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/BossNathanI.png")));
-                        sleep(250);
+                        sleep(50);
                     } else {
                         //this.enemigo.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/enemigoVeneficusT.png")));
                         sleep(250);
