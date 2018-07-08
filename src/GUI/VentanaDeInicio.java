@@ -3,7 +3,6 @@ package GUI;
 
 import General.Usuario;
 
-import PersonajesPrincipales.PersonajePrincipal;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,7 +17,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
-import PersonajesPrincipales.*;
+import Personajes.*;
 import java.applet.AudioClip;
 import java.awt.Color;
 import javax.swing.JOptionPane;
@@ -30,7 +29,7 @@ import javax.swing.JOptionPane;
  */
 public class VentanaDeInicio extends JFrame {
     
-    AbstractPersonajePrincipal sP = new AbstractPersonajePrincipal();
+    AbstractPersonaje sP = new AbstractPersonaje();
     
     Usuario usuario = new Usuario();
     
@@ -129,7 +128,7 @@ public class VentanaDeInicio extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Pasa a ventana de juego");
-                sP.getPersonajePrincipal(seleccion);
+                sP.getPersonaje(seleccion);
                 //new VentanaHistoria2().setVisible(true);
                 
 //                usuario.setNombre(alias.getText());

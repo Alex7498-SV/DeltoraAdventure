@@ -5,7 +5,7 @@
  */
 package Pociones;
 
-import PersonajesPrincipales.PersonajePrincipal;
+import Personajes.Personaje;
 
 /**
  *
@@ -13,7 +13,7 @@ import PersonajesPrincipales.PersonajePrincipal;
  */
 public class PocionCuatro extends PocionesBuilder{
 
-    PersonajePrincipal personajePrincipal = new PersonajePrincipal();
+    Personaje personajePrincipal = new Personaje();
     
     public int sumarVidaFull = 500;
     

@@ -5,7 +5,7 @@
  */
 package Pociones;
 
-import PersonajesPrincipales.PersonajePrincipal;
+import Personajes.Personaje;
 
 /**
  *
@@ -13,7 +13,7 @@ import PersonajesPrincipales.PersonajePrincipal;
  */
 public class PocionDos extends PocionesBuilder{
 
-    PersonajesPrincipales.PersonajePrincipal personajePrincipal =  new PersonajePrincipal();
+    Personaje personajePrincipal =  new Personaje();
     
     public int sumarVida = 100 ;
     public int restarVida = 50;

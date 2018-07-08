@@ -5,7 +5,7 @@
  */
 package Pociones;
 
-import PersonajesPrincipales.PersonajePrincipal;
+import Personajes.Personaje;
 
 /**
  *

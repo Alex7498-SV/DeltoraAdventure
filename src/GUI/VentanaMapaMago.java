@@ -120,11 +120,11 @@ public class VentanaMapaMago extends JFrame {
         enemigo1.start();
         enemigo2.start();
         enemigo3.start();
-        enemigo4.start();
+//        enemigo4.start();
         enemigo5.start();
         enemigo6.start();
         enemigo7.start();
-        enemigo8.start();
+//        enemigo8.start();
 
         personaje.addActionListener(new ActionListener() {
             @Override
@@ -243,6 +243,7 @@ public class VentanaMapaMago extends JFrame {
                         y -= 5;
                         personaje.setBounds(x, y, ancho, alto);
                         personaje.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/veneficusTrasera.png")));
+                        
                     }
                     if (action.equalsIgnoreCase("Abajo")) {
                         y += 5;
