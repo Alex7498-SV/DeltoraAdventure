@@ -7,9 +7,11 @@ package GUI;
 
 import Armas.AbstractArma;
 import General.Usuario;
+import Personajes.AbstractPersonaje;
 import Pociones.AbstractPocion;
 import Pociones.*;
 import Pociones.Pociones;
+import Villanos.Enemigo;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.event.MouseEvent;
@@ -27,6 +29,9 @@ public class VentanaInventarioMago extends JFrame{
     
     private JLabel libro, varita, caldero, nomLibro, nomVarita, nomCaldero,
             pocion1, pocion2, pocion3, pocion4, nomPo1, nomPo2, nomPo3, nomPo4;
+    
+    AbstractPersonaje Ap = new AbstractPersonaje();
+    Enemigo e;
     
     public VentanaInventarioMago(){
         super("Inventario Mago");

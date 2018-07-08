@@ -23,7 +23,7 @@ import javax.swing.JOptionPane;
  *
  * @author HugoJr. <Hugo Rivera at 00161417@uca.edu.sv>
  */
-public class VentanaPeleaMagoEnemigo extends JFrame {
+public class VentanaPeleaGuerreroEnemigo extends JFrame {
     
     public JLabel mago, enemigo, atacar,vidaEnemigo;
     
@@ -36,7 +36,7 @@ public class VentanaPeleaMagoEnemigo extends JFrame {
     int dannio = e.getAtaque();
         
 
-    public VentanaPeleaMagoEnemigo(){
+    public VentanaPeleaGuerreroEnemigo(){
         
         super("Pelea");
         
@@ -44,7 +44,7 @@ public class VentanaPeleaMagoEnemigo extends JFrame {
         sonido = java.applet.Applet.newAudioClip(getClass().getResource("/music/HL1_song26.wav"));
         sonido.play();
         e = Av.getNuevoEnemigo(1);
-        p = Ap.getPersonaje(1);
+        p = Ap.getPersonaje(2);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
         VentanaDePelea();
@@ -64,11 +64,11 @@ public class VentanaPeleaMagoEnemigo extends JFrame {
                 
         mago = new JLabel();
         mago.setBounds(30, 180, 40, 40);        
-        mago.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/veneficusTrasera.png")));
+        mago.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/nathanTrasera.png")));
         
         enemigo = new JLabel();
         enemigo.setBounds(140, 60, 40, 40);
-        enemigo.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/enemigoVeneficusF.png")));
+        enemigo.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/enemigoNathanF.png")));
         
         atacar = new JLabel("ATACAR");
         atacar.setBounds(280, 200, 70, 40);
@@ -127,10 +127,10 @@ public class VentanaPeleaMagoEnemigo extends JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new VentanaPeleaMagoEnemigo().setVisible(true);
+                new VentanaPeleaGuerreroEnemigo().setVisible(true);
             }
         });
-        VentanaPeleaMagoEnemigo reproducir = new VentanaPeleaMagoEnemigo();
+        VentanaPeleaGuerreroEnemigo reproducir = new VentanaPeleaGuerreroEnemigo();
         reproducir.setVisible(true);
     }
 
