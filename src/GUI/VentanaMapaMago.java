@@ -5,7 +5,13 @@
  */
 package GUI;
 
+import hilosdenemigos.HiloAMago1;
+import hilosdenemigos.HiloAMago4;
+import hilosdenemigos.HiloAMago8;
 import hilosdenemigos.HiloArribaAbajo;
+import hilosdenemigos.HiloDMago2;
+import hilosdenemigos.HiloDMago5;
+import hilosdenemigos.HiloDMago6;
 import hilosdenemigos.HiloDerechaIzquierda;
 import java.awt.Container;
 import javax.swing.ImageIcon;
@@ -48,15 +54,10 @@ public class VentanaMapaMago extends JFrame {
         personaj.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/veneficusFrontal.png")));
         setTitle("Deltora´s World.");
 
-        labels = new JLabel[12];
+        labels = new JLabel[10];
 //aallaallla
-        for (int i = 0; i <= 12; i++) {
-            if (i == 0) {
-                labels[i] = new JLabel();
-                labels[i].setIcon(new ImageIcon(getClass().getResource("/imagenesMago/enemigoVeneficusF.png")));
-                labels[i].setBounds(250, 175, 40, 40);
-                container.add(labels[i]);
-            }
+        for (int i = 0; i <= 8; i++) {
+
             if (i == 1) {
                 labels[i] = new JLabel();
                 labels[i].setIcon(new ImageIcon(getClass().getResource("/imagenesMago/enemigoVeneficusF.png")));
@@ -69,12 +70,7 @@ public class VentanaMapaMago extends JFrame {
                 labels[i].setBounds(250, 550, 40, 40);
                 container.add(labels[i]);
             }
-            if (i == 3) {
-                labels[i] = new JLabel();
-                labels[i].setIcon(new ImageIcon(getClass().getResource("/imagenesMago/enemigoVeneficusD.png")));
-                labels[i].setBounds(650, 500, 40, 40);
-                container.add(labels[i]);
-            }
+
             if (i == 4) {
                 labels[i] = new JLabel();
                 labels[i].setIcon(new ImageIcon(getClass().getResource("/imagenesMago/enemigoVeneficusF.png")));
@@ -93,12 +89,6 @@ public class VentanaMapaMago extends JFrame {
                 labels[i].setBounds(700, 50, 40, 40);
                 container.add(labels[i]);
             }
-            if (i == 7) {
-                labels[i] = new JLabel();
-                labels[i].setIcon(new ImageIcon(getClass().getResource("/imagenesMago/enemigoVeneficusD.png")));
-                labels[i].setBounds(500, 150, 40, 40);
-                container.add(labels[i]);
-            }
             if (i == 8) {
                 labels[i] = new JLabel();
                 labels[i].setIcon(new ImageIcon(getClass().getResource("/imagenesMago/BossVeneficusF.png")));
@@ -108,28 +98,18 @@ public class VentanaMapaMago extends JFrame {
         }
         //aallallla
 
-        HiloArribaAbajo enemigo0 = new HiloArribaAbajo("Mago0", 200, labels[0], labels[0].getX(), labels[0].getY());
-        HiloArribaAbajo enemigo1 = new HiloArribaAbajo("Mago1", 325, labels[1], labels[1].getX(), labels[1].getY());
-        HiloDerechaIzquierda enemigo2 = new HiloDerechaIzquierda("Mago2", 275, labels[2], labels[2].getX(), labels[2].getY());
-        HiloDerechaIzquierda enemigo3 = new HiloDerechaIzquierda("Mago3", 675, labels[3], labels[3].getX(), labels[3].getY());
-        HiloArribaAbajo enemigo4 = new HiloArribaAbajo("Mago4", 600, labels[4], labels[4].getX(), labels[4].getY());
-        HiloDerechaIzquierda enemigo5 = new HiloDerechaIzquierda("Mago5", 915, labels[5], labels[5].getX(), labels[5].getY());
-        HiloDerechaIzquierda enemigo6 = new HiloDerechaIzquierda("Mago6", 725, labels[6], labels[6].getX(), labels[6].getY());
-        HiloDerechaIzquierda enemigo7 = new HiloDerechaIzquierda("Mago7", 525, labels[7], labels[7].getX(), labels[7].getY());
-        HiloArribaAbajo enemigo8 = new HiloArribaAbajo("Mago8", 325, labels[8], labels[8].getX(), labels[8].getY());
-
-
-
-        enemigo0.start();
+        HiloAMago1 enemigo1 = new HiloAMago1("Mago1", 325, labels[1], personaj, labels[1].getX(), labels[1].getY());
+        HiloDMago2 enemigo2 = new HiloDMago2("Mago2", 275, labels[2], personaj, labels[2].getX(), labels[2].getY());
+//        
+        HiloAMago4 enemigo4 = new HiloAMago4("Mago4", 600, labels[4], personaj, labels[4].getX(), labels[4].getY());
+        HiloDMago5 enemigo5 = new HiloDMago5("Mago5", 915, labels[5], personaj, labels[5].getX(), labels[5].getY());
+        HiloDMago6 enemigo6 = new HiloDMago6("Mago6", 725, labels[6], personaj, labels[6].getX(), labels[6].getY());
+        HiloAMago8 enemigo8 = new HiloAMago8("Mago8", 325, labels[8], personaj, labels[8].getX(), labels[8].getY());
         enemigo1.start();
         enemigo2.start();
-        enemigo3.start();
-//        enemigo4.start();
+        enemigo4.start();
         enemigo5.start();
         enemigo6.start();
-
-        enemigo7.start();
-
         enemigo8.start();
 
         container.add(personaj);
@@ -207,87 +187,84 @@ public class VentanaMapaMago extends JFrame {
                 }
             } else if ((personaj.getX() >= 100 && personaj.getX() <= 185) && (personaj.getY() >= 330 && personaj.getY() <= 475)) {
                 if (personaj.getY() == 330) {
-                           JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
                     personaj.setBounds(x, y, ancho, alto);
                 } else if (personaj.getX() == 100) {
-                          JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
                     personaj.setBounds(x, y, ancho, alto);
                 } else if (personaj.getY() == 475) {
-                           JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
                     personaj.setBounds(x, y, ancho, alto);
                 } else {
-                    personaj.setBounds(personaj.getX() +5, personaj.getY(), ancho, alto);
+                    personaj.setBounds(personaj.getX() + 5, personaj.getY(), ancho, alto);
                 }
             } else if ((personaj.getX() >= 235 && personaj.getX() <= 425) && (personaj.getY() >= 350 && personaj.getY() <= 475)) {
 
                 if (personaj.getY() == 350) {
-                           JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
                     personaj.setBounds(x, y, ancho, alto);
-                } else if (personaj.getX() ==235) {
+                } else if (personaj.getX() == 235) {
                     personaj.setBounds(personaj.getX() - 5, personaj.getY(), ancho, alto);
                 } else if (personaj.getY() == 475) {
-                          JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
                     personaj.setBounds(x, y, ancho, alto);
                 } else {
-                          JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
                     personaj.setBounds(x, y, ancho, alto);
                 }
             } else if ((personaj.getX() >= 425 && personaj.getX() <= 860) && (personaj.getY() >= 400 && personaj.getY() <= 475)) {
 
-              
                 if (personaj.getY() == 400) {
-                          JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
                     personaj.setBounds(x, y, ancho, alto);
                 } else if (personaj.getX() == 475) {
-                           JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
                     personaj.setBounds(x, y, ancho, alto);
                 } else if (personaj.getY() == 475) {
-                          JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
                     personaj.setBounds(x, y, ancho, alto);
                 } else {
-                           JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
                     personaj.setBounds(x, y, ancho, alto);
-            }} 
-                else if ((personaj.getX() >= 805 && personaj.getX() <= 870) && (personaj.getY() >= 180 && personaj.getY() <= 310)) {
+                }
+            } else if ((personaj.getX() >= 805 && personaj.getX() <= 870) && (personaj.getY() >= 180 && personaj.getY() <= 310)) {
 
-                
                 if (personaj.getY() == 180) {
-                          JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
                     personaj.setBounds(x, y, ancho, alto);
                 } else if (personaj.getX() == 805) {
-                          JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
                     personaj.setBounds(x, y, ancho, alto);
                 } else if (personaj.getY() == 310) {
-                           JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
                     personaj.setBounds(x, y, ancho, alto);
                 } else {
-                          personaj.setBounds(personaj.getX() + 5, personaj.getY(), ancho, alto);
+                    personaj.setBounds(personaj.getX() + 5, personaj.getY(), ancho, alto);
                 }
             } else if ((personaj.getX() >= 805 && personaj.getX() <= 870) && (personaj.getY() >= 400 && personaj.getY() <= 580)) {
 
                 if (personaj.getY() == 400) {
-                           JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
                     personaj.setBounds(x, y, ancho, alto);
                 } else if (personaj.getX() == 805) {
-                           JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
                     personaj.setBounds(x, y, ancho, alto);
                 } else if (personaj.getY() == 580) {
-                          JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
                     personaj.setBounds(x, y, ancho, alto);
                 } else {
                     personaj.setBounds(personaj.getX() + 5, personaj.getY(), ancho, alto);
                 }
             } else if ((personaj.getX() >= 870 && personaj.getX() <= 945) && (personaj.getY() >= 180 && personaj.getY() <= 260)) {
 
-              
                 if (personaj.getY() == 180) {
-                   personaj.setBounds(personaj.getX(), personaj.getY() -5, ancho, alto);
+                    personaj.setBounds(personaj.getX(), personaj.getY() - 5, ancho, alto);
                     personaj.setBounds(x, y, ancho, alto);
                 } else if (personaj.getX() == 870) {
                     JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
                     personaj.setBounds(x, y, ancho, alto);
                 } else if (personaj.getY() == 240) {
-                 JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
                     personaj.setBounds(x, y, ancho, alto);
                 } else {
                     JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
@@ -296,22 +273,21 @@ public class VentanaMapaMago extends JFrame {
             } else if ((personaj.getX() >= 922 && personaj.getX() <= 1025) && (personaj.getY() >= 510 && personaj.getY() <= 580)) {
 
                 if (personaj.getY() == 510) {
-                   JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
                     personaj.setBounds(x, y, ancho, alto);
                 } else if (personaj.getX() == 922) {
                     personaj.setBounds(personaj.getX() - 5, personaj.getY(), ancho, alto);
                 } else if (personaj.getY() == 1025) {
-                   JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
                     personaj.setBounds(x, y, ancho, alto);
                 } else {
-                   JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
                     personaj.setBounds(x, y, ancho, alto);
                 }
             } else if ((personaj.getX() >= 425 && personaj.getX() <= 500) && (personaj.getY() >= 510 && personaj.getY() <= 585)) {
 
-         
                 if (personaj.getY() == 510) {
-                   JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
                     personaj.setBounds(x, y, ancho, alto);
                 } else if (personaj.getX() == 425) {
                     JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
@@ -319,46 +295,44 @@ public class VentanaMapaMago extends JFrame {
                 } else if (personaj.getY() == 585) {
                     personaj.setBounds(personaj.getX(), personaj.getY() - 5, ancho, alto);
                 } else {
-                   JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
                     personaj.setBounds(x, y, ancho, alto);
                 }
             } else if ((personaj.getX() >= 675 && personaj.getX() <= 750) && (personaj.getY() >= 180 && personaj.getY() <= 475)) {
 
                 personaj.setBounds(x, y, ancho, alto);
                 if (personaj.getY() == 180) {
-                    personaj.setBounds(personaj.getX(), personaj.getY() -5, ancho, alto);
+                    personaj.setBounds(personaj.getX(), personaj.getY() - 5, ancho, alto);
                 } else if (personaj.getX() == 675) {
-                  JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
                     personaj.setBounds(x, y, ancho, alto);
                 } else if (personaj.getY() == 475) {
-                   JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
                     personaj.setBounds(x, y, ancho, alto);
                 } else {
-                  JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
                     personaj.setBounds(x, y, ancho, alto);
                 }
             } else if ((personaj.getX() >= 470 && personaj.getX() <= 750) && (personaj.getY() >= 180 && personaj.getY() <= 260)) {
 
-          
                 if (personaj.getY() == 180) {
                     personaj.setBounds(personaj.getX(), personaj.getY() - 5, ancho, alto);
                 } else if (personaj.getX() == 470) {
                     personaj.setBounds(personaj.getX() - 5, personaj.getY(), ancho, alto);
                 } else if (personaj.getY() == 260) {
-                   JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
                     personaj.setBounds(x, y, ancho, alto);
                 } else {
-                   JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
                     personaj.setBounds(x, y, ancho, alto);
                 }
             } else if ((personaj.getX() >= 550 && personaj.getX() <= 750) && (personaj.getY() >= 80 && personaj.getY() <= 145)) {
 
-               
                 if (personaj.getY() == 80) {
-                   JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
                     personaj.setBounds(x, y, ancho, alto);
                 } else if (personaj.getX() == 550) {
-                   JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
                     personaj.setBounds(x, y, ancho, alto);
                 } else if (personaj.getY() == 145) {
                     personaj.setBounds(personaj.getX(), personaj.getY() + 15, ancho, alto);
@@ -368,7 +342,6 @@ public class VentanaMapaMago extends JFrame {
                 }
             } else if ((personaj.getX() >= 550 && personaj.getX() <= 615) && (personaj.getY() >= 10 && personaj.getY() <= 80)) {
 
-                
                 if (personaj.getY() == 10) {
                     JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
                     personaj.setBounds(x, y, ancho, alto);
@@ -376,38 +349,37 @@ public class VentanaMapaMago extends JFrame {
                     JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
                     personaj.setBounds(x, y, ancho, alto);
                 } else if (personaj.getY() == 80) {
-                   JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
                     personaj.setBounds(x, y, ancho, alto);
                 } else {
-                  JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
+                    JOptionPane.showMessageDialog(null, "Moriste en la lava D:");
                     personaj.setBounds(x, y, ancho, alto);
                 }
             } else {
                 if (action.equalsIgnoreCase("Arriba")) {
 
                     personaj.setBounds(personaj.getX(), personaj.getY() - 5, ancho, alto);
-                    personaj.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/nathanTrasera.png")));
+                    personaj.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/veneficusTrasera.png")));
                 }
                 if (action.equalsIgnoreCase("Abajo")) {
 
                     personaj.setBounds(personaj.getX(), personaj.getY() + 5, ancho, alto);
-                    personaj.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/nathanFrontal.png")));
+                    personaj.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/veneficusFrontal.png")));
                 }
                 if (action.equalsIgnoreCase("Izquierda")) {
 
                     personaj.setBounds(personaj.getX() - 5, personaj.getY(), ancho, alto);
-                    personaj.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/nathanIzquierda.png")));
+                    personaj.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/veneficusIzquierda.png")));
                 }
                 if (action.equalsIgnoreCase("Derecha")) {
 
                     personaj.setBounds(personaj.getX() + 5, personaj.getY(), ancho, alto);
-                    personaj.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/nathanDerecha.png")));
+                    personaj.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/veneficusDerecha.png")));
                 }
             }
         }
 
     }
-
 
 //    private void events(){
 //        personaje.addActionListener(new ActionListener() {

@@ -5,6 +5,7 @@
  */
 package hilosdenemigos;
 
+import GUI.VentanaInventarioMago;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -20,7 +21,7 @@ public class HiloArribaAbajo extends Thread {
     private int limite;
     private JLabel enemigo;
     private int speed = 500;
-    
+    private JLabel yo;
     private boolean mago0 = true; 
     private boolean mago1 = true; 
     private boolean mago2 = true; 
@@ -165,17 +166,19 @@ public class HiloArribaAbajo extends Thread {
         this.nombre = nombre;
     }
 
-    public HiloArribaAbajo(String nombre, int limite, JLabel enemigo, int x, int y) {
+    public HiloArribaAbajo(String nombre, int limite, JLabel enemigo, JLabel yo, int x, int y) {
         this.nombre = nombre;
         this.limite = limite;
         this.enemigo = enemigo;
         this.x = x;
         this.y = y;
-    }
+this.yo= yo;    
+}
 
     @Override
     public void run() {
-        //Enemigo mago #0
+        boolean flag= true;
+//        Enemigo mago #0
 //        while (mago0){
 //            for (int i = y; i <= this.limite; i += 1) {
 //                this.enemigo.setLocation(x, i);
@@ -201,10 +204,15 @@ public class HiloArribaAbajo extends Thread {
 //                }
 //            }
 //        }
-        //Enemigo mago #1
+//        Enemigo mago #1
                  while (mago0){
             for (int i = y; i <= this.limite; i += 1) {
                 this.enemigo.setLocation(x, i);
+                float v = (float) Math.sqrt(Math.pow(yo.getX()-enemigo.getX(), 2)+Math.pow(yo.getY()-enemigo.getY(), 2));
+                if(v <= 50){
+                    flag = false;
+                    break;
+                }
                 try {
                     if (this.nombre.equals("Mago1")) {
                         this.enemigo.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/BossVeneficusF.png")));
@@ -214,9 +222,24 @@ public class HiloArribaAbajo extends Thread {
                         ex.printStackTrace();
                     }
                 }
+            if(!flag){
+                mago0=false;
+                enemigo.setVisible(false);
+                new VentanaInventarioMago().setVisible(true);
+                  System.out.println(enemigo.getX());
+                  System.out.println(enemigo.getY());
+                  
+               // Seguir();
+                break;}
+            yield();
             
             for (int i = this.limite; i >= y; i -= 1) {
                 this.enemigo.setLocation(x, i);
+                float v = (float) Math.sqrt(Math.pow(yo.getX()-enemigo.getX(), 2)+Math.pow(yo.getY()-enemigo.getY(), 2));
+                if(v <= 50){
+                    flag = false;
+                    break;
+                }
                 try {
                     if (this.nombre.equals("Mago1")) {
                         this.enemigo.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/BossVeneficusT.png")));
@@ -226,6 +249,15 @@ public class HiloArribaAbajo extends Thread {
                     ex.printStackTrace();
                 }
             }
+              if(!flag){
+               // Seguir();
+               mago0=false;
+                enemigo.setVisible(false);
+                new VentanaInventarioMago().setVisible(true);
+                  System.out.println(enemigo.getX());
+                  System.out.println(enemigo.getY());
+                break;}
+            yield();
         }
         //Enemigo mago #2
                 while (mago2){
