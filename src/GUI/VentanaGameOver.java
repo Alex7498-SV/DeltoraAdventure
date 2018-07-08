@@ -5,6 +5,9 @@
  */
 package GUI;
 
+import BaseDeDatos.Filtro;
+import BaseDeDatos.FiltroBase;
+import General.Usuario;
 import java.awt.Color;
 import javax.swing.JFrame;
 
@@ -13,10 +16,9 @@ import javax.swing.JFrame;
  * @author HugoJr. <Hugo Rivera at 00161417@uca.edu.sv>
  */
 public class VentanaGameOver extends javax.swing.JFrame {
-
-    /**
-     * Creates new form VentanaGameOver
-     */
+    
+    Usuario u = new Usuario();
+    
     public VentanaGameOver() {
         super("Game Over");
         initComponents();
@@ -53,6 +55,9 @@ public class VentanaGameOver extends javax.swing.JFrame {
         terminar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 terminarMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                terminarMousePressed(evt);
             }
         });
 
@@ -106,6 +111,11 @@ public class VentanaGameOver extends javax.swing.JFrame {
         dispose();
         new VentanaDeInicio().setVisible(true);
     }//GEN-LAST:event_terminarMouseClicked
+
+    private void terminarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_terminarMousePressed
+        Filtro f = new Filtro();
+        FiltroBase FB = new FiltroBase(u.getNombre(), u.getScore());
+    }//GEN-LAST:event_terminarMousePressed
 
     /**
      * @param args the command line arguments

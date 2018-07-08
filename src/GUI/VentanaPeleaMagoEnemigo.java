@@ -37,17 +37,17 @@ public class VentanaPeleaMagoEnemigo extends JFrame {
     
     private boolean play = true;
     private int turno = 1;
-    int dannio = e.getAtaque();
+    int dannio;// = e.getAtaque();
+    
     
 
     public VentanaPeleaMagoEnemigo(){
-        
         super("Pelea");
-        
         AudioClip sonido;
         sonido = java.applet.Applet.newAudioClip(getClass().getResource("/music/HL1_song26.wav"));
         sonido.play();
         e = Av.getNuevoEnemigo(1);
+        this.dannio = e.getAtaque();
         p = Ap.getPersonaje(1);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
@@ -56,7 +56,7 @@ public class VentanaPeleaMagoEnemigo extends JFrame {
         container.add(mago);
         container.add(enemigo);
         container.add(atacar);
-        container.add(vidaEnemigo);
+////        container.add(vidaEnemigo);
         setSize(400, 300);
         events();
         this.setLocationRelativeTo(null);

@@ -9,7 +9,8 @@ import java.util.Scanner;
 public class Usuario {
 
     Scanner scn =  new Scanner(System.in);
-    private String username, score;
+    private String username; 
+    int score;
     boolean flag;
     int vida = 100;
     int ataque = 0;
@@ -57,7 +58,7 @@ public class Usuario {
     }
     
     
-    public Usuario(String username, String score) {
+    public Usuario(String username, int score) {
         this.username = username;
         this.score = score;
     }
@@ -66,11 +67,11 @@ public class Usuario {
         return username;
     }
 
-    public String getScore() {
+    public int getScore() {
         return score;
     }
 
-    public void setScore(String score) {
+    public void setScore(int score) {
         this.score = score;
     }
     
