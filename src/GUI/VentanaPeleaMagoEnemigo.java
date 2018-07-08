@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package GUI;
 
 import Personajes.AbstractPersonaje;
@@ -29,10 +25,16 @@ import javax.swing.JOptionPane;
  */
 public class VentanaPeleaMagoEnemigo extends JFrame {
     
-    public JLabel mago, enemigo, atacar,vidaEnemigo, ceroVida;
+    public JLabel mago, enemigo, atacar,vidaEnemigo;
     
-    public int restarVida = 40;
-    
+    AbstractVillano Av = new AbstractVillano();
+    AbstractPersonaje Ap = new AbstractPersonaje();
+    Enemigo e;
+    Personaje p;
+    private boolean play = true;
+    private int turno = 1;
+        
+
     public VentanaPeleaMagoEnemigo(){
         
         super("Pelea");
@@ -40,7 +42,8 @@ public class VentanaPeleaMagoEnemigo extends JFrame {
         AudioClip sonido;
         sonido = java.applet.Applet.newAudioClip(getClass().getResource("/music/HL1_song26.wav"));
         sonido.play();
-        
+        e = Av.getNuevoEnemigo(1);
+        p = Ap.getPersonaje(1);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
         VentanaDePelea();
@@ -49,7 +52,6 @@ public class VentanaPeleaMagoEnemigo extends JFrame {
         container.add(enemigo);
         container.add(atacar);
         container.add(vidaEnemigo);
-        container.add(ceroVida);
         setSize(400, 300);
         events();
         this.setLocationRelativeTo(null);
@@ -71,39 +73,45 @@ public class VentanaPeleaMagoEnemigo extends JFrame {
         atacar.setBounds(280, 200, 70, 40);
         atacar.setFont(new java.awt.Font("Miriam Fixed", 0, 16));
         atacar.setForeground(Color.red);
+       
+//        vidaEnemigo = new JLabel(Integer.toString(Ee.getVida()));
+//        vidaEnemigo.setBounds(295, 40, 70, 40);
+//        vidaEnemigo.setFont(new java.awt.Font("Miriam Fixed", 0, 12));
+//        vidaEnemigo.setForeground(Color.yellow);
         
-        AbstractVillano Av = new AbstractVillano();
-        
-        Enemigo Ee = new Enemigo();
-        Ee.getVida();
-        //Ee = Av.getNuevoEnemigo(1, 0, 0.50);//selec, vida, ataq, recom
-        //respecto al selec, se refiere al enemigo, selec 1 = enem normal
-        //selec 2 = boss
-        
-        //da error porque quite todos los String recom en el paquete ya que
-        //en buildTipoRecompensa() creo una pocion
-        
-//        Boss bs = new Boss();
-//        bs.buildTipoRecompensa();
-        
-        AbstractPersonaje Ap = new AbstractPersonaje();
-        Personaje Pp;
-        Pp = Ap.getPersonaje(1);
-        
-        
-        vidaEnemigo = new JLabel(Integer.toString(Ee.getVida()));
-        vidaEnemigo.setBounds(295, 40, 70, 40);
-        vidaEnemigo.setFont(new java.awt.Font("Miriam Fixed", 0, 12));
-        vidaEnemigo.setForeground(Color.yellow);
-        
-        Ee.setVida(Ee.getVida()-restarVida);
-        
-        ceroVida = new JLabel(Integer.toString(Ee.getVida()-restarVida));
-        ceroVida.setBounds(310, 40, 70, 40);
-        ceroVida.setFont(new java.awt.Font("Miriam Fixed", 0, 12));
-        ceroVida.setForeground(Color.yellow);
-        ceroVida.setVisible(false);
 
+    }
+        
+    
+    public void events(){
+        atacar.addMouseListener(new GUI.MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent ev) {
+                if(e.getVida()<= 0){
+                    JOptionPane.showMessageDialog(null, "Haz ganado la batalla campeón");
+                    enemigo.setVisible(false);
+                    vidaEnemigo.setVisible(false);
+                }
+            }
+        });
+    }
+      
+    public void pelea(){
+        while(play){
+            if (turno == 1){
+                
+            }else if(turno == 2){
+                
+            }
+        }
+    }
+    
+    public void restarVidaEnemigo(int rest){    
+        e.setVida(e.getVida()-rest);
+    }
+    
+    public void restarVidaPersonaje(int rest){
+        p.setVida(p.getVida()- rest);
     }
     
     public static void main(String[] args) {
@@ -116,43 +124,5 @@ public class VentanaPeleaMagoEnemigo extends JFrame {
         VentanaPeleaMagoEnemigo reproducir = new VentanaPeleaMagoEnemigo();
         reproducir.setVisible(true);
     }
-    
-    public void events(){
-        atacar.addMouseListener(new GUI.MouseListener() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                //restarVida();
-                Enemigo Ee = new Enemigo();
-                if(Ee.getVida()<=0){
-                    JOptionPane.showMessageDialog(null, "Haz ganado la batalla campeón");
-                    enemigo.setVisible(false);
-                    vidaEnemigo.setVisible(false);
-                    ceroVida.setVisible(false);
-                }
-            }
-        });
-    }
-                
-//    public void restarVida(){
-//        AbstractVillano Av = new AbstractVillano();
-//        Enemigo e;
-//        e = Av.getNuevoEnemigo(1, 50, 25);
-//        
-//        System.out.println(e.getAtaque());
-//        System.out.println(e.getVida());
-//
-//        
-////        Enemigo enem = new Enemigo();
-////        //int diez = 5;
-////        System.out.println(enem.getVida());
-////        System.out.println("se ha restado "+restarVida+" a la vida del enemigo");
-////        enem.setVida(enem.getVida()-restarVida);
-////        System.out.println("La nueva vida es "+enem.getVida());
-//////        System.out.println("se ha restado "+diez+" a la vida del enemigo");
-//////        enem.setVida(enem.getVida()-diez);
-//////        System.out.println("La nueva vida es "+enem.getVida());
-////        
-//    }
-//    
 
 }

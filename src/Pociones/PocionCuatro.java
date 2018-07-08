@@ -15,7 +15,7 @@ public class PocionCuatro extends PocionesBuilder{
 
     Personaje personajePrincipal = new Personaje();
     
-    public int sumarVidaFull = 500;
+    public int sumarVidaFull = 100;
     
     public PocionCuatro() {
         super.pociones = new Pociones();

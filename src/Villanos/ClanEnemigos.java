@@ -20,9 +20,13 @@ public class ClanEnemigos {
         return vBuilder.getEnemigo();
     }
     
+    public void darRecompensa(){
+        vBuilder.buildTipoRecompensa();
+    }
+    
     public void crearEnemigo(int incv, int  incat){
         vBuilder.buildVida(incv);
         vBuilder.buildAtaque(incat);
-        vBuilder.buildTipoRecompensa();
+        
     }
 }
