@@ -18,7 +18,7 @@ public class HiloAMago4 extends Thread {
     private int limite;
     private JLabel enemigo;
     private JLabel yo;
-    private int speed = 500;
+    private int speed = 25;
     private boolean mago4 = true;
     private int x;
     private int y;

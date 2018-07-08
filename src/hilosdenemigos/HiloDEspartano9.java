@@ -13,7 +13,7 @@ public class HiloDEspartano9 extends Thread {
     private boolean flag = true;
     private int limite;
     private JLabel enemigo;
-    private int speed = 500;
+    private int speed = 25;
     private int x;
     private int y;
     private boolean enemigo9 = true;

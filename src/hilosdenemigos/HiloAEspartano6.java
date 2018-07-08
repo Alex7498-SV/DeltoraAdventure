@@ -20,7 +20,7 @@ public class HiloAEspartano6 extends Thread {
     private int limite;
     private JLabel enemigo;
     private JLabel yo;
-    private int speed = 500;
+    private int speed = 25;
     private boolean enemigo6 = true;
     private int x;
     private int y;

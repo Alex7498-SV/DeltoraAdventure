@@ -11,7 +11,7 @@ public class HiloDMago2 extends Thread {
     private int limite;
     private JLabel enemigo;
     private JLabel yo;
-    private int speed = 500;
+    private int speed = 25;
     private int x;
     private int y;
     private boolean mago2 = true;
@@ -97,7 +97,7 @@ public class HiloDMago2 extends Thread {
                 this.enemigo.setLocation(i, y);
                 try {
                     if (this.nombre.equals("Mago2")) {
-                        this.enemigo.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/enemigoVeneficusF.png")));
+                        this.enemigo.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/enemigoVeneficusD.png")));
                         sleep(speed);
                     }
                 } catch (InterruptedException ex) {
@@ -119,7 +119,7 @@ public class HiloDMago2 extends Thread {
                 this.enemigo.setLocation(i, y);
                 try {
                     if (this.nombre.equals("Mago2")) {
-                        this.enemigo.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/enemigoVeneficusT.png")));
+                        this.enemigo.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/enemigoVeneficusI.png")));
                         sleep(speed);
                     }
                 } catch (InterruptedException ex) {

@@ -20,7 +20,7 @@ public class HiloAEspartano11 extends Thread {
     private int limite;
     private JLabel enemigo;
     private JLabel yo;
-    private int speed = 500;
+    private int speed = 25;
     private boolean enemigo11 = true;
     private int x;
     private int y;
@@ -121,7 +121,7 @@ public class HiloAEspartano11 extends Thread {
                 
                 try {
                     if (this.nombre.equals("enemigo11")) {
-                        this.enemigo.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/enemigoNathanF.png")));
+                        this.enemigo.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/BossNathanF.png")));
                         sleep(speed);
                     }
                 } catch (InterruptedException ex) {
@@ -150,7 +150,7 @@ public class HiloAEspartano11 extends Thread {
                 }
                 try {
                     if (this.nombre.equals("enemigo11")) {
-                        this.enemigo.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/enemigoNathanT.png")));
+                        this.enemigo.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/BossNathanT.png")));
                         sleep(speed);
                     }
                 }catch (InterruptedException ex) {
