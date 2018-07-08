@@ -25,16 +25,15 @@ public class VentanaMapaEspartano extends JFrame {
 
     private JLabel[] labels;
     private JLabel lblFondo;
-    private JButton personaje;
-    private int x = 80;
-    private int y = 70;
-    private final int alto = 40;
-    private final int ancho = 40;
+    static JLabel personaje = new JLabel();
+    static private int x = 80, y = 80;
+    static private int alto = 40, ancho = 40;
 
     Container container = getContentPane();
 
     public VentanaMapaEspartano() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        addKeyListener(new TAdapter());
         setLayout(null);
         //events();
         labels = new JLabel[12];
@@ -42,7 +41,6 @@ public class VentanaMapaEspartano extends JFrame {
         lblFondo.setBounds(0, 0, 1080, 700);
         lblFondo.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/mapaf.jpg")));
 
-        personaje = new JButton(":v");
         personaje.setBounds(x, y, ancho, alto);
         personaje.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/nathanFrontal.png")));
         setTitle("Deltora´s World.");
@@ -134,249 +132,26 @@ public class VentanaMapaEspartano extends JFrame {
         HiloDerechaIzquierda enemigo9 = new HiloDerechaIzquierda("enemigo9", 650, labels[9], labels[9].getX(), labels[9].getY());
         HiloDerechaIzquierda enemigo10 = new HiloDerechaIzquierda("enemigo10", 525, labels[10], labels[10].getX(), labels[10].getY());
         HiloArribaAbajo enemigo11 = new HiloArribaAbajo("enemigo11", 300, labels[11], labels[11].getX(), labels[11].getY());
-        enemigo0.start();
-        enemigo1.start();
-        enemigo2.start();
-        enemigo3.start();
-        enemigo4.start();
-        enemigo5.start();
-        enemigo6.start();
-        enemigo7.start();
-        enemigo8.start();
-        enemigo9.start();
-        enemigo10.start();
+//        enemigo0.start();
+//        enemigo1.start();
+//        enemigo2.start();
+//        enemigo3.start();
+//        enemigo4.start();
+//        enemigo5.start();
+//        enemigo6.start();
+//        enemigo7.start();
+//        enemigo8.start();
+//        enemigo9.start();
+//        enemigo10.start();
         enemigo11.start();
 
-        personaje.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("ventana inventario");
-                new VentanaInventarioSpartano().setVisible(true);
-            }
-        });
-
-        personaje.addKeyListener(new KeyListener() {
-            @Override
-            public void keyTyped(KeyEvent e) {
-                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
-//////////////////////////////54 a lo ancho y 64 a lo largo //////////////////////
-
-            @Override
-            public void keyPressed(KeyEvent e) {
-                System.out.println(e.getKeyText(e.getKeyCode()));
-                String action = e.getKeyText(e.getKeyCode());
-                if (x == 80 && y == 200) {
-                    //860, 540
-                    x = 900;
-                    y = 600;
-                    personaje.setBounds(x, y, ancho, alto);
-                }
-                if (x == 925 && y == 600) {
-                    //860, 540
-                    x = 80;
-                    y = 150;
-                    personaje.setBounds(x, y, ancho, alto);
-                }
-
-                if ((x < 45 || x > 990) || (y < 45 || y > 620)) {
-                    JOptionPane.showMessageDialog(null, "You Died in the fire");
-                    x = 80;
-                    y = 70;
-                    personaje.setBounds(x, y, ancho, alto);
-                } else if ((x >= 275 && x <= 378) && (y >= 45 && y <= 432)) {
-                    //JOptionPane.showMessageDialog(null, "You dont go in this way");
-                    if (y == 430) {
-                        y += 5;
-                    } else if (x == 375) {
-                        x += 5;
-                    } else {
-                        x -= 5;
-                    }
-                } else if ((x >= 210 && x <= 375) && (y >= 180 && y <= 378)) {
-                    //JOptionPane.showMessageDialog(null, "You dont go in this way");
-                    if (y == 375) {
-                        y += 5;
-                    } else if (y == 180) {
-                        y -= 5;
-                    } else if (x == 375) {
-                        x += 5;
-                    } else {
-                        x -= 5;
-                    }
-                } else if ((x >= 90 && x <= 195) && (y >= 180 && y <= 378)) {
-                    //JOptionPane.showMessageDialog(null, "You dont go in this way");
-                    if (y == 375) {
-                        y += 5;
-                    } else if (x == 195) {
-                        x += 5;
-                    } else if (y == 180) {
-                        y -= 5;
-                    } else {
-                        x -= 5;
-                    }
-                } else if ((x >= 45 && x <= 195) && (y >= 240 && y <= 315)) {
-                    //JOptionPane.showMessageDialog(null, "You dont go in this way");
-                    if (y == 315) {
-                        y += 5;
-                    } else if (x == 195) {
-                        x += 5;
-                    } else if (y == 240) {
-                        y -= 5;
-                    } else {
-                        x -= 5;
-                    }
-                } else if ((x >= 275 && x <= 750) && (y >= 345 && y <= 432)) {
-                    //JOptionPane.showMessageDialog(null, "You dont go in this way");
-                    if (y == 430) {
-                        y += 5;
-                    } else if (x == 750) {
-                        x += 5;
-                    } else if (y == 345) {
-                        y -= 5;
-                    } else {
-                        x -= 5;
-                    }
-                } else if ((x >= 660 && x <= 750) && (y >= 135 && y <= 540)) {
-                    //JOptionPane.showMessageDialog(null, "You dont go in this way");
-                    if (y == 540) {
-                        y += 5;
-                    } else if (x == 750) {
-                        x += 5;
-                    } else if (y == 135) {
-                        y -= 5;
-                    } else {
-                        x -= 5;
-                    }
-                } else if ((x >= 660 && x <= 750) && (y >= 135 && y <= 540)) {
-                    //JOptionPane.showMessageDialog(null, "You dont go in this way");
-                    if (y == 540) {
-                        y += 5;
-                    } else if (x == 750) {
-                        x += 5;
-                    } else if (y == 135) {
-                        y -= 5;
-                    } else {
-                        x -= 5;
-                    }
-                } else if ((x >= 590 && x <= 825) && (y >= 450 && y <= 540)) {
-                  //  JOptionPane.showMessageDialog(null, "You dont go in this way");
-                    if (y == 540) {
-                        y += 5;
-                    } else if (x == 825) {
-                        x += 5;
-                    } else if (y == 450) {
-                        y -= 5;
-                    } else {
-                        x -= 5;
-                    }
-                } else if ((x >= 590 && x <= 825) && (y >= 555 && y <= 700)) {
-                   // JOptionPane.showMessageDialog(null, "You dont go in this way");
-                    if (y == 700) {
-                        y += 5;
-                    } else if (x == 825) {
-                        x += 5;
-                    } else if (y == 555) {
-                        y -= 5;
-                    } else {
-                        x -= 5;
-                    }
-                } else if ((x >= 460 && x <= 750) && (y >= 135 && y <= 210)) {
-                    //JOptionPane.showMessageDialog(null, "You dont go in this way");
-                    if (y == 210) {
-                        y += 5;
-                    } else if (x == 750) {
-                        x += 5;
-                    } else if (y == 135) {
-                        y -= 5;
-                    } else {
-                        x -= 5;
-                    }
-                } else if ((x >= 375 && x <= 445) && (y >= 135 && y <= 210)) {
-                   // JOptionPane.showMessageDialog(null, "You dont go in this way");
-                    if (y == 210) {
-                        y += 5;
-                    } else if (x == 445) {
-                        x += 5;
-                    } else if (y == 135) {
-                        y -= 5;
-                    } else {
-                        x -= 5;
-                    }
-                } else if ((x >= 750 && x <= 895) && (y >= 240 && y <= 315)) {
-                  //  JOptionPane.showMessageDialog(null, "You dont go in this way");
-                    if (y == 315) {
-                        y += 5;
-                    } else if (x == 895) {
-                        x += 5;
-                    } else if (y == 240) {
-                        y -= 5;
-                    } else {
-                        x -= 5;
-                    }
-                } else if ((x >= 905 && x <= 1080) && (y >= 240 && y <= 315)) {
-                    //JOptionPane.showMessageDialog(null, "You dont go in this way");
-                    if (y == 315) {
-                        y += 5;
-                    } else if (x == 1080) {
-                        x += 5;
-                    } else if (y == 240) {
-                        y -= 5;
-                    } else {
-                        x -= 5;
-                    }
-                } else {
-                    if (action.equalsIgnoreCase("Arriba")) {
-                        y -= 5;
-                        personaje.setBounds(x, y, ancho, alto);
-                        personaje.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/nathanTrasera.png")));
-                    }
-                    if (action.equalsIgnoreCase("Abajo")) {
-                        y += 5;
-                        personaje.setBounds(x, y, ancho, alto);
-                        personaje.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/nathanFrontal.png")));
-                    }
-                    if (action.equalsIgnoreCase("Izquierda")) {
-                        x -= 5;
-                        personaje.setBounds(x, y, ancho, alto);
-                        personaje.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/nathanIzquierda.png")));
-                    }
-                    if (action.equalsIgnoreCase("Derecha")) {
-                        x += 5;
-                        personaje.setBounds(x, y, ancho, alto);
-                        personaje.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/nathanDerecha.png")));
-                    }
-                }
-//                if((y >= 45 && y <= 620)&&(x >= 45 && x <= 990)) {
-//                    if(action.equalsIgnoreCase("Arriba")){
-//                        y -= 5;
-//                        personaje.setBounds(x, y, ancho, alto);
-//                    }
-//                    if(action.equalsIgnoreCase("Abajo")){
-//                        y += 5;
-//                        personaje.setBounds(x, y, ancho, alto);
-//                    }
-//                    if(action.equalsIgnoreCase("Izquierda")){
-//                        x -= 5;
-//                        personaje.setBounds(x, y, ancho, alto);
-//                    }
-//                    if(action.equalsIgnoreCase("Derecha")){
-//                        x += 5;
-//                        personaje.setBounds(x, y, ancho, alto);
-//                    }
-//                }else {
-//                    JOptionPane.showMessageDialog(null, "You Died");
-//                    x = 80;
-//                    y = 70;
-//                    personaje.setBounds(x, y, ancho, alto);
-//                }
-            }
-
-            @Override
-            public void keyReleased(KeyEvent e) {
-                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
-        });
+//        personaje.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                System.out.println("ventana inventario");
+//                new VentanaInventarioSpartano().setVisible(true);
+//            }
+//        });
 
         container.add(personaje);
         container.add(lblFondo);
@@ -401,4 +176,194 @@ public class VentanaMapaEspartano extends JFrame {
 //            }
 //        });
 //    }
+    private static class TAdapter extends KeyAdapter {
+
+        @Override
+        public void keyPressed(KeyEvent e) {
+            System.out.println(e.getKeyText(e.getKeyCode()));
+            String action = e.getKeyText(e.getKeyCode());
+            int key = e.getKeyCode();
+            if (personaje.getX() == 80 && y == 200) {
+                //860, 540
+                x = 900;
+                y = 600;
+                personaje.setBounds(x, y, ancho, alto);
+            }
+            if (personaje.getX() == 925 && personaje.getY() == 600) {
+                //860, 540
+                x = 80;
+                y = 150;
+                personaje.setBounds(x, y, ancho, alto);
+            }
+
+            if ((personaje.getX() < 45 || personaje.getX() > 990) || (personaje.getY() < 45 || personaje.getY() > 620)) {
+                JOptionPane.showMessageDialog(null, "You Died in the fire");
+                x = 80;
+                y = 70;
+                personaje.setBounds(x, y, ancho, alto);
+            } else if ((personaje.getX() >= 275 && personaje.getX() <= 378) && (personaje.getY() >= 45 && personaje.getY() <= 432)) {
+                //JOptionPane.showMessageDialog(null, "You dont go in this way");
+                if (personaje.getY() == 430) {
+                    personaje.setBounds(personaje.getX(), personaje.getY() - 5, ancho, alto);
+                } else if (personaje.getX() == 375) {
+                    personaje.setBounds(personaje.getX() + 5, personaje.getY(), ancho, alto);
+                } else {
+                    personaje.setBounds(personaje.getX() - 5, personaje.getY(), ancho, alto);
+                }
+            } else if ((personaje.getX() >= 210 && personaje.getX() <= 375) && (personaje.getY() >= 180 && personaje.getY() <= 378)) {
+                //JOptionPane.showMessageDialog(null, "You dont go in this way");
+                if (personaje.getY() == 375) {
+                    personaje.setBounds(personaje.getX(), personaje.getY() + 5, ancho, alto);
+                } else if (personaje.getY() == 180) {
+                    personaje.setBounds(personaje.getX(), personaje.getY() - 5, ancho, alto);
+                } else if (personaje.getX() == 375) {
+                    personaje.setBounds(personaje.getX() + 5, personaje.getY(), ancho, alto);
+                } else {
+                    personaje.setBounds(personaje.getX() - 5, personaje.getY(), ancho, alto);
+                }
+            } else if ((personaje.getX() >= 90 && personaje.getX() <= 195) && (personaje.getY() >= 180 && personaje.getY() <= 378)) {
+                //JOptionPane.showMessageDialog(null, "You dont go in this way");
+                if (y == 375) {
+                    personaje.setBounds(personaje.getX(), personaje.getY() + 5, ancho, alto);
+                } else if (personaje.getX() == 195) {
+                    personaje.setBounds(personaje.getX() + 5, personaje.getY(), ancho, alto);
+                } else if (personaje.getY() == 180) {
+                    personaje.setBounds(personaje.getX(), personaje.getY() - 5, ancho, alto);
+                } else {
+                    personaje.setBounds(personaje.getX() - 5, personaje.getY(), ancho, alto);
+                }
+            } else if ((personaje.getX() >= 45 && personaje.getX() <= 195) && (personaje.getY() >= 240 && personaje.getY() <= 315)) {
+                //JOptionPane.showMessageDialog(null, "You dont go in this way");
+                if (personaje.getY() == 315) {
+                    personaje.setBounds(personaje.getX(), personaje.getY() + 5, ancho, alto);
+                } else if (personaje.getX() == 195) {
+                    personaje.setBounds(personaje.getX() + 5, personaje.getY(), ancho, alto);
+                } else if (personaje.getY() == 240) {
+                    personaje.setBounds(personaje.getX(), personaje.getY() - 5, ancho, alto);
+                } else {
+                    personaje.setBounds(personaje.getX() - 5, personaje.getY(), ancho, alto);
+                }
+            } else if ((personaje.getX() >= 275 && personaje.getX() <= 750) && (personaje.getY() >= 345 && personaje.getY() <= 432)) {
+                //JOptionPane.showMessageDialog(null, "You dont go in this way");
+                if (personaje.getY() == 430) {
+                    personaje.setBounds(personaje.getX(), personaje.getY() + 5, ancho, alto);
+                } else if (personaje.getX() == 750) {
+                    personaje.setBounds(personaje.getX() + 5, personaje.getY(), ancho, alto);
+                } else if (personaje.getY() == 345) {
+                    personaje.setBounds(personaje.getX(), personaje.getY() - 5, ancho, alto);
+                } else {
+                    personaje.setBounds(personaje.getX() - 5, personaje.getY(), ancho, alto);
+                }
+            } else if ((personaje.getX() >= 660 && personaje.getX() <= 750) && (personaje.getY() >= 135 && personaje.getY() <= 540)) {
+                //JOptionPane.showMessageDialog(null, "You dont go in this way");
+                if (personaje.getY() == 540) {
+                    personaje.setBounds(personaje.getX(), personaje.getY() + 5, ancho, alto);
+                } else if (personaje.getX() == 750) {
+                    personaje.setBounds(personaje.getX() + 5, personaje.getY(), ancho, alto);
+                } else if (personaje.getY() == 135) {
+                    personaje.setBounds(personaje.getX(), personaje.getY() - 5, ancho, alto);
+                } else {
+                    personaje.setBounds(personaje.getX() - 5, personaje.getY(), ancho, alto);
+                }
+            } else if ((personaje.getX() >= 660 && personaje.getX() <= 750) && (personaje.getY() >= 135 && personaje.getY() <= 540)) {
+                //JOptionPane.showMessageDialog(null, "You dont go in this way");
+                if (personaje.getY() == 540) {
+                    personaje.setBounds(personaje.getX(), personaje.getY() + 5, ancho, alto);
+                } else if (personaje.getX() == 750) {
+                    personaje.setBounds(personaje.getX() + 5, personaje.getY(), ancho, alto);
+                } else if (personaje.getY() == 135) {
+                    personaje.setBounds(personaje.getX(), personaje.getY() - 5, ancho, alto);
+                } else {
+                    personaje.setBounds(personaje.getX() - 5, personaje.getY(), ancho, alto);
+                }
+            } else if ((personaje.getX() >= 590 && personaje.getX() <= 825) && (personaje.getY() >= 450 && personaje.getY() <= 540)) {
+                //  JOptionPane.showMessageDialog(null, "You dont go in this way");
+                if (personaje.getY() == 540) {
+                    personaje.setBounds(personaje.getX(), personaje.getY() + 5, ancho, alto);
+                } else if (personaje.getX() == 825) {
+                    personaje.setBounds(personaje.getX() + 5, personaje.getY(), ancho, alto);
+                } else if (personaje.getY() == 450) {
+                    personaje.setBounds(personaje.getX(), personaje.getY() - 5, ancho, alto);
+                } else {
+                    personaje.setBounds(personaje.getX() - 5, personaje.getY(), ancho, alto);
+                }
+            } else if ((personaje.getX() >= 590 && personaje.getX() <= 825) && (personaje.getY() >= 555 && personaje.getY() <= 700)) {
+                // JOptionPane.showMessageDialog(null, "You dont go in this way");
+                if (personaje.getY() == 700) {
+                    personaje.setBounds(personaje.getX(), personaje.getY() + 5, ancho, alto);
+                } else if (personaje.getX() == 825) {
+                    personaje.setBounds(personaje.getX() + 5, personaje.getY(), ancho, alto);
+                } else if (personaje.getY() == 555) {
+                    personaje.setBounds(personaje.getX(), personaje.getY() - 5, ancho, alto);
+                } else {
+                    personaje.setBounds(personaje.getX() - 5, personaje.getY(), ancho, alto);
+                }
+            } else if ((personaje.getX() >= 460 && personaje.getX() <= 750) && (personaje.getY() >= 135 && personaje.getY() <= 210)) {
+                //JOptionPane.showMessageDialog(null, "You dont go in this way");
+                if (personaje.getY() == 210) {
+                    personaje.setBounds(personaje.getX(), personaje.getY() + 5, ancho, alto);
+                } else if (personaje.getX() == 750) {
+                    personaje.setBounds(personaje.getX() + 5, personaje.getY(), ancho, alto);
+                } else if (personaje.getY() == 135) {
+                    personaje.setBounds(personaje.getX(), personaje.getY() - 5, ancho, alto);
+                } else {
+                    personaje.setBounds(personaje.getX() - 5, personaje.getY(), ancho, alto);
+                }
+            } else if ((personaje.getX() >= 375 && personaje.getX() <= 445) && (personaje.getY() >= 135 && personaje.getY() <= 210)) {
+                // JOptionPane.showMessageDialog(null, "You dont go in this way");
+                if (personaje.getY() == 210) {
+                    personaje.setBounds(personaje.getX(), personaje.getY() + 5, ancho, alto);
+                } else if (personaje.getX() == 445) {
+                    personaje.setBounds(personaje.getX() + 5, personaje.getY(), ancho, alto);
+                } else if (personaje.getY() == 135) {
+                    personaje.setBounds(personaje.getX(), personaje.getY() - 5, ancho, alto);
+                } else {
+                    personaje.setBounds(personaje.getX() - 5, personaje.getY(), ancho, alto);
+                }
+            } else if ((personaje.getX() >= 750 && personaje.getX() <= 895) && (personaje.getY() >= 240 && personaje.getY() <= 315)) {
+                //  JOptionPane.showMessageDialog(null, "You dont go in this way");
+                if (personaje.getY() == 315) {
+                    personaje.setBounds(personaje.getX(), personaje.getY() + 5, ancho, alto);
+                } else if (personaje.getX() == 895) {
+                    personaje.setBounds(personaje.getX() + 5, personaje.getY(), ancho, alto);
+                } else if (personaje.getY() == 240) {
+                    personaje.setBounds(personaje.getX(), personaje.getY() - 5, ancho, alto);
+                } else {
+                    personaje.setBounds(personaje.getX() - 5, personaje.getY(), ancho, alto);
+                }
+            } else if ((personaje.getX() >= 905 && personaje.getX() <= 1080) && (personaje.getY() >= 240 && personaje.getY() <= 315)) {
+                //JOptionPane.showMessageDialog(null, "You dont go in this way");
+                if (personaje.getY() == 315) {
+                    personaje.setBounds(personaje.getX(), personaje.getY() + 15, ancho, alto);
+                } else if (personaje.getX() == 1080) {
+                    personaje.setBounds(personaje.getX() + 5, personaje.getY(), ancho, alto);
+                } else if (personaje.getY() == 240) {
+                    personaje.setBounds(personaje.getX(), personaje.getY() - 5, ancho, alto);
+                } else {
+                    personaje.setBounds(personaje.getX() - 5, personaje.getY(), ancho, alto);
+                }
+            } else {
+                if (action.equalsIgnoreCase("Arriba")) {
+
+                    personaje.setBounds(personaje.getX(), personaje.getY() - 5, ancho, alto);
+                    personaje.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/nathanTrasera.png")));
+                }
+                if (action.equalsIgnoreCase("Abajo")) {
+
+                    personaje.setBounds(personaje.getX(), personaje.getY() + 5, ancho, alto);
+                    personaje.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/nathanFrontal.png")));
+                }
+                if (action.equalsIgnoreCase("Izquierda")) {
+
+                    personaje.setBounds(personaje.getX() - 5, personaje.getY(), ancho, alto);
+                    personaje.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/nathanIzquierda.png")));
+                }
+                if (action.equalsIgnoreCase("Derecha")) {
+
+                    personaje.setBounds(personaje.getX() + 5, personaje.getY(), ancho, alto);
+                    personaje.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/nathanDerecha.png")));
+                }
+            }
+        }
+    }
 }
