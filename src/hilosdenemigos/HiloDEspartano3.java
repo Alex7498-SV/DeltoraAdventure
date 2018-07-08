@@ -114,7 +114,7 @@ public class HiloDEspartano3 extends Thread{
                 }
                 try {
                     if (this.nombre.equals("enemigo3")) {
-                        this.enemigo.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/enemigoNathanD.png")));
+                        this.enemigo.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/enemigoNathanD.png")));
                         sleep(speed);
                     }
                 } catch (InterruptedException ex) {
@@ -143,7 +143,7 @@ public class HiloDEspartano3 extends Thread{
                 }
                 try {
                     if (this.nombre.equals("enemigo3")) {
-                        this.enemigo.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/enemigoNathanI.png")));
+                        this.enemigo.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/enemigoNathanI.png")));
                         sleep(speed);
                     }
                 }catch (InterruptedException ex) {

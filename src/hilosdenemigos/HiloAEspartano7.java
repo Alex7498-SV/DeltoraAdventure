@@ -97,6 +97,14 @@ public class HiloAEspartano7 extends Thread {
     public void setFlag(boolean flag) {
         this.flag = flag;
     }
+    public HiloAEspartano7(String nombre, int limite, JLabel enemigo, JLabel yo, int x, int y) {
+        this.nombre = nombre;
+        this.limite = limite;
+        this.enemigo = enemigo;
+        this.x = x;
+        this.y = y;
+        this.yo = yo;
+    }
      
     
     @Override
