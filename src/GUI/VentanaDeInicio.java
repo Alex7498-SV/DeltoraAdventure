@@ -174,7 +174,7 @@ public class VentanaDeInicio extends JFrame {
                 sonido = java.applet.Applet.newAudioClip(getClass().getResource("/music/yes.wav"));
                 sonido.play();
                 
-                new VentanaPeleaMagoEnemigo().setVisible(true);
+               // new VentanaPeleaMagoEnemigo().setVisible(true);
             }
             
             @Override
