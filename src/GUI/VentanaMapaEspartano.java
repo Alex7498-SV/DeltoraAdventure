@@ -204,11 +204,11 @@ public class VentanaMapaEspartano extends JFrame {
             } else if ((personaje.getX() >= 275 && personaje.getX() <= 378) && (personaje.getY() >= 45 && personaje.getY() <= 432)) {
                 //JOptionPane.showMessageDialog(null, "You dont go in this way");
                 if (personaje.getY() == 430) {
-                    personaje.setBounds(personaje.getX(), personaje.getY() - 5, ancho, alto);
+                    personaje.setBounds(personaje.getX(), personaje.getY() - 15, ancho, alto);
                 } else if (personaje.getX() == 375) {
-                    personaje.setBounds(personaje.getX() + 5, personaje.getY(), ancho, alto);
+                    personaje.setBounds(personaje.getX() + 15, personaje.getY(), ancho, alto);
                 } else {
-                    personaje.setBounds(personaje.getX() - 5, personaje.getY(), ancho, alto);
+                    personaje.setBounds(personaje.getX() - 15, personaje.getY(), ancho, alto);
                 }
             } else if ((personaje.getX() >= 210 && personaje.getX() <= 375) && (personaje.getY() >= 180 && personaje.getY() <= 378)) {
                 //JOptionPane.showMessageDialog(null, "You dont go in this way");
@@ -224,13 +224,13 @@ public class VentanaMapaEspartano extends JFrame {
             } else if ((personaje.getX() >= 90 && personaje.getX() <= 195) && (personaje.getY() >= 180 && personaje.getY() <= 378)) {
                 //JOptionPane.showMessageDialog(null, "You dont go in this way");
                 if (y == 375) {
-                    personaje.setBounds(personaje.getX(), personaje.getY() + 5, ancho, alto);
+                    personaje.setBounds(personaje.getX(), personaje.getY() + 15, ancho, alto);
                 } else if (personaje.getX() == 195) {
-                    personaje.setBounds(personaje.getX() + 5, personaje.getY(), ancho, alto);
+                    personaje.setBounds(personaje.getX() + 15, personaje.getY(), ancho, alto);
                 } else if (personaje.getY() == 180) {
-                    personaje.setBounds(personaje.getX(), personaje.getY() - 5, ancho, alto);
+                    personaje.setBounds(personaje.getX(), personaje.getY() - 15, ancho, alto);
                 } else {
-                    personaje.setBounds(personaje.getX() - 5, personaje.getY(), ancho, alto);
+                    personaje.setBounds(personaje.getX() - 15, personaje.getY(), ancho, alto);
                 }
             } else if ((personaje.getX() >= 45 && personaje.getX() <= 195) && (personaje.getY() >= 240 && personaje.getY() <= 315)) {
                 //JOptionPane.showMessageDialog(null, "You dont go in this way");
@@ -336,11 +336,11 @@ public class VentanaMapaEspartano extends JFrame {
                 if (personaje.getY() == 315) {
                     personaje.setBounds(personaje.getX(), personaje.getY() + 15, ancho, alto);
                 } else if (personaje.getX() == 1080) {
-                    personaje.setBounds(personaje.getX() + 5, personaje.getY(), ancho, alto);
+                    personaje.setBounds(personaje.getX() + 15, personaje.getY(), ancho, alto);
                 } else if (personaje.getY() == 240) {
-                    personaje.setBounds(personaje.getX(), personaje.getY() - 5, ancho, alto);
+                    personaje.setBounds(personaje.getX(), personaje.getY() - 15, ancho, alto);
                 } else {
-                    personaje.setBounds(personaje.getX() - 5, personaje.getY(), ancho, alto);
+                    personaje.setBounds(personaje.getX() - 15, personaje.getY(), ancho, alto);
                 }
             } else {
                 if (action.equalsIgnoreCase("Arriba")) {
