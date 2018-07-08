@@ -31,6 +31,7 @@ public class VentanaPeleaGuerreroBoss extends JFrame {
     AbstractPersonaje Ap = new AbstractPersonaje();
     Enemigo e;
     Personaje p;
+   
     private boolean play = true;
     private int turno = 1;
     int dannio = e.getAtaque();

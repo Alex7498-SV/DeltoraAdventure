@@ -25,16 +25,20 @@ import javax.swing.JOptionPane;
  */
 public class VentanaPeleaMagoEnemigo extends JFrame {
     
+   
     public JLabel mago, enemigo, atacar,vidaEnemigo;
     
     AbstractVillano Av = new AbstractVillano();
     AbstractPersonaje Ap = new AbstractPersonaje();
     Enemigo e;
     Personaje p;
+    
+    
+    
     private boolean play = true;
     private int turno = 1;
     int dannio = e.getAtaque();
-        
+    
 
     public VentanaPeleaMagoEnemigo(){
         
