@@ -5,7 +5,13 @@
  */
 package GUI;
 
+import hilosdenemigos.HiloAEspartano1;
+import hilosdenemigos.HiloAEspartano11;
+import hilosdenemigos.HiloAEspartano6;
+import hilosdenemigos.HiloAEspartano7;
 import hilosdenemigos.HiloArribaAbajo;
+import hilosdenemigos.HiloDEspartano3;
+import hilosdenemigos.HiloDEspartano9;
 import hilosdenemigos.HiloDerechaIzquierda;
 import java.awt.Container;
 import javax.swing.ImageIcon;
@@ -46,22 +52,21 @@ public class VentanaMapaEspartano extends JFrame {
         setTitle("Deltora´s World.");
 
         for (int i = 0; i <= 12; i++) {
-           
+
             if (i == 1) {
                 labels[i] = new JLabel();
                 labels[i].setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/enemigoNathanF.png")));
                 labels[i].setBounds(200, 400, 40, 40);
                 container.add(labels[i]);
             }
-           
+
             if (i == 3) {
                 labels[i] = new JLabel();
                 labels[i].setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/enemigoNathanF.png")));
                 labels[i].setBounds(300, 540, 40, 40);
                 container.add(labels[i]);
             }
-         
-           
+
             if (i == 6) {
                 labels[i] = new JLabel();
                 labels[i].setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/enemigoNathanF.png")));
@@ -74,14 +79,14 @@ public class VentanaMapaEspartano extends JFrame {
                 labels[i].setBounds(825, 175, 40, 40);
                 container.add(labels[i]);
             }
-            
+
             if (i == 9) {
                 labels[i] = new JLabel();
                 labels[i].setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/enemigoNathanF.png")));
                 labels[i].setBounds(625, 55, 40, 40);
                 container.add(labels[i]);
             }
-            
+
             if (i == 11) {
                 labels[i] = new JLabel();
                 labels[i].setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/enemigoNathanF.png")));
@@ -90,25 +95,23 @@ public class VentanaMapaEspartano extends JFrame {
             }
 
         }
-//        HiloArribaAbajo enemigo1 = new HiloArribaAbajo("enemigo1", 450, labels[1], labels[1].getX(), labels[1].getY());
-        HiloDerechaIzquierda enemigo3 = new HiloDerechaIzquierda("enemigo3", 325, labels[3], labels[3].getX(), labels[3].getY());
-      
-      
-//        HiloArribaAbajo enemigo6 = new HiloArribaAbajo("enemigo6", 400, labels[6], labels[6].getX(), labels[6].getY());
-//        HiloArribaAbajo enemigo7 = new HiloArribaAbajo("enemigo7", 200, labels[7], labels[7].getX(), labels[7].getY());
-      
-        HiloDerechaIzquierda enemigo9 = new HiloDerechaIzquierda("enemigo9", 650, labels[9], labels[9].getX(), labels[9].getY());
-      
-//        HiloArribaAbajo enemigo11 = new HiloArribaAbajo("enemigo11", 300, labels[11], labels[11].getX(), labels[11].getY());
- 
-//        enemigo1.start();    
-//        enemigo3.start();
-//        enemigo4.start();    
-//        enemigo6.start();
-//        enemigo7.start();
-//        enemigo9.start();   
-//        enemigo11.start();
 
+        HiloAEspartano1 enemigo1 = new HiloAEspartano1("enemigo1", 450, labels[1], personaje, labels[1].getX(), labels[1].getY());
+        HiloDEspartano3 enemigo3 = new HiloDEspartano3("enemigo3", 325,  labels[3],personaje, labels[3].getX(), labels[3].getY());
+
+        HiloAEspartano6 enemigo6 = new HiloAEspartano6("enemigo6", 450, labels[6], personaje, labels[6].getX(), labels[6].getY());
+
+        HiloAEspartano7 enemigo7 = new HiloAEspartano7("enemigo7", 200, labels[7],personaje, labels[7].getX(), labels[7].getY());
+        HiloDEspartano9 enemigo9 = new HiloDEspartano9("enemigo9", 650, labels[9],personaje, labels[9].getX(), labels[9].getY());
+
+        HiloAEspartano11 enemigo11 = new HiloAEspartano11("enemigo11", 450, labels[11], personaje, labels[11].getX(), labels[11].getY());
+
+        enemigo1.start();    
+        enemigo3.start();  
+        enemigo6.start();
+        enemigo7.start();
+        enemigo9.start();   
+        enemigo11.start();
 //        personaje.addActionListener(new ActionListener() {
 //            @Override
 //            public void actionPerformed(ActionEvent e) {
@@ -116,7 +119,6 @@ public class VentanaMapaEspartano extends JFrame {
 //                new VentanaInventarioSpartano().setVisible(true);
 //            }
 //        });
-
         container.add(personaje);
         container.add(lblFondo);
         setSize(1080, 740);
