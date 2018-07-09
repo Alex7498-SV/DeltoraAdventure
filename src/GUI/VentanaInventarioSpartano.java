@@ -138,6 +138,7 @@ public class VentanaInventarioSpartano extends JFrame{
                 Usuario.inventarioArmas.add(abs.getNuevaArma(5));//numero del arma en AbstractArma 'case 5'
                 System.out.println("Arma: "+Usuario.inventarioArmas.get(0).getTipo()+". Ataque: "+Usuario.inventarioArmas.get(0).getValorAtaque());
                 JOptionPane.showMessageDialog(null, espada);
+                System.out.println("Num de elem en lista inventario armas "+Usuario.inventarioArmas.size());
                 //agregarle el arma al personaje
                 //solo toma una pos y esa es la pos 0 que es en donde se guarda la primera arma a la que se le de click
             }
@@ -151,6 +152,7 @@ public class VentanaInventarioSpartano extends JFrame{
                 Usuario.inventarioArmas.add(abs.getNuevaArma(1));
                 System.out.println("Arma: "+Usuario.inventarioArmas.get(1).getTipo()+". Ataque: "+Usuario.inventarioArmas.get(1).getValorAtaque());
                 JOptionPane.showMessageDialog(null, hacha);
+                System.out.println("Num de elem en lista inventario armas "+Usuario.inventarioArmas.size());
                 //agregarle el arma al personaje
             }
         });
@@ -163,6 +165,7 @@ public class VentanaInventarioSpartano extends JFrame{
                 Usuario.inventarioArmas.add(abs.getNuevaArma(2));
                 System.out.println("Arma: "+Usuario.inventarioArmas.get(2).getTipo()+". Ataque: "+Usuario.inventarioArmas.get(2).getValorAtaque());
                 JOptionPane.showMessageDialog(null, lanza);
+                System.out.println("Num de elem en lista inventario armas "+Usuario.inventarioArmas.size());
                 //agregarle el arma al personaje
             }
         });
@@ -175,6 +178,7 @@ public class VentanaInventarioSpartano extends JFrame{
                 Usuario.inventarioPociones.add(abs.getNuevaPocion(1));
                 System.out.println("Pocion: "+Usuario.inventarioPociones.get(0).getTipo());
                 JOptionPane.showMessageDialog(null, pocion1);
+                System.out.println("Num de elem en lista inventario armas "+Usuario.inventarioPociones.size());
                 //cero por la pos de la pocion en inventarioPociones
             }
         });
@@ -187,6 +191,7 @@ public class VentanaInventarioSpartano extends JFrame{
                 Usuario.inventarioPociones.add(abs.getNuevaPocion(2));
                 System.out.println("Pocion: "+Usuario.inventarioPociones.get(1).getTipo());
                 JOptionPane.showMessageDialog(null, pocion2);
+                System.out.println("Num de elem en lista inventario armas "+Usuario.inventarioPociones.size());
             }
         });
         
@@ -198,6 +203,7 @@ public class VentanaInventarioSpartano extends JFrame{
                 Usuario.inventarioPociones.add(abs.getNuevaPocion(3));
                 System.out.println("Pocion: "+Usuario.inventarioPociones.get(2).getTipo());
                 JOptionPane.showMessageDialog(null, pocion3);
+                System.out.println("Num de elem en lista inventario armas "+Usuario.inventarioPociones.size());
             }
         });
         
@@ -209,6 +215,7 @@ public class VentanaInventarioSpartano extends JFrame{
                 Usuario.inventarioPociones.add(abs.getNuevaPocion(4));
                 System.out.println("Pocion: "+Usuario.inventarioPociones.get(3).getTipo());
                 JOptionPane.showMessageDialog(null, pocion4);
+                System.out.println("Num de elem en lista inventario armas "+Usuario.inventarioPociones.size());
             }
         });
     }
