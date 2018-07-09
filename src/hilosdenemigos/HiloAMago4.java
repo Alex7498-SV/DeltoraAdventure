@@ -6,6 +6,7 @@
 package hilosdenemigos;
 
 import GUI.VentanaInventarioMago;
+import GUI.VentanaPeleaMagoEnemigo;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
@@ -119,7 +120,7 @@ public class HiloAMago4 extends Thread {
             if (!flag) {
                 mago4 = false;
                 enemigo.setVisible(false);
-                new VentanaInventarioMago().setVisible(true);
+                new VentanaPeleaMagoEnemigo().setVisible(true);
                 System.out.println(enemigo.getX());
                 System.out.println(enemigo.getY());
 
@@ -148,7 +149,7 @@ public class HiloAMago4 extends Thread {
                 // Seguir();
                 mago4 = false;
                 enemigo.setVisible(false);
-                new VentanaInventarioMago().setVisible(true);
+                new VentanaPeleaMagoEnemigo().setVisible(true);
                 System.out.println(enemigo.getX());
                 System.out.println(enemigo.getY());
                 break;

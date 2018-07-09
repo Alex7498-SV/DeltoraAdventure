@@ -1,6 +1,7 @@
 package hilosdenemigos;
 
 import GUI.VentanaInventarioMago;
+import GUI.VentanaPeleaMagoEnemigo;
 import static java.lang.Thread.yield;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -95,6 +96,11 @@ public class HiloDMago5 extends Thread {
         while (mago5) {
             for (int i = x; i <= this.limite; i += 1) {
                 this.enemigo.setLocation(i, y);
+                 float v = (float) Math.sqrt(Math.pow(yo.getX() - enemigo.getX(), 2) + Math.pow(yo.getY() - enemigo.getY(), 2));
+                if (v <= 50) {
+                    flag = false;
+                    break;
+                }
                 try {
                     if (this.nombre.equals("Mago5")) {
                         this.enemigo.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/enemigoVeneficusD.png")));
@@ -107,7 +113,7 @@ public class HiloDMago5 extends Thread {
             if (!flag) {
                 mago5 = false;
                 enemigo.setVisible(false);
-                new VentanaInventarioMago().setVisible(true);
+               new VentanaPeleaMagoEnemigo().setVisible(true);
                 System.out.println(enemigo.getX());
                 System.out.println(enemigo.getY());
 
@@ -117,6 +123,11 @@ public class HiloDMago5 extends Thread {
             yield();
             for (int i = this.limite; i >= x; i -= 1) {
                 this.enemigo.setLocation(i, y);
+                 float v = (float) Math.sqrt(Math.pow(yo.getX() - enemigo.getX(), 2) + Math.pow(yo.getY() - enemigo.getY(), 2));
+                if (v <= 50) {
+                    flag = false;
+                    break;
+                }
                 try {
                     if (this.nombre.equals("Mago5")) {
                         this.enemigo.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/enemigoVeneficusI.png")));
@@ -129,7 +140,7 @@ public class HiloDMago5 extends Thread {
                 // Seguir();
                 mago5 = false;
                 enemigo.setVisible(false);
-                new VentanaInventarioMago().setVisible(true);
+               new VentanaPeleaMagoEnemigo().setVisible(true);
                 System.out.println(enemigo.getX());
                 System.out.println(enemigo.getY());
                 break;

@@ -1,6 +1,7 @@
 package hilosdenemigos;
 
 import GUI.VentanaInventarioMago;
+import GUI.VentanaPeleaMagoEnemigo;
 import static java.lang.Thread.yield;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -100,6 +101,7 @@ public class HiloDMago6 extends Thread {
                     flag = false;
                     break;
                 }
+           
                 try {
                     if (this.nombre.equals("Mago6")) {
                         this.enemigo.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/enemigoVeneficusD.png")));
@@ -112,7 +114,7 @@ public class HiloDMago6 extends Thread {
             if (!flag) {
                 mago6 = false;
                 enemigo.setVisible(false);
-                new VentanaInventarioMago().setVisible(true);
+                new VentanaPeleaMagoEnemigo().setVisible(true);
                 System.out.println(enemigo.getX());
                 System.out.println(enemigo.getY());
 
@@ -122,6 +124,11 @@ public class HiloDMago6 extends Thread {
             yield();
             for (int i = this.limite; i >= x; i -= 1) {
                 this.enemigo.setLocation(i, y);
+                 float v = (float) Math.sqrt(Math.pow(yo.getX() - enemigo.getX(), 2) + Math.pow(yo.getY() - enemigo.getY(), 2));
+                if (v <= 50) {
+                    flag = false;
+                    break;
+                }
                 try {
                     if (this.nombre.equals("Mago6")) {
                         this.enemigo.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/enemigoVeneficusI.png")));
@@ -134,7 +141,7 @@ public class HiloDMago6 extends Thread {
                 // Seguir();
                 mago6 = false;
                 enemigo.setVisible(false);
-                new VentanaInventarioMago().setVisible(true);
+               new VentanaPeleaMagoEnemigo().setVisible(true);
                 System.out.println(enemigo.getX());
                 System.out.println(enemigo.getY());
                 break;
