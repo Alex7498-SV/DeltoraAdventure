@@ -91,7 +91,7 @@ public class VentanaInventarioSpartano extends JFrame{
         pocion1.setBounds(30, 300, 100, 100);
         pocion1.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/pocion1.png")));
         
-        nomPo2 = new JLabel("POCION UNO");
+        nomPo2 = new JLabel("POCION DOS");
         nomPo2.setBounds(140, 250, 150, 40);
         nomPo2.setFont(new java.awt.Font("Tempus Sans ITC", 0, 12));
         nomPo2.setForeground(Color.white);
@@ -100,7 +100,7 @@ public class VentanaInventarioSpartano extends JFrame{
         pocion2.setBounds(145, 300, 100, 100);
         pocion2.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/pocion2.png")));
         
-        nomPo3 = new JLabel("POCION UNO");
+        nomPo3 = new JLabel("POCION TRES");
         nomPo3.setBounds(255, 250, 150, 40);
         nomPo3.setFont(new java.awt.Font("Tempus Sans ITC", 0, 12));
         nomPo3.setForeground(Color.white);
@@ -110,7 +110,7 @@ public class VentanaInventarioSpartano extends JFrame{
         pocion3.setBounds(260, 300, 100, 100);
         pocion3.setIcon(new ImageIcon(getClass().getResource("/personajeimagen/pocion3.png")));
         
-        nomPo4 = new JLabel("POCION UNO");
+        nomPo4 = new JLabel("POCION CUATRO");
         nomPo4.setBounds(370, 250, 150, 40);
         nomPo4.setFont(new java.awt.Font("Tempus Sans ITC", 0, 12));
         nomPo4.setForeground(Color.white);
