@@ -33,7 +33,7 @@ public class VentanaPeleaMagoBoss extends JFrame {
     Personaje p;
     private boolean play = true;
     private int turno = 1;
-    int dannio = e.getAtaque();
+    int dannio; //= e.getAtaque();
         
 
     public VentanaPeleaMagoBoss(){
@@ -52,7 +52,7 @@ public class VentanaPeleaMagoBoss extends JFrame {
         container.add(mago);
         container.add(enemigo);
         container.add(atacar);
-        container.add(vidaEnemigo);
+//        container.add(vidaEnemigo);
         setSize(400, 300);
         events();
         this.setLocationRelativeTo(null);
