@@ -41,13 +41,16 @@ public class VentanaPeleaMagoBoss extends JFrame {
 
     public VentanaPeleaMagoBoss(){
         super("Pelea");
+        
         AudioClip sonido;
         sonido = java.applet.Applet.newAudioClip(getClass().getResource("/music/HL1_song26.wav"));
         sonido.play();
+        
         e = Av.getNuevoEnemigo(2);
         this.dannioE = e.getAtaque();
         p = Ap.getPersonaje(1);
         this.dannioP = p.getAtaque();
+        
         //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
         VentanaDePelea();
@@ -168,7 +171,6 @@ public class VentanaPeleaMagoBoss extends JFrame {
                         vidaPer.setVisible(false);
                         finalPer.setText(Integer.toString(0));
                         new VentanaGameOver().setVisible(true);
-                        new VentanaMapaMago().setVisible(false);
                     } else {
                         vidaPer.setText(Integer.toString(p.getVida()));
                         finalPer.setText(Integer.toString(p.getVida()));
