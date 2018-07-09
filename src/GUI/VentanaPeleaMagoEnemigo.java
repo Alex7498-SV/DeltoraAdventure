@@ -134,7 +134,6 @@ public class VentanaPeleaMagoEnemigo extends JFrame {
                 }else{
                     restarVidaEnemigo(dannioE);
                     if (e.getVida() <= 0) {
-//                        int a = 0;
                         vidaEnemigo.setText(Integer.toString(0));
                         JOptionPane.showMessageDialog(null, "Haz ganado la batalla");
                         enemigo.setVisible(false);
@@ -146,48 +145,12 @@ public class VentanaPeleaMagoEnemigo extends JFrame {
                     }
                     System.out.println(e.getVida());
                 }
-
-//                if(e.getVida()<= 0){
-//                    JOptionPane.showMessageDialog(null, "Haz ganado la batalla campeón");
-//                    mago.setVisible(false);
-//                    vidaPer.setVisible(false);
-//                }else{
-//                    restarVidaPersonaje(dannio);
-//                    if (p.getVida() <= 0) {
-////                        int a = 0;
-//                        vidaPer.setText(Integer.toString(0));
-//                        JOptionPane.showMessageDialog(null, "Ha ganado la batalla Enemigo");
-//                        mago.setVisible(false);
-//                        vidaPer.setVisible(false);
-//                    } else {
-//                        vidaPer.setText(Integer.toString(p.getVida()));
-//                    }
-//                    System.out.println(p.getVida());
-//                }
             }
         });
         
         atacaEne.addMouseListener(new GUI.MouseListener() {
             @Override
             public void mouseClicked(MouseEvent ev) {
-//                if(e.getVida()<= 0){
-//                    JOptionPane.showMessageDialog(null, "Haz ganado la batalla Enemigo");
-//                    enemigo.setVisible(false);
-//                    vidaEnemigo.setVisible(false);
-//                }else{
-//                    restarVidaEnemigo(dannio);
-//                    if (e.getVida() <= 0) {
-////                        int a = 0;
-//                        vidaEnemigo.setText(Integer.toString(0));
-//                        JOptionPane.showMessageDialog(null, "Haz ganado la batalla");
-//                        enemigo.setVisible(false);
-//                        vidaEnemigo.setVisible(false);
-//                    } else {
-//                        vidaEnemigo.setText(Integer.toString(e.getVida()));
-//                    }
-//                    System.out.println(e.getVida());
-//                }
-
                 if(p.getVida()<= 0){
                     JOptionPane.showMessageDialog(null, "Ha ganado la batalla Enemigo");
                     mago.setVisible(false);
@@ -196,12 +159,13 @@ public class VentanaPeleaMagoEnemigo extends JFrame {
                 }else{
                     restarVidaPersonaje(dannioP);
                     if (p.getVida() <= 0) {
-//                        int a = 0;
                         vidaPer.setText(Integer.toString(0));
                         JOptionPane.showMessageDialog(null, "Ha ganado la batalla Enemigo");
                         mago.setVisible(false);
                         vidaPer.setVisible(false);
                         finalPer.setText(Integer.toString(0));
+                        new VentanaGameOver().setVisible(true);
+                        new VentanaMapaMago().setVisible(false);
                     } else {
                         vidaPer.setText(Integer.toString(p.getVida()));
                         finalPer.setText(Integer.toString(p.getVida()));
@@ -248,24 +212,6 @@ public class VentanaPeleaMagoEnemigo extends JFrame {
     }
 
 }
-
-//                if(e.getVida()<= 0){
-//                    JOptionPane.showMessageDialog(null, "Haz ganado la batalla campeón");
-//                    mago.setVisible(false);
-//                    vidaPer.setVisible(false);
-//                }else{
-//                    restarVidaPersonaje(dannio);
-//                    if (p.getVida() <= 0) {
-////                        int a = 0;
-//                        vidaPer.setText(Integer.toString(0));
-//                        JOptionPane.showMessageDialog(null, "Ha ganado la batalla Enemigo");
-//                        mago.setVisible(false);
-//                        vidaPer.setVisible(false);
-//                    } else {
-//                        vidaPer.setText(Integer.toString(p.getVida()));
-//                    }
-//                    System.out.println(p.getVida());
-//                }
 
 
 
