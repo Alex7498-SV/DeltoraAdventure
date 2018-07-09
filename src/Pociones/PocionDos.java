@@ -69,12 +69,12 @@ public class PocionDos extends PocionesBuilder{
     
     public void restarVida(){
 
-        Personaje pp = new Personaje();
+        Personaje p = new Personaje();
         
-        System.out.println(pp.getVida());
-        System.out.println("se ha restado "+restarVida+" a la vida del personaje"+pp.getNombre());
-        pp.setVida(pp.getVida()-restarVida);
-        System.out.println("La nueva vida es "+pp.getVida());
+        System.out.println(p.getVida());
+        System.out.println("se ha restado "+restarVida+" a la vida del personaje"+p.getNombre());
+        p.setVida(p.getVida()-restarVida);
+        System.out.println("La nueva vida es "+p.getVida());
     }
 
     @Override

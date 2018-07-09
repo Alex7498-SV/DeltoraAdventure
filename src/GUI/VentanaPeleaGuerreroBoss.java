@@ -144,6 +144,7 @@ public class VentanaPeleaGuerreroBoss extends JFrame {
                         enemigo.setVisible(false);
                         vidaEnemigo.setVisible(false);
                         finalEne.setText(Integer.toString(0));
+                        dispose();
                         new VentanaWin().setVisible(true);
                     } else {
                         vidaEnemigo.setText(Integer.toString(e.getVida()));
@@ -170,6 +171,7 @@ public class VentanaPeleaGuerreroBoss extends JFrame {
                         mago.setVisible(false);
                         vidaPer.setVisible(false);
                         finalPer.setText(Integer.toString(0));
+                        dispose();
                         new VentanaGameOver().setVisible(true);
                     } else {
                         vidaPer.setText(Integer.toString(p.getVida()));

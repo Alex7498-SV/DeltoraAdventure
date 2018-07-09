@@ -8,6 +8,7 @@ package GUI;
 import Armas.AbstractArma;
 import General.Usuario;
 import Personajes.AbstractPersonaje;
+import Personajes.Personaje;
 import Pociones.AbstractPocion;
 import Pociones.*;
 import Pociones.Pociones;
@@ -32,11 +33,13 @@ public class VentanaInventarioMago extends JFrame{
             pocion1, pocion2, pocion3, pocion4, nomPo1, nomPo2, nomPo3, nomPo4;
     
     AbstractPersonaje Ap = new AbstractPersonaje();
-    Enemigo e;
+    Personaje p;
     
     public VentanaInventarioMago(){
         super("Inventario Mago");
 //        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        p = Ap.getPersonaje(1);
+
         setLayout(null);
         VentanaDeInventario();
         Container container =  getContentPane();
@@ -192,7 +195,14 @@ public class VentanaInventarioMago extends JFrame{
                 pocionUno.sumarVida();
                 JOptionPane.showMessageDialog(null, pocion1);
                 System.out.println("Num de elem en lista inventario armas "+Usuario.inventarioPociones.size());
+                
+//                if(p.getVida() > 0){
+//                    PocionUno pocionUno = new PocionUno();
+//                    pocionUno.sumarVida();
+//                }
+                System.out.println(p.getVida());//no me toma la vida modificada por la pocion y asi con todas las demas
             }
+            
         });
         
         pocion2.addMouseListener(new GUI.MouseListener() {
@@ -202,11 +212,20 @@ public class VentanaInventarioMago extends JFrame{
                 System.out.println("Pocion dos elegida");
                 Usuario.inventarioPociones.add(abs.getNuevaPocion(2));
                 System.out.println("Pocion: "+Usuario.inventarioPociones.get(Usuario.inventarioPociones.size()-1).getTipo());
-                PocionDos pocionDos = new PocionDos();
-                pocionDos.pocionMisteriosa();
+//                PocionDos pocionDos = new PocionDos();
+//                pocionDos.pocionMisteriosa();
                 JOptionPane.showMessageDialog(null, pocion2);
                 System.out.println("Num de elem en lista inventario armas "+Usuario.inventarioPociones.size());
+                
+                if(p.getVida() > 0){
+                    PocionDos pocionDos = new PocionDos();
+                    pocionDos.restarVida();
+                    p.setVida(p.getVida());
+                    System.out.println(p.getVida());
+                }//no me resta la vida
+                System.out.println(p.getVida());
             }
+            
         });
         
         pocion3.addMouseListener(new GUI.MouseListener() {
@@ -216,10 +235,18 @@ public class VentanaInventarioMago extends JFrame{
                 System.out.println("Pocion tres elegida");
                 Usuario.inventarioPociones.add(abs.getNuevaPocion(3));
                 System.out.println("Pocion: "+Usuario.inventarioPociones.get(Usuario.inventarioPociones.size()-1).getTipo());
-                PocionTres pocionTres = new PocionTres();
-                pocionTres.sumarDanio();
+//                PocionTres pocionTres = new PocionTres();
+//                pocionTres.sumarDanio();
                 JOptionPane.showMessageDialog(null, pocion3);
                 System.out.println("Num de elem en lista inventario armas "+Usuario.inventarioPociones.size());
+                if(p.getAtaque()> 0){
+                    PocionTres pocionTres = new PocionTres();
+                    pocionTres.sumarDanio();
+                    //p.setAtaque(p.getAtaque());
+                    
+                }//
+                //p.setAtaque(p.getAtaque());
+                System.out.println(p.getAtaque());
             }
         });
         

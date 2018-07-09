@@ -100,7 +100,11 @@ public class VentanaWin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void reiniciarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reiniciarMouseClicked
+        //new VentanaMapaMago().setVisible(false);
+        //new VentanaMapaEspartano().setVisible(false);
         dispose();
+        //new VentanaMapaMago().setVisible(false);
+        //System.exit(0);
         new VentanaDeInicio().setVisible(true);
         
         Filtro f = new Filtro();

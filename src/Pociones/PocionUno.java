@@ -13,9 +13,10 @@ import Personajes.Personaje;
  */
 public class PocionUno extends PocionesBuilder{
     
-//    PersonajePrincipal personajePrincipal = new PersonajePrincipal();
+    Personaje p = new Personaje();
     
     public int sumarVida = 50;
+    public int sumarAtaque = 25;//25 del jugador + 25 pocion total ataca con 50
 
     public PocionUno(){
         super.pociones = new Pociones();
@@ -29,24 +30,27 @@ public class PocionUno extends PocionesBuilder{
     @Override
     public void sumarVida(){
 
-//        System.out.println(Pp.getNombre());
-//        System.out.println("Vida: "+Pp.getVida());
-//        System.out.println("Ataque: "+Pp.getAtaque());
-//        
-//        Pp.setVida(Pp.getVida() + sumarVida);
-//        
-//        System.out.println("Vida1: "+Pp.getVida());
+        System.out.println(p.getNombre());
+        System.out.println("Vida: "+p.getVida());
+        System.out.println("Ataque: "+p.getAtaque());
         
-//        System.out.println("Vida: "+pp.getVida());
-//        System.out.println("se ha sumado "+sumarVida+" a la vida del personaje"+pp.getNombre());
-//        pp.setVida(pp.getVida()+sumarVida);
-//        System.out.println("La nueva vida es: "+pp.getVida());
+        p.setVida(p.getVida() + sumarVida);
+        p.setAtaque(p.getAtaque()+sumarAtaque);
         
+        System.out.println("Vida nueva: "+p.getVida());
+        System.out.println("Nuevo Ataque: "+p.getAtaque());
+       
+        
+//        System.out.println("Vida: "+p.getVida());
+//        System.out.println("se ha sumado "+sumarVida+" a la vida del personaje"+p.getNombre());
+//        p.setVida(p.getVida()+sumarVida);
+//        System.out.println("La nueva vida es: "+p.getVida());
 //        
-//        personajePrincipal.getVida();
-//        System.out.println(personajePrincipal.getVida());
+//        
+//        p.getVida();
+//        System.out.println(p.getVida());
 //        System.out.println("Se ha sumado " + sumarVida + " a la vida del personaje");
-//        personajePrincipal.sumarVida(sumarVida);
+//        p.sumarVida(sumarVida);
     }
 
     @Override
