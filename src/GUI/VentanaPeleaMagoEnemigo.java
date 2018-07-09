@@ -84,8 +84,8 @@ public class VentanaPeleaMagoEnemigo extends JFrame {
         atacar.setFont(new java.awt.Font("Miriam Fixed", 0, 16));
         atacar.setForeground(Color.red);
         
-        atacaEne = new JLabel("ATACAR");
-        atacaEne.setBounds(280, 100, 70, 40);
+        atacaEne = new JLabel("ATAQUE ENEMIGO");
+        atacaEne.setBounds(230, 100, 120, 40);
         atacaEne.setFont(new java.awt.Font("Miriam Fixed", 0, 16));
         atacaEne.setForeground(Color.red);
        
@@ -127,15 +127,16 @@ public class VentanaPeleaMagoEnemigo extends JFrame {
             @Override
             public void mouseClicked(MouseEvent ev) {
                 if(e.getVida()<= 0){
-                    JOptionPane.showMessageDialog(null, "Haz ganado la batalla");
+                    JOptionPane.showMessageDialog(null, "Haz ganado la batalla!");
                     enemigo.setVisible(false);
                     vidaEnemigo.setVisible(false);
                     finalEne.setText(Integer.toString(e.getVida()));
                 }else{
                     restarVidaEnemigo(dannioE);
                     if (e.getVida() <= 0) {
+//                        int a = 0;
                         vidaEnemigo.setText(Integer.toString(0));
-                        JOptionPane.showMessageDialog(null, "Haz ganado la batalla");
+                        JOptionPane.showMessageDialog(null, "Haz ganado la batalla!");
                         enemigo.setVisible(false);
                         vidaEnemigo.setVisible(false);
                         finalEne.setText(Integer.toString(0));
@@ -212,6 +213,7 @@ public class VentanaPeleaMagoEnemigo extends JFrame {
     }
 
 }
+
 
 
 
