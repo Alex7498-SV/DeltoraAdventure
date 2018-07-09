@@ -1,6 +1,7 @@
 package hilosdenemigos;
 
 import GUI.VentanaInventarioMago;
+import GUI.VentanaPeleaGuerreroEnemigo;
 import static java.lang.Thread.sleep;
 import static java.lang.Thread.yield;
 import javax.swing.ImageIcon;
@@ -122,7 +123,7 @@ public class HiloDEspartano9 extends Thread {
             if (!flag) {
                 enemigo9 = false;
                 enemigo.setVisible(false);
-                new VentanaInventarioMago().setVisible(true);
+                new VentanaPeleaGuerreroEnemigo().setVisible(true);
                 System.out.println(enemigo.getX());
                 System.out.println(enemigo.getY());
 
@@ -150,7 +151,7 @@ public class HiloDEspartano9 extends Thread {
                     // Seguir();
                     enemigo9 = false;
                     enemigo.setVisible(false);
-                    new VentanaInventarioMago().setVisible(true);
+                    new VentanaPeleaGuerreroEnemigo().setVisible(true);
                     System.out.println(enemigo.getX());
                     System.out.println(enemigo.getY());
                     break;

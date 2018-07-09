@@ -135,7 +135,7 @@ public class HiloAEspartano1 extends Thread {
             if (!flag) {
                 enemigo1 = false;
                 enemigo.setVisible(false);
-                new VentanaInventarioMago().setVisible(true);
+                new VentanaPeleaGuerreroEnemigo().setVisible(true);
                 System.out.println(enemigo.getX());
                 System.out.println(enemigo.getY());
 
