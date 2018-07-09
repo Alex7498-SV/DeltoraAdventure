@@ -25,34 +25,38 @@ import javax.swing.JOptionPane;
  */
 public class VentanaPeleaMagoBoss extends JFrame {
     
+   
     public JLabel mago, enemigo, atacar,vidaEnemigo;
     
     AbstractVillano Av = new AbstractVillano();
     AbstractPersonaje Ap = new AbstractPersonaje();
     Enemigo e;
     Personaje p;
+    
+    
+    
     private boolean play = true;
     private int turno = 1;
-    int dannio; //= e.getAtaque();
-        
+    int dannio;// = e.getAtaque();
+    
+    
 
     public VentanaPeleaMagoBoss(){
-        
         super("Pelea");
-        
         AudioClip sonido;
         sonido = java.applet.Applet.newAudioClip(getClass().getResource("/music/HL1_song26.wav"));
         sonido.play();
         e = Av.getNuevoEnemigo(2);
+        this.dannio = e.getAtaque();
         p = Ap.getPersonaje(1);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
         VentanaDePelea();
         Container container = getContentPane();
         container.add(mago);
         container.add(enemigo);
         container.add(atacar);
-//        container.add(vidaEnemigo);
+        container.add(vidaEnemigo);
         setSize(400, 300);
         events();
         this.setLocationRelativeTo(null);
@@ -68,14 +72,17 @@ public class VentanaPeleaMagoBoss extends JFrame {
         
         enemigo = new JLabel();
         enemigo.setBounds(140, 60, 40, 40);
-        enemigo.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/BossVeneficusF.png")));
+        enemigo.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/enemigoVeneficusF.png")));
         
         atacar = new JLabel("ATACAR");
         atacar.setBounds(280, 200, 70, 40);
         atacar.setFont(new java.awt.Font("Miriam Fixed", 0, 16));
         atacar.setForeground(Color.red);
        
-       
+        vidaEnemigo = new JLabel(Integer.toString(e.getVida()));
+        vidaEnemigo.setBounds(295, 40, 70, 40);
+        vidaEnemigo.setFont(new java.awt.Font("Miriam Fixed", 0, 12));
+        vidaEnemigo.setForeground(Color.yellow);        
 
     }
         
@@ -90,6 +97,7 @@ public class VentanaPeleaMagoBoss extends JFrame {
                     vidaEnemigo.setVisible(false);
                 }else{
                     restarVidaEnemigo(dannio);
+                    vidaEnemigo.setText(Integer.toString(e.getVida()));
                     System.out.println(e.getVida());
                 }
             }
