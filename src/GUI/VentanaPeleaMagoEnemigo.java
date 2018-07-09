@@ -33,8 +33,6 @@ public class VentanaPeleaMagoEnemigo extends JFrame {
     Enemigo e;
     Personaje p;
     
-    
-    
     private boolean play = true;
     private int turno = 1;
     int dannio;// = e.getAtaque();
@@ -147,3 +145,6 @@ public class VentanaPeleaMagoEnemigo extends JFrame {
     }
 
 }
+
+
+
