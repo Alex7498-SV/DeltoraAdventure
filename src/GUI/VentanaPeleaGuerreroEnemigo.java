@@ -25,27 +25,31 @@ import javax.swing.JOptionPane;
  */
 public class VentanaPeleaGuerreroEnemigo extends JFrame {
     
+   
     public JLabel mago, enemigo, atacar,vidaEnemigo;
     
     AbstractVillano Av = new AbstractVillano();
     AbstractPersonaje Ap = new AbstractPersonaje();
     Enemigo e;
     Personaje p;
+    
+    
+    
     private boolean play = true;
     private int turno = 1;
-    int dannio = e.getAtaque();
-        
+    int dannio;// = e.getAtaque();
+    
+    
 
     public VentanaPeleaGuerreroEnemigo(){
-        
         super("Pelea");
-        
         AudioClip sonido;
         sonido = java.applet.Applet.newAudioClip(getClass().getResource("/music/HL1_song26.wav"));
         sonido.play();
         e = Av.getNuevoEnemigo(1);
-        p = Ap.getPersonaje(2);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.dannio = e.getAtaque();
+        p = Ap.getPersonaje(1);
+//        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
         VentanaDePelea();
         Container container = getContentPane();
@@ -75,10 +79,10 @@ public class VentanaPeleaGuerreroEnemigo extends JFrame {
         atacar.setFont(new java.awt.Font("Miriam Fixed", 0, 16));
         atacar.setForeground(Color.red);
        
-//        vidaEnemigo = new JLabel(Integer.toString(Ee.getVida()));
-//        vidaEnemigo.setBounds(295, 40, 70, 40);
-//        vidaEnemigo.setFont(new java.awt.Font("Miriam Fixed", 0, 12));
-//        vidaEnemigo.setForeground(Color.yellow);
+        vidaEnemigo = new JLabel(Integer.toString(e.getVida()));
+        vidaEnemigo.setBounds(295, 40, 70, 40);
+        vidaEnemigo.setFont(new java.awt.Font("Miriam Fixed", 0, 12));
+        vidaEnemigo.setForeground(Color.yellow);
         
 
     }

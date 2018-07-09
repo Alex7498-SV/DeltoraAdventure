@@ -115,6 +115,12 @@ public class VentanaGameOver extends javax.swing.JFrame {
     private void terminarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_terminarMousePressed
         Filtro f = new Filtro();
         FiltroBase FB = new FiltroBase(u.getNombre(), u.getScore());
+        
+        if(f.create(FB)){
+            System.out.println("Insercion de datos correcta");
+        }else{
+            System.out.println("No se pudo completar la insercion de datos");
+        }
     }//GEN-LAST:event_terminarMousePressed
 
     /**
@@ -142,6 +148,8 @@ public class VentanaGameOver extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(VentanaGameOver.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 

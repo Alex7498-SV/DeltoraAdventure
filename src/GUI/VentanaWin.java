@@ -5,6 +5,9 @@
  */
 package GUI;
 
+import BaseDeDatos.Filtro;
+import BaseDeDatos.FiltroBase;
+import General.Usuario;
 import javax.swing.JFrame;
 
 /**
@@ -16,6 +19,9 @@ public class VentanaWin extends javax.swing.JFrame {
     /**
      * Creates new form VentanaWin
      */
+    
+    Usuario u = new Usuario();
+    
     public VentanaWin() {
         super("You win!");
         initComponents();
@@ -96,6 +102,15 @@ public class VentanaWin extends javax.swing.JFrame {
     private void reiniciarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reiniciarMouseClicked
         dispose();
         new VentanaDeInicio().setVisible(true);
+        
+        Filtro f = new Filtro();
+        FiltroBase FB = new FiltroBase(u.getNombre(), u.getScore());
+        
+        if(f.create(FB)){
+            System.out.println("Insercion de datos correcta");
+        }else{
+            System.out.println("No se pudo completar la insercion de datos");
+        }
     }//GEN-LAST:event_reiniciarMouseClicked
 
     /**
@@ -123,6 +138,8 @@ public class VentanaWin extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(VentanaWin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
