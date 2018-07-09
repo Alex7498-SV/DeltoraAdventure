@@ -16,6 +16,7 @@ import static java.awt.image.ImageObserver.WIDTH;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -136,6 +137,7 @@ public class VentanaInventarioSpartano extends JFrame{
                 System.out.println("Arma espada elegida");
                 Usuario.inventarioArmas.add(abs.getNuevaArma(5));//numero del arma en AbstractArma 'case 5'
                 System.out.println("Arma: "+Usuario.inventarioArmas.get(0).getTipo()+". Ataque: "+Usuario.inventarioArmas.get(0).getValorAtaque());
+                JOptionPane.showMessageDialog(null, espada);
                 //agregarle el arma al personaje
                 //solo toma una pos y esa es la pos 0 que es en donde se guarda la primera arma a la que se le de click
             }
@@ -148,6 +150,7 @@ public class VentanaInventarioSpartano extends JFrame{
                 System.out.println("Arma hacha elegida");
                 Usuario.inventarioArmas.add(abs.getNuevaArma(1));
                 System.out.println("Arma: "+Usuario.inventarioArmas.get(1).getTipo()+". Ataque: "+Usuario.inventarioArmas.get(1).getValorAtaque());
+                JOptionPane.showMessageDialog(null, hacha);
                 //agregarle el arma al personaje
             }
         });
@@ -159,6 +162,7 @@ public class VentanaInventarioSpartano extends JFrame{
                 System.out.println("Arma lanza elegida");
                 Usuario.inventarioArmas.add(abs.getNuevaArma(2));
                 System.out.println("Arma: "+Usuario.inventarioArmas.get(2).getTipo()+". Ataque: "+Usuario.inventarioArmas.get(2).getValorAtaque());
+                JOptionPane.showMessageDialog(null, lanza);
                 //agregarle el arma al personaje
             }
         });
@@ -170,6 +174,7 @@ public class VentanaInventarioSpartano extends JFrame{
                 System.out.println("Pocion uno elegida");
                 Usuario.inventarioPociones.add(abs.getNuevaPocion(1));
                 System.out.println("Pocion: "+Usuario.inventarioPociones.get(0).getTipo());
+                JOptionPane.showMessageDialog(null, pocion1);
                 //cero por la pos de la pocion en inventarioPociones
             }
         });
@@ -181,6 +186,7 @@ public class VentanaInventarioSpartano extends JFrame{
                 System.out.println("Pocion dos elegida");
                 Usuario.inventarioPociones.add(abs.getNuevaPocion(2));
                 System.out.println("Pocion: "+Usuario.inventarioPociones.get(1).getTipo());
+                JOptionPane.showMessageDialog(null, pocion2);
             }
         });
         
@@ -191,6 +197,7 @@ public class VentanaInventarioSpartano extends JFrame{
                 System.out.println("Pocion tres elegida");
                 Usuario.inventarioPociones.add(abs.getNuevaPocion(3));
                 System.out.println("Pocion: "+Usuario.inventarioPociones.get(2).getTipo());
+                JOptionPane.showMessageDialog(null, pocion3);
             }
         });
         
@@ -201,6 +208,7 @@ public class VentanaInventarioSpartano extends JFrame{
                 System.out.println("Pocion cuatro elegida");
                 Usuario.inventarioPociones.add(abs.getNuevaPocion(4));
                 System.out.println("Pocion: "+Usuario.inventarioPociones.get(3).getTipo());
+                JOptionPane.showMessageDialog(null, pocion4);
             }
         });
     }

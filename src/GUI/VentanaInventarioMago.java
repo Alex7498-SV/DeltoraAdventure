@@ -20,6 +20,7 @@ import static java.awt.image.ImageObserver.WIDTH;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 //aallaallla
 /**
  *
@@ -146,6 +147,7 @@ public class VentanaInventarioMago extends JFrame{
                 Usuario.inventarioArmas.add(abs.getNuevaArma(6));//numero del arma en AbstractArma 'case 6'
                 System.out.println("Arma: "+Usuario.inventarioArmas.get(Usuario.inventarioArmas.size()-1).getTipo()+". Ataque: "+Usuario.inventarioArmas.get(Usuario.inventarioArmas.size()-1).getValorAtaque());
                 System.out.println(Usuario.inventarioArmas.size());
+                JOptionPane.showMessageDialog(null, libro);
                 //agregarle el arma al personaje
                 //solo toma una pos y esa es la pos 0 que es en donde se guarda la primera arma a la que se le de click
             }
@@ -158,6 +160,7 @@ public class VentanaInventarioMago extends JFrame{
                 System.out.println("Arma varita elegida");
                 Usuario.inventarioArmas.add(abs.getNuevaArma(4));
                 System.out.println("Arma: "+Usuario.inventarioArmas.get(Usuario.inventarioArmas.size()-1).getTipo()+". Ataque: "+Usuario.inventarioArmas.get(Usuario.inventarioArmas.size()-1).getValorAtaque());
+                JOptionPane.showMessageDialog(null, varita);
                 //agregarle el arma al personaje
             }
         });
@@ -170,6 +173,7 @@ public class VentanaInventarioMago extends JFrame{
                 Usuario.inventarioArmas.add(abs.getNuevaArma(3));
                 
                 System.out.println("Arma: "+Usuario.inventarioArmas.get(Usuario.inventarioArmas.size()-1).getTipo()+". Ataque: "+Usuario.inventarioArmas.get(Usuario.inventarioArmas.size()-1).getValorAtaque());
+                JOptionPane.showMessageDialog(null, caldero);
                 //agregarle el arma al personaje
             }
         });
@@ -184,6 +188,7 @@ public class VentanaInventarioMago extends JFrame{
                 //System.out.println(Pociones.PocionUno);
                 PocionUno pocionUno = new PocionUno();
                 pocionUno.sumarVida();
+                JOptionPane.showMessageDialog(null, pocion1);
             }
         });
         
@@ -196,6 +201,7 @@ public class VentanaInventarioMago extends JFrame{
                 System.out.println("Pocion: "+Usuario.inventarioPociones.get(Usuario.inventarioPociones.size()-1).getTipo());
                 PocionDos pocionDos = new PocionDos();
                 pocionDos.pocionMisteriosa();
+                JOptionPane.showMessageDialog(null, pocion2);
             }
         });
         
@@ -208,6 +214,7 @@ public class VentanaInventarioMago extends JFrame{
                 System.out.println("Pocion: "+Usuario.inventarioPociones.get(Usuario.inventarioPociones.size()-1).getTipo());
                 PocionTres pocionTres = new PocionTres();
                 pocionTres.sumarDanio();
+                JOptionPane.showMessageDialog(null, pocion3);
             }
         });
         
@@ -220,6 +227,7 @@ public class VentanaInventarioMago extends JFrame{
                 System.out.println("Pocion: "+Usuario.inventarioPociones.get(Usuario.inventarioPociones.size()-1).getTipo());
                 PocionCuatro pocionCuatro = new PocionCuatro();
                 pocionCuatro.sumarFullVida();
+                JOptionPane.showMessageDialog(null, pocion4);
             }
         });
     }

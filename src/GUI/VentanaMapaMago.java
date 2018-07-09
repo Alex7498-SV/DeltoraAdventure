@@ -141,7 +141,7 @@ public class VentanaMapaMago extends JFrame {
 
         @Override
         public void keyPressed(KeyEvent e) {
-//            System.out.println(e.getKeyText(e.getKeyCode()));
+            System.out.println(e.getKeyText(e.getKeyCode()));
             String action = e.getKeyText(e.getKeyCode());
 
             int key = e.getKeyCode();
@@ -362,7 +362,7 @@ public class VentanaMapaMago extends JFrame {
                     personaj.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/veneficusTrasera.png")));
                 }
                 if (action.equalsIgnoreCase("Abajo")) {
-
+                    //new VentanaInventarioMago().setVisible(true);
                     personaj.setBounds(personaj.getX(), personaj.getY() + 5, ancho, alto);
                     personaj.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/veneficusFrontal.png")));
                 }
@@ -375,6 +375,9 @@ public class VentanaMapaMago extends JFrame {
 
                     personaj.setBounds(personaj.getX() + 5, personaj.getY(), ancho, alto);
                     personaj.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/veneficusDerecha.png")));
+                }
+                if (action.equalsIgnoreCase("I")) {
+                    new VentanaInventarioMago().setVisible(true);
                 }
             }
         }

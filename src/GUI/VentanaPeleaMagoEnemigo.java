@@ -97,7 +97,13 @@ public class VentanaPeleaMagoEnemigo extends JFrame {
                     vidaEnemigo.setVisible(false);
                 }else{
                     restarVidaEnemigo(dannio);
-                    vidaEnemigo.setText(Integer.toString(e.getVida()));
+                    if (e.getVida() <= 0) {
+                        JOptionPane.showMessageDialog(null, "Haz ganado la batalla campeón");
+                        enemigo.setVisible(false);
+                        vidaEnemigo.setVisible(false);
+                    } else {
+                        vidaEnemigo.setText(Integer.toString(e.getVida()));
+                    }
                     System.out.println(e.getVida());
                 }
             }

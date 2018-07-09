@@ -315,7 +315,7 @@ public class VentanaMapaEspartano extends JFrame {
                     personaje.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/nathanTrasera.png")));
                 }
                 if (action.equalsIgnoreCase("Abajo")) {
-
+                    
                     personaje.setBounds(personaje.getX(), personaje.getY() + 5, ancho, alto);
                     personaje.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/nathanFrontal.png")));
                 }
@@ -328,6 +328,9 @@ public class VentanaMapaEspartano extends JFrame {
 
                     personaje.setBounds(personaje.getX() + 5, personaje.getY(), ancho, alto);
                     personaje.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/nathanDerecha.png")));
+                }
+                if (action.equalsIgnoreCase("I")) {
+                    new VentanaInventarioSpartano().setVisible(true);
                 }
             }
         }
