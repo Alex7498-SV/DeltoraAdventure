@@ -4,8 +4,8 @@ package Personajes;
 
 public class Personaje {
     
-    private int vida = 100;
-    private int ataque = 25;
+    static private int vida = 100;
+    static private int ataque = 25;
     private String nombre = "";
 
     public int getVida() {
