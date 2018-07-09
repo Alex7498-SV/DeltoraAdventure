@@ -49,14 +49,14 @@ public class VentanaPeleaMagoEnemigo extends JFrame {
         e = Av.getNuevoEnemigo(1);
         this.dannio = e.getAtaque();
         p = Ap.getPersonaje(1);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
         VentanaDePelea();
         Container container = getContentPane();
         container.add(mago);
         container.add(enemigo);
         container.add(atacar);
-////        container.add(vidaEnemigo);
+        container.add(vidaEnemigo);
         setSize(400, 300);
         events();
         this.setLocationRelativeTo(null);
@@ -79,10 +79,10 @@ public class VentanaPeleaMagoEnemigo extends JFrame {
         atacar.setFont(new java.awt.Font("Miriam Fixed", 0, 16));
         atacar.setForeground(Color.red);
        
-//        vidaEnemigo = new JLabel(Integer.toString(Ee.getVida()));
-//        vidaEnemigo.setBounds(295, 40, 70, 40);
-//        vidaEnemigo.setFont(new java.awt.Font("Miriam Fixed", 0, 12));
-//        vidaEnemigo.setForeground(Color.yellow);
+        vidaEnemigo = new JLabel(Integer.toString(e.getVida()));
+        vidaEnemigo.setBounds(295, 40, 70, 40);
+        vidaEnemigo.setFont(new java.awt.Font("Miriam Fixed", 0, 12));
+        vidaEnemigo.setForeground(Color.yellow);
         
 
     }
