@@ -141,7 +141,7 @@ public class VentanaMapaMago extends JFrame {
 
         @Override
         public void keyPressed(KeyEvent e) {
-            System.out.println(e.getKeyText(e.getKeyCode()));
+//            System.out.println(e.getKeyText(e.getKeyCode()));
             String action = e.getKeyText(e.getKeyCode());
 
             int key = e.getKeyCode();
