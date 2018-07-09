@@ -47,6 +47,8 @@ public class VentanaPeleaGuerreroEnemigo extends JFrame {
         sonido = java.applet.Applet.newAudioClip(getClass().getResource("/music/HL1_song26.wav"));
         sonido.play();
         e = Av.getNuevoEnemigo(1);
+        System.out.println(Av.getNuevoEnemigo(1).getVida());
+//        e.setVida(100);
         this.dannio = e.getAtaque();
         p = Ap.getPersonaje(1);
 //        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -68,11 +70,11 @@ public class VentanaPeleaGuerreroEnemigo extends JFrame {
                 
         mago = new JLabel();
         mago.setBounds(30, 180, 40, 40);        
-        mago.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/nathanTrasera.png")));
+        mago.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/nathanTrasera.png")));
         
         enemigo = new JLabel();
         enemigo.setBounds(140, 60, 40, 40);
-        enemigo.setIcon(new ImageIcon(getClass().getResource("/imagenesMago/enemigoNathanF.png")));
+        enemigo.setIcon(new ImageIcon(getClass().getResource("/imagenesEspartano/enemigoNathanF.png")));
         
         atacar = new JLabel("ATACAR");
         atacar.setBounds(280, 200, 70, 40);
@@ -98,6 +100,7 @@ public class VentanaPeleaGuerreroEnemigo extends JFrame {
                     vidaEnemigo.setVisible(false);
                 }else{
                     restarVidaEnemigo(dannio);
+                    vidaEnemigo.setText(Integer.toString(e.getVida()));
                     System.out.println(e.getVida());
                 }
             }

@@ -11,8 +11,8 @@ package Villanos;
  */
 public class Enemigo {
     
-    private static int vida = 50;
-    private static int ataque = 20;
+    private int vida = 50;
+    private int ataque = 20;
 
     String recompensa  = "";
     boolean atacando = false;
